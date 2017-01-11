@@ -15,21 +15,21 @@ preplace inst ECE423_QSYS.sram.tdt -pg 1
 preplace inst ECE423_QSYS.sram.reset -pg 1
 preplace inst ECE423_QSYS.lpddr2.afi_reset_export -pg 1
 preplace inst ECE423_QSYS.lpddr2.pll_ref_clk -pg 1
-preplace inst ECE423_QSYS.lpddr2 -pg 1 -lvl 5 -y 1100
+preplace inst ECE423_QSYS.lpddr2 -pg 1 -lvl 5 -y 1140
 preplace inst ECE423_QSYS.sram.slave_translator -pg 1
-preplace inst ECE423_QSYS.timer_0 -pg 1 -lvl 5 -y 370
+preplace inst ECE423_QSYS.timer_0 -pg 1 -lvl 5 -y 410
 preplace inst ECE423_QSYS.sram_sharer -pg 1 -lvl 4 -y 840
-preplace inst ECE423_QSYS.ledr -pg 1 -lvl 5 -y 870
-preplace inst ECE423_QSYS.timer_1 -pg 1 -lvl 5 -y 470
+preplace inst ECE423_QSYS.ledr -pg 1 -lvl 5 -y 910
+preplace inst ECE423_QSYS.timer_1 -pg 1 -lvl 5 -y 510
 preplace inst ECE423_QSYS.lpddr2.p0 -pg 1
 preplace inst ECE423_QSYS.lpddr2.afi_half_clk -pg 1
 preplace inst ECE423_QSYS.lpddr2.soft_reset -pg 1
-preplace inst ECE423_QSYS.sysid -pg 1 -lvl 5 -y 290
-preplace inst ECE423_QSYS.ledg -pg 1 -lvl 5 -y 770
-preplace inst ECE423_QSYS.i2c_sda -pg 1 -lvl 5 -y 670
-preplace inst ECE423_QSYS.i2c_scl -pg 1 -lvl 5 -y 570
+preplace inst ECE423_QSYS.sysid -pg 1 -lvl 5 -y 330
+preplace inst ECE423_QSYS.ledg -pg 1 -lvl 5 -y 810
+preplace inst ECE423_QSYS.i2c_sda -pg 1 -lvl 5 -y 710
+preplace inst ECE423_QSYS.i2c_scl -pg 1 -lvl 5 -y 610
 preplace inst ECE423_QSYS -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst ECE423_QSYS.sram_bridge -pg 1 -lvl 5 -y 970
+preplace inst ECE423_QSYS.sram_bridge -pg 1 -lvl 5 -y 1010
 preplace inst ECE423_QSYS.sram_sharer.pin_sharer -pg 1
 preplace inst ECE423_QSYS.sram_sharer.clock -pg 1
 preplace inst ECE423_QSYS.lpddr2.dll0 -pg 1
@@ -37,34 +37,37 @@ preplace inst ECE423_QSYS.sram.tda -pg 1
 preplace inst ECE423_QSYS.lpddr2.pll_bridge -pg 1
 preplace inst ECE423_QSYS.lpddr2.as0 -pg 1
 preplace inst ECE423_QSYS.lpddr2.afi_clk -pg 1
-preplace inst ECE423_QSYS.key -pg 1 -lvl 5 -y 70
-preplace inst ECE423_QSYS.jtag_uart -pg 1 -lvl 5 -y 190
+preplace inst ECE423_QSYS.key -pg 1 -lvl 5 -y 90
+preplace inst ECE423_QSYS.jtag_uart -pg 1 -lvl 5 -y 230
 preplace inst ECE423_QSYS.cpu.cpu -pg 1
 preplace inst ECE423_QSYS.clk_50 -pg 1 -lvl 5 -y 30
 preplace inst ECE423_QSYS.lpddr2.global_reset -pg 1
 preplace inst ECE423_QSYS.sram_sharer.arbiter -pg 1
 preplace inst ECE423_QSYS.sram_sharer.reset -pg 1
+preplace inst ECE423_QSYS.sd_cont -pg 1 -lvl 6 -y 30
 preplace inst ECE423_QSYS.cpu.clock_bridge -pg 1
 preplace inst ECE423_QSYS.cpu -pg 1 -lvl 2 -y 780
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.status,(SLAVE)ECE423_QSYS.lpddr2_status) 1 0 5 NJ 1370 NJ 1370 NJ 1370 NJ 1370 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)clk_125.clk_in,(SLAVE)ECE423_QSYS.clk_125) 1 0 1 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.lpddr2_oct,(SLAVE)lpddr2.oct) 1 0 5 NJ 1290 NJ 1290 NJ 1290 NJ 1290 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.lpddr2_pll_ref_clk,(SLAVE)lpddr2.pll_ref_clk) 1 0 5 NJ 1310 NJ 1310 NJ 1310 NJ 1310 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.i2c_scl,(SLAVE)i2c_scl.external_connection) 1 0 5 NJ 640 NJ 640 NJ 640 NJ 640 NJ
 preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.ledr,(SLAVE)ledr.external_connection) 1 0 5 NJ 980 NJ 980 NJ 980 NJ 980 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)i2c_sda.external_connection,(SLAVE)ECE423_QSYS.i2c_sda) 1 0 5 NJ 700 NJ 700 NJ 700 NJ 700 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.pll_ref_clk,(SLAVE)ECE423_QSYS.lpddr2_pll_ref_clk) 1 0 5 NJ 1310 NJ 1310 NJ 1310 NJ 1310 NJ
-preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)jtag_uart.irq,(MASTER)cpu.irq,(SLAVE)timer_1.irq,(SLAVE)key.irq,(SLAVE)timer_0.irq) 1 2 3 NJ 780 NJ 780 1130
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.key,(SLAVE)key.external_connection) 1 0 5 NJ 100 NJ 100 NJ 100 NJ 100 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)i2c_scl.external_connection,(SLAVE)ECE423_QSYS.i2c_scl) 1 0 5 NJ 600 NJ 600 NJ 600 NJ 600 NJ
+preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)timer_1.irq,(SLAVE)jtag_uart.irq,(MASTER)cpu.irq,(SLAVE)key.irq,(SLAVE)timer_0.irq) 1 2 3 NJ 800 NJ 800 1170
+preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.mp_wfifo_clk_0,(SLAVE)lpddr2.mp_cmd_clk_0,(SLAVE)sram.clk,(SLAVE)cpu.clk,(MASTER)clk_125.clk,(SLAVE)sysid.clk,(SLAVE)jtag_uart.clk,(SLAVE)i2c_sda.clk,(SLAVE)key.clk,(SLAVE)lpddr2.mp_rfifo_clk_0,(SLAVE)timer_0.clk,(SLAVE)sram_bridge.clk,(SLAVE)timer_1.clk,(SLAVE)ledr.clk,(SLAVE)sram_sharer.clk,(SLAVE)ledg.clk,(SLAVE)i2c_scl.clk) 1 1 4 330 940 790 940 950 940 1230
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.clk_125,(SLAVE)clk_125.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.key,(SLAVE)key.external_connection) 1 0 5 NJ 120 NJ 120 NJ 120 NJ 120 NJ
+preplace netloc INTERCONNECT<net_container>ECE423_QSYS</net_container>(SLAVE)cpu.reset,(SLAVE)sram.reset,(MASTER)clk_125.clk_reset,(SLAVE)ledg.reset,(SLAVE)lpddr2.global_reset,(SLAVE)ledr.reset,(SLAVE)i2c_scl.reset,(SLAVE)sram_sharer.reset,(SLAVE)i2c_sda.reset,(SLAVE)lpddr2.soft_reset,(SLAVE)sysid.reset,(SLAVE)jtag_uart.reset,(SLAVE)key.reset,(SLAVE)lpddr2.mp_cmd_reset_n_0,(SLAVE)timer_1.reset,(SLAVE)lpddr2.mp_wfifo_reset_n_0,(MASTER)cpu.debug_reset_request,(SLAVE)lpddr2.mp_rfifo_reset_n_0,(SLAVE)sram_bridge.reset,(SLAVE)timer_0.reset) 1 1 4 350 960 770 960 990 960 1210
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.i2c_sda,(SLAVE)i2c_sda.external_connection) 1 0 5 NJ 720 NJ 720 NJ 720 NJ 720 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.lpddr2_status,(SLAVE)lpddr2.status) 1 0 5 NJ 1410 NJ 1410 NJ 1410 NJ 1410 NJ
 preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.ledg,(SLAVE)ledg.external_connection) 1 0 5 NJ 740 NJ 740 NJ 740 NJ 740 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.clk_50,(SLAVE)clk_50.in_clk) 1 0 5 NJ 40 NJ 40 NJ 40 NJ 40 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.lpddr2,(SLAVE)lpddr2.memory) 1 0 5 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)sram_bridge.out,(SLAVE)ECE423_QSYS.sram_bridge_out) 1 0 5 NJ 1000 NJ 1000 NJ 1000 NJ 1000 NJ
+preplace netloc INTERCONNECT<net_container>ECE423_QSYS</net_container>(SLAVE)ledg.s1,(SLAVE)key.s1,(SLAVE)sd_cont.slave,(SLAVE)timer_0.s1,(MASTER)sd_cont.master,(SLAVE)cpu.debug_mem_slave,(SLAVE)sysid.control_slave,(MASTER)cpu.data_master,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)sram.uas,(SLAVE)lpddr2.avl_0,(SLAVE)i2c_scl.s1,(SLAVE)i2c_sda.s1,(MASTER)cpu.instruction_master,(SLAVE)ledr.s1,(SLAVE)timer_1.s1) 1 1 6 370 920 730 780 NJ 780 1270 220 1580 160 1710
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)sd_cont.sd,(SLAVE)ECE423_QSYS.sd) 1 0 6 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.oct,(SLAVE)ECE423_QSYS.lpddr2_oct) 1 0 5 NJ 1290 NJ 1290 NJ 1290 NJ 1290 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.lpddr2,(SLAVE)lpddr2.memory) 1 0 5 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ
+preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(MASTER)clk_50.out_clk,(SLAVE)sd_cont.sd_clk,(SLAVE)sd_cont.clock) 1 5 1 1580
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)sram_bridge.out,(SLAVE)ECE423_QSYS.sram_bridge_out) 1 0 5 NJ 1040 NJ 1040 NJ 1040 NJ 1040 NJ
 preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.reset,(SLAVE)clk_125.clk_in_reset) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)sram_bridge.tcs,(MASTER)sram_sharer.tcm) 1 4 1 1130
-preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)timer_0.clk,(SLAVE)key.clk,(SLAVE)ledg.clk,(SLAVE)i2c_sda.clk,(SLAVE)lpddr2.mp_wfifo_clk_0,(SLAVE)lpddr2.mp_rfifo_clk_0,(SLAVE)timer_1.clk,(SLAVE)sysid.clk,(SLAVE)ledr.clk,(SLAVE)sram_bridge.clk,(SLAVE)i2c_scl.clk,(SLAVE)cpu.clk,(SLAVE)sram_sharer.clk,(SLAVE)sram.clk,(MASTER)clk_125.clk,(SLAVE)lpddr2.mp_cmd_clk_0,(SLAVE)jtag_uart.clk) 1 1 4 330 960 790 800 950 800 1170
-preplace netloc INTERCONNECT<net_container>ECE423_QSYS</net_container>(SLAVE)jtag_uart.reset,(SLAVE)ledr.reset,(SLAVE)sram_sharer.reset,(SLAVE)lpddr2.mp_rfifo_reset_n_0,(SLAVE)sram.reset,(MASTER)cpu.debug_reset_request,(SLAVE)lpddr2.mp_cmd_reset_n_0,(SLAVE)lpddr2.global_reset,(SLAVE)sysid.reset,(SLAVE)key.reset,(SLAVE)sram_bridge.reset,(SLAVE)timer_0.reset,(SLAVE)i2c_sda.reset,(SLAVE)lpddr2.soft_reset,(SLAVE)i2c_scl.reset,(SLAVE)cpu.reset,(SLAVE)lpddr2.mp_wfifo_reset_n_0,(SLAVE)timer_1.reset,(MASTER)clk_125.clk_reset,(SLAVE)ledg.reset) 1 1 4 350 920 770 940 970 940 1190
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)sram_bridge.tcs,(MASTER)sram_sharer.tcm) 1 4 1 1170
 preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.lpddr2_pll_sharing,(SLAVE)lpddr2.pll_sharing) 1 0 5 NJ 1330 NJ 1330 NJ 1330 NJ 1330 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)sram.tcm,(SLAVE)sram_sharer.tcs0) 1 3 1 950
-preplace netloc INTERCONNECT<net_container>ECE423_QSYS</net_container>(SLAVE)timer_0.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)lpddr2.avl_0,(MASTER)cpu.data_master,(SLAVE)key.s1,(SLAVE)i2c_scl.s1,(SLAVE)sram.uas,(SLAVE)i2c_sda.s1,(SLAVE)sysid.control_slave,(MASTER)cpu.instruction_master,(SLAVE)ledg.s1,(SLAVE)timer_1.s1,(SLAVE)cpu.debug_mem_slave,(SLAVE)ledr.s1) 1 1 4 370 940 750 960 NJ 960 1230
-levelinfo -pg 1 0 120 1550
-levelinfo -hier ECE423_QSYS 130 160 490 850 1030 1360 1540
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)clk_50.in_clk,(SLAVE)ECE423_QSYS.clk_50) 1 0 5 NJ 40 NJ 40 NJ 40 NJ 40 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)sram_sharer.tcs0,(MASTER)sram.tcm) 1 3 1 970
+levelinfo -pg 1 0 120 1750
+levelinfo -hier ECE423_QSYS 130 160 490 850 1050 1400 1610 1730

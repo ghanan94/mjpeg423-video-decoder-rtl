@@ -32,15 +32,21 @@
 			lpddr2_status_local_cal_success              : out   std_logic;                                        -- local_cal_success
 			lpddr2_status_local_cal_fail                 : out   std_logic;                                        -- local_cal_fail
 			reset_reset_n                                : in    std_logic                     := 'X';             -- reset_n
+			sd_sd_clk                                    : out   std_logic;                                        -- sd_clk
+			sd_sd_cmd                                    : inout std_logic                     := 'X';             -- sd_cmd
+			sd_sd_dat                                    : inout std_logic_vector(3 downto 0)  := (others => 'X'); -- sd_dat
 			sram_bridge_out_sram_tcm_data_out            : inout std_logic_vector(15 downto 0) := (others => 'X'); -- sram_tcm_data_out
 			sram_bridge_out_sram_tcm_address_out         : out   std_logic_vector(18 downto 0);                    -- sram_tcm_address_out
 			sram_bridge_out_sram_tcm_outputenable_n_out  : out   std_logic_vector(0 downto 0);                     -- sram_tcm_outputenable_n_out
 			sram_bridge_out_sram_tcm_chipselect_n_out    : out   std_logic_vector(0 downto 0);                     -- sram_tcm_chipselect_n_out
 			sram_bridge_out_sram_tcm_byteenable_n_out    : out   std_logic_vector(1 downto 0);                     -- sram_tcm_byteenable_n_out
 			sram_bridge_out_sram_tcm_write_n_out         : out   std_logic_vector(0 downto 0);                     -- sram_tcm_write_n_out
-			sd_sd_clk                                    : out   std_logic;                                        -- sd_clk
-			sd_sd_cmd                                    : inout std_logic                     := 'X';             -- sd_cmd
-			sd_sd_dat                                    : inout std_logic_vector(3 downto 0)  := (others => 'X')  -- sd_dat
+			video_clk_clk                                : out   std_logic;                                        -- clk
+			video_RGB_OUT                                : out   std_logic_vector(23 downto 0);                    -- RGB_OUT
+			video_HD                                     : out   std_logic;                                        -- HD
+			video_VD                                     : out   std_logic;                                        -- VD
+			video_DEN                                    : out   std_logic;                                        -- DEN
+			video_dma_reset_n_reset_n                    : in    std_logic                     := 'X'              -- reset_n
 		);
 	end component ECE423_QSYS;
 

@@ -31,14 +31,20 @@
 		.lpddr2_status_local_cal_success              (<connected-to-lpddr2_status_local_cal_success>),              //                   .local_cal_success
 		.lpddr2_status_local_cal_fail                 (<connected-to-lpddr2_status_local_cal_fail>),                 //                   .local_cal_fail
 		.reset_reset_n                                (<connected-to-reset_reset_n>),                                //              reset.reset_n
+		.sd_sd_clk                                    (<connected-to-sd_sd_clk>),                                    //                 sd.sd_clk
+		.sd_sd_cmd                                    (<connected-to-sd_sd_cmd>),                                    //                   .sd_cmd
+		.sd_sd_dat                                    (<connected-to-sd_sd_dat>),                                    //                   .sd_dat
 		.sram_bridge_out_sram_tcm_data_out            (<connected-to-sram_bridge_out_sram_tcm_data_out>),            //    sram_bridge_out.sram_tcm_data_out
 		.sram_bridge_out_sram_tcm_address_out         (<connected-to-sram_bridge_out_sram_tcm_address_out>),         //                   .sram_tcm_address_out
 		.sram_bridge_out_sram_tcm_outputenable_n_out  (<connected-to-sram_bridge_out_sram_tcm_outputenable_n_out>),  //                   .sram_tcm_outputenable_n_out
 		.sram_bridge_out_sram_tcm_chipselect_n_out    (<connected-to-sram_bridge_out_sram_tcm_chipselect_n_out>),    //                   .sram_tcm_chipselect_n_out
 		.sram_bridge_out_sram_tcm_byteenable_n_out    (<connected-to-sram_bridge_out_sram_tcm_byteenable_n_out>),    //                   .sram_tcm_byteenable_n_out
 		.sram_bridge_out_sram_tcm_write_n_out         (<connected-to-sram_bridge_out_sram_tcm_write_n_out>),         //                   .sram_tcm_write_n_out
-		.sd_sd_clk                                    (<connected-to-sd_sd_clk>),                                    //                 sd.sd_clk
-		.sd_sd_cmd                                    (<connected-to-sd_sd_cmd>),                                    //                   .sd_cmd
-		.sd_sd_dat                                    (<connected-to-sd_sd_dat>)                                     //                   .sd_dat
+		.video_clk_clk                                (<connected-to-video_clk_clk>),                                //          video_clk.clk
+		.video_RGB_OUT                                (<connected-to-video_RGB_OUT>),                                //              video.RGB_OUT
+		.video_HD                                     (<connected-to-video_HD>),                                     //                   .HD
+		.video_VD                                     (<connected-to-video_VD>),                                     //                   .VD
+		.video_DEN                                    (<connected-to-video_DEN>),                                    //                   .DEN
+		.video_dma_reset_n_reset_n                    (<connected-to-video_dma_reset_n_reset_n>)                     //  video_dma_reset_n.reset_n
 	);
 

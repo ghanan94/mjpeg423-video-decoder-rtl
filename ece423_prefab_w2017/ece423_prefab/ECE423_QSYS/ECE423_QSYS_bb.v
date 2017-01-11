@@ -32,15 +32,21 @@ module ECE423_QSYS (
 	lpddr2_status_local_cal_success,
 	lpddr2_status_local_cal_fail,
 	reset_reset_n,
+	sd_sd_clk,
+	sd_sd_cmd,
+	sd_sd_dat,
 	sram_bridge_out_sram_tcm_data_out,
 	sram_bridge_out_sram_tcm_address_out,
 	sram_bridge_out_sram_tcm_outputenable_n_out,
 	sram_bridge_out_sram_tcm_chipselect_n_out,
 	sram_bridge_out_sram_tcm_byteenable_n_out,
 	sram_bridge_out_sram_tcm_write_n_out,
-	sd_sd_clk,
-	sd_sd_cmd,
-	sd_sd_dat);	
+	video_clk_clk,
+	video_RGB_OUT,
+	video_HD,
+	video_VD,
+	video_DEN,
+	video_dma_reset_n_reset_n);	
 
 	input		clk_125_clk;
 	input		clk_50_clk;
@@ -74,13 +80,19 @@ module ECE423_QSYS (
 	output		lpddr2_status_local_cal_success;
 	output		lpddr2_status_local_cal_fail;
 	input		reset_reset_n;
+	output		sd_sd_clk;
+	inout		sd_sd_cmd;
+	inout	[3:0]	sd_sd_dat;
 	inout	[15:0]	sram_bridge_out_sram_tcm_data_out;
 	output	[18:0]	sram_bridge_out_sram_tcm_address_out;
 	output	[0:0]	sram_bridge_out_sram_tcm_outputenable_n_out;
 	output	[0:0]	sram_bridge_out_sram_tcm_chipselect_n_out;
 	output	[1:0]	sram_bridge_out_sram_tcm_byteenable_n_out;
 	output	[0:0]	sram_bridge_out_sram_tcm_write_n_out;
-	output		sd_sd_clk;
-	inout		sd_sd_cmd;
-	inout	[3:0]	sd_sd_dat;
+	output		video_clk_clk;
+	output	[23:0]	video_RGB_OUT;
+	output		video_HD;
+	output		video_VD;
+	output		video_DEN;
+	input		video_dma_reset_n_reset_n;
 endmodule
