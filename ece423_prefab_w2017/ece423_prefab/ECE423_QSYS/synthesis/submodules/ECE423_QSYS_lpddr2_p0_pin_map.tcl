@@ -1,4 +1,4 @@
-# (C) 2001-2016 Altera Corporation. All rights reserved.
+# (C) 2001-2015 Altera Corporation. All rights reserved.
 # Your use of Altera Corporation's design tools, logic functions and other 
 # software and tools, and its AMPP partner logic functions, and any output 
 # files any of the foregoing (including device programming or simulation 
@@ -1215,7 +1215,7 @@ proc ECE423_QSYS_lpddr2_p0_get_acv_read_offset { period dqs_phase dqs_period } {
 
 	return $offset
 }
-# (C) 2001-2016 Altera Corporation. All rights reserved.
+# (C) 2001-2015 Altera Corporation. All rights reserved.
 # Your use of Altera Corporation's design tools, logic functions and other 
 # software and tools, and its AMPP partner logic functions, and any output 
 # files any of the foregoing (including device programming or simulation 

@@ -49,8 +49,7 @@ module ECE423_QSYS (
 		output wire        video_HD,                                     //                   .HD
 		output wire        video_VD,                                     //                   .VD
 		output wire        video_DEN,                                    //                   .DEN
-		output wire        video_clk_clk,                                //          video_clk.clk
-		input  wire        video_dma_reset_n_reset_n                     //  video_dma_reset_n.reset_n
+		output wire        video_clk_clk                                 //          video_clk.clk
 	);
 
 	wire          pixel_conv_out_valid;                                      // pixel_conv:valid_out -> video:valid
@@ -240,7 +239,7 @@ module ECE423_QSYS (
 	wire          rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [cpu:reset_n, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:cpu_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire          rst_controller_reset_out_reset_req;                        // rst_controller:reset_req -> [cpu:reset_req, rst_translator:reset_req_in]
 	wire          cpu_debug_reset_request_reset;                             // cpu:debug_reset_request -> rst_controller:reset_in1
-	wire          rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> [avalon_st_adapter_001:in_rst_0_reset, i2c_scl:reset_n, i2c_sda:reset_n, key:reset_n, ledg:reset_n, ledr:reset_n, mm_interconnect_0:lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset_reset, mm_interconnect_0:sysid_reset_reset_bridge_in_reset_reset, mm_interconnect_1:lpddr2_avl_1_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_1:lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset, sram:reset_reset, sram_bridge:reset, sram_sharer:reset_reset, sysid:reset_n, timer_0:reset_n, timer_1:reset_n, video_fifo:wrreset_n]
+	wire          rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> [avalon_st_adapter_001:in_rst_0_reset, i2c_scl:reset_n, i2c_sda:reset_n, key:reset_n, ledg:reset_n, ledr:reset_n, mm_interconnect_0:lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset_reset, mm_interconnect_0:sysid_reset_reset_bridge_in_reset_reset, mm_interconnect_1:lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset, mm_interconnect_1:video_dma_reset_n_reset_bridge_in_reset_reset, sram:reset_reset, sram_bridge:reset, sram_sharer:reset_reset, sysid:reset_n, timer_0:reset_n, timer_1:reset_n, video_dma:reset_n_reset_n, video_fifo:wrreset_n]
 	wire          rst_controller_002_reset_out_reset;                        // rst_controller_002:reset_out -> [avalon_st_adapter:in_rst_0_reset, pixel_conv:reset_n, video:reset_n, video_fifo:rdreset_n]
 	wire          rst_controller_003_reset_out_reset;                        // rst_controller_003:reset_out -> [mm_interconnect_0:sd_cont_reset_reset_bridge_in_reset_reset, sd_cont:reset]
 
@@ -625,7 +624,7 @@ module ECE423_QSYS (
 		.mm_read_readdatavalid        (video_dma_mm_read_readdatavalid),                          //                 .readdatavalid
 		.mm_read_burstcount           (video_dma_mm_read_burstcount),                             //                 .burstcount
 		.clock_clk                    (clk_125_clk),                                              //            clock.clk
-		.reset_n_reset_n              (video_dma_reset_n_reset_n),                                //          reset_n.reset_n
+		.reset_n_reset_n              (~rst_controller_001_reset_out_reset),                      //          reset_n.reset_n
 		.csr_writedata                (mm_interconnect_0_video_dma_csr_writedata),                //              csr.writedata
 		.csr_write                    (mm_interconnect_0_video_dma_csr_write),                    //                 .write
 		.csr_byteenable               (mm_interconnect_0_video_dma_csr_byteenable),               //                 .byteenable
@@ -792,26 +791,26 @@ module ECE423_QSYS (
 	);
 
 	ECE423_QSYS_mm_interconnect_1 mm_interconnect_1 (
-		.clk_125_clk_clk                                           (clk_125_clk),                                       //                                         clk_125_clk.clk
-		.lpddr2_avl_1_translator_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                // lpddr2_avl_1_translator_reset_reset_bridge_in_reset.reset
-		.lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset       (rst_controller_001_reset_out_reset),                //       lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset.reset
-		.video_dma_mm_read_address                                 (video_dma_mm_read_address),                         //                                   video_dma_mm_read.address
-		.video_dma_mm_read_waitrequest                             (video_dma_mm_read_waitrequest),                     //                                                    .waitrequest
-		.video_dma_mm_read_burstcount                              (video_dma_mm_read_burstcount),                      //                                                    .burstcount
-		.video_dma_mm_read_byteenable                              (video_dma_mm_read_byteenable),                      //                                                    .byteenable
-		.video_dma_mm_read_read                                    (video_dma_mm_read_read),                            //                                                    .read
-		.video_dma_mm_read_readdata                                (video_dma_mm_read_readdata),                        //                                                    .readdata
-		.video_dma_mm_read_readdatavalid                           (video_dma_mm_read_readdatavalid),                   //                                                    .readdatavalid
-		.lpddr2_avl_1_address                                      (mm_interconnect_1_lpddr2_avl_1_address),            //                                        lpddr2_avl_1.address
-		.lpddr2_avl_1_write                                        (mm_interconnect_1_lpddr2_avl_1_write),              //                                                    .write
-		.lpddr2_avl_1_read                                         (mm_interconnect_1_lpddr2_avl_1_read),               //                                                    .read
-		.lpddr2_avl_1_readdata                                     (mm_interconnect_1_lpddr2_avl_1_readdata),           //                                                    .readdata
-		.lpddr2_avl_1_writedata                                    (mm_interconnect_1_lpddr2_avl_1_writedata),          //                                                    .writedata
-		.lpddr2_avl_1_beginbursttransfer                           (mm_interconnect_1_lpddr2_avl_1_beginbursttransfer), //                                                    .beginbursttransfer
-		.lpddr2_avl_1_burstcount                                   (mm_interconnect_1_lpddr2_avl_1_burstcount),         //                                                    .burstcount
-		.lpddr2_avl_1_byteenable                                   (mm_interconnect_1_lpddr2_avl_1_byteenable),         //                                                    .byteenable
-		.lpddr2_avl_1_readdatavalid                                (mm_interconnect_1_lpddr2_avl_1_readdatavalid),      //                                                    .readdatavalid
-		.lpddr2_avl_1_waitrequest                                  (~mm_interconnect_1_lpddr2_avl_1_waitrequest)        //                                                    .waitrequest
+		.clk_125_clk_clk                                     (clk_125_clk),                                       //                                   clk_125_clk.clk
+		.lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                // lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset.reset
+		.video_dma_reset_n_reset_bridge_in_reset_reset       (rst_controller_001_reset_out_reset),                //       video_dma_reset_n_reset_bridge_in_reset.reset
+		.video_dma_mm_read_address                           (video_dma_mm_read_address),                         //                             video_dma_mm_read.address
+		.video_dma_mm_read_waitrequest                       (video_dma_mm_read_waitrequest),                     //                                              .waitrequest
+		.video_dma_mm_read_burstcount                        (video_dma_mm_read_burstcount),                      //                                              .burstcount
+		.video_dma_mm_read_byteenable                        (video_dma_mm_read_byteenable),                      //                                              .byteenable
+		.video_dma_mm_read_read                              (video_dma_mm_read_read),                            //                                              .read
+		.video_dma_mm_read_readdata                          (video_dma_mm_read_readdata),                        //                                              .readdata
+		.video_dma_mm_read_readdatavalid                     (video_dma_mm_read_readdatavalid),                   //                                              .readdatavalid
+		.lpddr2_avl_1_address                                (mm_interconnect_1_lpddr2_avl_1_address),            //                                  lpddr2_avl_1.address
+		.lpddr2_avl_1_write                                  (mm_interconnect_1_lpddr2_avl_1_write),              //                                              .write
+		.lpddr2_avl_1_read                                   (mm_interconnect_1_lpddr2_avl_1_read),               //                                              .read
+		.lpddr2_avl_1_readdata                               (mm_interconnect_1_lpddr2_avl_1_readdata),           //                                              .readdata
+		.lpddr2_avl_1_writedata                              (mm_interconnect_1_lpddr2_avl_1_writedata),          //                                              .writedata
+		.lpddr2_avl_1_beginbursttransfer                     (mm_interconnect_1_lpddr2_avl_1_beginbursttransfer), //                                              .beginbursttransfer
+		.lpddr2_avl_1_burstcount                             (mm_interconnect_1_lpddr2_avl_1_burstcount),         //                                              .burstcount
+		.lpddr2_avl_1_byteenable                             (mm_interconnect_1_lpddr2_avl_1_byteenable),         //                                              .byteenable
+		.lpddr2_avl_1_readdatavalid                          (mm_interconnect_1_lpddr2_avl_1_readdatavalid),      //                                              .readdatavalid
+		.lpddr2_avl_1_waitrequest                            (~mm_interconnect_1_lpddr2_avl_1_waitrequest)        //                                              .waitrequest
 	);
 
 	ECE423_QSYS_irq_mapper irq_mapper (

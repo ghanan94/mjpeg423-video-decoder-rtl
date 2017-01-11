@@ -84,5 +84,5 @@ lappend arg_list "--system-info=DEVICE_FAMILY=CYCLONEV"
 lappend arg_list "--report-file=sopcinfo:ECE423_QSYS_lpddr2_s0.sopcinfo"
 lappend arg_list "--report-file=txt:ECE423_QSYS_lpddr2_s0_seq_ipd_report.txt"
 lappend arg_list "--file-set=QUARTUS_SYNTH"
-catch { eval [concat [list exec "C:/altera/15.1/quartus/sopc_builder/bin/ip-generate" --component-name=qsys_sequencer_110] $arg_list] } temp
+catch { eval [concat [list exec "C:/software/altera/15.1/quartus/sopc_builder/bin/ip-generate" --component-name=qsys_sequencer_110] $arg_list] } temp
 puts $temp
