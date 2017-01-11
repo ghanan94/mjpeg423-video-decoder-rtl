@@ -44,7 +44,6 @@
 		.video_RGB_OUT                                (<connected-to-video_RGB_OUT>),                                //              video.RGB_OUT
 		.video_HD                                     (<connected-to-video_HD>),                                     //                   .HD
 		.video_VD                                     (<connected-to-video_VD>),                                     //                   .VD
-		.video_DEN                                    (<connected-to-video_DEN>),                                    //                   .DEN
-		.video_dma_reset_n_reset_n                    (<connected-to-video_dma_reset_n_reset_n>)                     //  video_dma_reset_n.reset_n
+		.video_DEN                                    (<connected-to-video_DEN>)                                     //                   .DEN
 	);
 

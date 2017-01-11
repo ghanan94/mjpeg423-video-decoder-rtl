@@ -524,11 +524,6 @@
    internal="video_clk.out_clk"
    type="clock"
    dir="start" />
- <interface
-   name="video_dma_reset_n"
-   internal="video_dma.reset_n"
-   type="reset"
-   dir="end" />
  <module name="clk_125" kind="clock_source" version="15.1" enabled="1">
   <parameter name="clockFrequency" value="125000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -1896,6 +1891,11 @@
    version="15.1"
    start="clk_125.clk_reset"
    end="video_fifo.reset_in" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="clk_125.clk_reset"
+   end="video_dma.reset_n" />
  <connection
    kind="reset"
    version="15.1"

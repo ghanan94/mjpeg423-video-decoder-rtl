@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2017.01.07.19:43:18</td>
+    <td class="l">2017.01.10.20:49:07</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -115,6 +115,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <a href="#module_lpddr2"><b>lpddr2</b>
      </a> altera_mem_if_lpddr2_emif 15.1
      <br/>&#160;&#160;
+     <a href="#module_sd_cont"><b>sd_cont</b>
+     </a> sd_cont 1.0
+     <br/>&#160;&#160;
      <a href="#module_sram"><b>sram</b>
      </a> altera_generic_tristate_controller 15.1
      <br/>&#160;&#160;
@@ -125,7 +128,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </a> altera_avalon_timer 15.1
      <br/>&#160;&#160;
      <a href="#module_timer_1"><b>timer_1</b>
-     </a> altera_avalon_timer 15.1</span>
+     </a> altera_avalon_timer 15.1
+     <br/>&#160;&#160;
+     <a href="#module_video_dma"><b>video_dma</b>
+     </a> altera_msgdma 15.1</span>
    </div>
   </div>
   <div style="width:100% ;  height:10px"> </div>
@@ -137,10 +143,20 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <a href="#module_cpu"><b>cpu</b>
      </a>
     </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_sd_cont"><b>sd_cont</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_video_dma"><b>video_dma</b>
+     </a>
+    </td>
    </tr>
    <tr>
     <td class="masterl">&#160;data_master</td>
     <td class="masterr">&#160;instruction_master</td>
+    <td class="masterlr">&#160;master</td>
+    <td class="masterlr">&#160;mm_read</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -149,11 +165,15 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">debug_mem_slave&#160;</td>
     <td class="addr"><span style="color:#989898">0x</span>20100800</td>
     <td class="addr"><span style="color:#989898">0x</span>20100800</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -162,10 +182,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201010b0</td>
+    <td class="addr"><span style="color:#989898">0x</span>201014e0</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -175,10 +199,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201010a0</td>
+    <td class="addr"><span style="color:#989898">0x</span>201014d0</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -188,10 +216,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_jtag_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201010d8</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101508</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -201,10 +233,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201010c0</td>
+    <td class="addr"><span style="color:#989898">0x</span>201014f0</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -214,10 +250,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101060</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101480</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -227,10 +267,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101040</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101460</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -240,10 +284,38 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
-    <td class="slaveb">avl_0&#160;</td>
+    <td class="slavem">avl_0&#160;</td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">avl_1&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_sd_cont"><b>sd_cont</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">slave&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101000</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -253,11 +325,15 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">uas&#160;</td>
     <td class="addr"><span style="color:#989898">0x</span>20080000</td>
     <td class="addr"><span style="color:#989898">0x</span>20080000</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -266,10 +342,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">control_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201010d0</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101500</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -279,10 +359,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101080</td>
+    <td class="addr"><span style="color:#989898">0x</span>201014a0</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -292,10 +376,38 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101000</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101400</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_video_dma"><b>video_dma</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">csr&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101440</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">descriptor_slave&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>201014c0</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
   </table>
@@ -401,7 +513,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk_125">clk_125</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="48">cpu</td>
+      <td class="main" rowspan="58">cpu</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -476,6 +588,42 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;control_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_video_dma">video_dma</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;descriptor_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr_irq</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -618,6 +766,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_sd_cont">sd_cont</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;slave</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -1336,7 +1500,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /&gt;&lt;slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /&gt;&lt;slave name='cpu.debug_mem_slave' start='0x20100800' end='0x20101000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_1.s1' start='0x20101000' end='0x20101040' type='altera_avalon_timer.s1' /&gt;&lt;slave name='ledr.s1' start='0x20101040' end='0x20101060' type='altera_avalon_pio.s1' /&gt;&lt;slave name='ledg.s1' start='0x20101060' end='0x20101080' type='altera_avalon_pio.s1' /&gt;&lt;slave name='timer_0.s1' start='0x20101080' end='0x201010A0' type='altera_avalon_timer.s1' /&gt;&lt;slave name='i2c_sda.s1' start='0x201010A0' end='0x201010B0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='i2c_scl.s1' start='0x201010B0' end='0x201010C0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x201010C0' end='0x201010D0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='sysid.control_slave' start='0x201010D0' end='0x201010D8' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x201010D8' end='0x201010E0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /&gt;&lt;slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /&gt;&lt;slave name='cpu.debug_mem_slave' start='0x20100800' end='0x20101000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='sd_cont.slave' start='0x20101000' end='0x20101400' type='sd_cont.slave' /&gt;&lt;slave name='timer_1.s1' start='0x20101400' end='0x20101440' type='altera_avalon_timer.s1' /&gt;&lt;slave name='video_dma.csr' start='0x20101440' end='0x20101460' type='altera_msgdma.csr' /&gt;&lt;slave name='ledr.s1' start='0x20101460' end='0x20101480' type='altera_avalon_pio.s1' /&gt;&lt;slave name='ledg.s1' start='0x20101480' end='0x201014A0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='timer_0.s1' start='0x201014A0' end='0x201014C0' type='altera_avalon_timer.s1' /&gt;&lt;slave name='video_dma.descriptor_slave' start='0x201014C0' end='0x201014D0' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='i2c_sda.s1' start='0x201014D0' end='0x201014E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='i2c_scl.s1' start='0x201014E0' end='0x201014F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x201014F0' end='0x20101500' type='altera_avalon_pio.s1' /&gt;&lt;slave name='sysid.control_slave' start='0x20101500' end='0x20101508' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x20101508' end='0x20101510' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -1388,7 +1552,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">internalIrqMaskSystemInfo</td>
-        <td class="parametervalue">23</td>
+        <td class="parametervalue">31</td>
        </tr>
        <tr>
         <td class="parametername">customInstSlavesSystemInfo</td>
@@ -2742,7 +2906,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_cpu">cpu</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="19">lpddr2</td>
+      <td class="main" rowspan="33">lpddr2</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avl_0</td>
@@ -2751,7 +2915,31 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="16">
+      <td class="neighbor" rowspan="2">
+       <a href="#module_sd_cont">sd_cont</a>
+      </td>
+      <td class="from">master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avl_0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_dma">video_dma</a>
+      </td>
+      <td class="from">mm_read&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avl_1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="24">
        <a href="#module_clk_125">clk_125</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
@@ -2763,7 +2951,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">clk&#160;&#160;</td>
      </tr>
      <tr>
+      <td class="to">&#160;&#160;mp_cmd_clk_1</td>
+     </tr>
+     <tr>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
       <td class="to">&#160;&#160;mp_rfifo_clk_0</td>
+     </tr>
+     <tr>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;mp_rfifo_clk_1</td>
      </tr>
      <tr>
       <td class="from">clk&#160;&#160;</td>
@@ -2787,7 +2987,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
+      <td class="to">&#160;&#160;mp_cmd_reset_n_1</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
       <td class="to">&#160;&#160;mp_rfifo_reset_n_0</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;mp_rfifo_reset_n_1</td>
      </tr>
      <tr>
       <td class="from">clk_reset&#160;&#160;</td>
@@ -3788,7 +4000,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">AVL_PORT</td>
-        <td class="parametervalue">Port 0</td>
+        <td class="parametervalue">Port 0,Port 1</td>
        </tr>
        <tr>
         <td class="parametername">AVL_DATA_WIDTH_PORT_0</td>
@@ -3832,15 +4044,15 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">AVL_DATA_WIDTH_PORT_1</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">32</td>
        </tr>
        <tr>
         <td class="parametername">AVL_ADDR_WIDTH_PORT_1</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">27</td>
        </tr>
        <tr>
         <td class="parametername">PRIORITY_PORT_1</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">2</td>
        </tr>
        <tr>
         <td class="parametername">WEIGHT_PORT_1</td>
@@ -3848,11 +4060,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">CPORT_TYPE_PORT_1</td>
-        <td class="parametervalue">0</td>
+        <td class="parametervalue">2</td>
        </tr>
        <tr>
         <td class="parametername">AVL_NUM_SYMBOLS_PORT_1</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">4</td>
        </tr>
        <tr>
         <td class="parametername">LSB_WFIFO_PORT_1</td>
@@ -3864,11 +4076,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">LSB_RFIFO_PORT_1</td>
-        <td class="parametervalue">5</td>
+        <td class="parametervalue">1</td>
        </tr>
        <tr>
         <td class="parametername">MSB_RFIFO_PORT_1</td>
-        <td class="parametervalue">5</td>
+        <td class="parametervalue">1</td>
        </tr>
        <tr>
         <td class="parametername">AVL_DATA_WIDTH_PORT_2</td>
@@ -4032,7 +4244,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ALLOCATED_RFIFO_PORT</td>
-        <td class="parametervalue">F0,None,None,None,None,None</td>
+        <td class="parametervalue">F0,F1,None,None,None,None</td>
        </tr>
        <tr>
         <td class="parametername">ALLOCATED_WFIFO_PORT</td>
@@ -4132,7 +4344,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ENUM_CMD_PORT_IN_USE_1</td>
-        <td class="parametervalue">FALSE</td>
+        <td class="parametervalue">TRUE</td>
        </tr>
        <tr>
         <td class="parametername">ENUM_CMD_PORT_IN_USE_2</td>
@@ -4172,11 +4384,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ENUM_CPORT1_RFIFO_MAP</td>
-        <td class="parametervalue">FIFO_0</td>
+        <td class="parametervalue">FIFO_1</td>
        </tr>
        <tr>
         <td class="parametername">ENUM_CPORT1_TYPE</td>
-        <td class="parametervalue">DISABLE</td>
+        <td class="parametervalue">READ</td>
        </tr>
        <tr>
         <td class="parametername">ENUM_CPORT1_WFIFO_MAP</td>
@@ -4732,7 +4944,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ENUM_RCFG_USER_PRIORITY_1</td>
-        <td class="parametervalue">PRIORITY_1</td>
+        <td class="parametervalue">PRIORITY_2</td>
        </tr>
        <tr>
         <td class="parametername">ENUM_RCFG_USER_PRIORITY_2</td>
@@ -4756,7 +4968,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ENUM_RD_DWIDTH_1</td>
-        <td class="parametervalue">DWIDTH_0</td>
+        <td class="parametervalue">DWIDTH_32</td>
        </tr>
        <tr>
         <td class="parametername">ENUM_RD_DWIDTH_2</td>
@@ -4780,7 +4992,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ENUM_RD_FIFO_IN_USE_1</td>
-        <td class="parametervalue">FALSE</td>
+        <td class="parametervalue">TRUE</td>
        </tr>
        <tr>
         <td class="parametername">ENUM_RD_FIFO_IN_USE_2</td>
@@ -4796,7 +5008,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ENUM_RD_PORT_INFO_1</td>
-        <td class="parametervalue">USE_NO</td>
+        <td class="parametervalue">USE_1</td>
        </tr>
        <tr>
         <td class="parametername">ENUM_RD_PORT_INFO_2</td>
@@ -4828,7 +5040,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ENUM_RFIFO1_CPORT_MAP</td>
-        <td class="parametervalue">CMD_PORT_0</td>
+        <td class="parametervalue">CMD_PORT_1</td>
        </tr>
        <tr>
         <td class="parametername">ENUM_RFIFO2_CPORT_MAP</td>
@@ -4980,7 +5192,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ENUM_USER_PRIORITY_1</td>
-        <td class="parametervalue">PRIORITY_1</td>
+        <td class="parametervalue">PRIORITY_2</td>
        </tr>
        <tr>
         <td class="parametername">ENUM_USER_PRIORITY_2</td>
@@ -5488,19 +5700,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">CV_AVL_DATA_WIDTH_PORT_1</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">32</td>
        </tr>
        <tr>
         <td class="parametername">CV_AVL_ADDR_WIDTH_PORT_1</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">27</td>
        </tr>
        <tr>
         <td class="parametername">CV_CPORT_TYPE_PORT_1</td>
-        <td class="parametervalue">0</td>
+        <td class="parametervalue">2</td>
        </tr>
        <tr>
         <td class="parametername">CV_AVL_NUM_SYMBOLS_PORT_1</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">4</td>
        </tr>
        <tr>
         <td class="parametername">CV_LSB_WFIFO_PORT_1</td>
@@ -5512,11 +5724,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">CV_LSB_RFIFO_PORT_1</td>
-        <td class="parametervalue">5</td>
+        <td class="parametervalue">1</td>
        </tr>
        <tr>
         <td class="parametername">CV_MSB_RFIFO_PORT_1</td>
-        <td class="parametervalue">5</td>
+        <td class="parametervalue">1</td>
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_AUTO_PCH_ENABLE_1</td>
@@ -5524,15 +5736,15 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_CMD_PORT_IN_USE_1</td>
-        <td class="parametervalue">FALSE</td>
+        <td class="parametervalue">TRUE</td>
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_CPORT1_RFIFO_MAP</td>
-        <td class="parametervalue">FIFO_0</td>
+        <td class="parametervalue">FIFO_1</td>
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_CPORT1_TYPE</td>
-        <td class="parametervalue">DISABLE</td>
+        <td class="parametervalue">READ</td>
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_CPORT1_WFIFO_MAP</td>
@@ -5584,15 +5796,15 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_RCFG_USER_PRIORITY_1</td>
-        <td class="parametervalue">PRIORITY_1</td>
+        <td class="parametervalue">PRIORITY_2</td>
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_RD_DWIDTH_1</td>
-        <td class="parametervalue">DWIDTH_0</td>
+        <td class="parametervalue">DWIDTH_32</td>
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_RD_PORT_INFO_1</td>
-        <td class="parametervalue">USE_NO</td>
+        <td class="parametervalue">USE_1</td>
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_STATIC_WEIGHT_1</td>
@@ -5600,7 +5812,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_USER_PRIORITY_1</td>
-        <td class="parametervalue">PRIORITY_1</td>
+        <td class="parametervalue">PRIORITY_2</td>
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_WR_DWIDTH_1</td>
@@ -5612,7 +5824,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TG_TEMP_PORT_1</td>
-        <td class="parametervalue">0</td>
+        <td class="parametervalue">2</td>
        </tr>
        <tr>
         <td class="parametername">AV_PORT_2_CONNECT_TO_CV_PORT</td>
@@ -6168,7 +6380,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_RFIFO1_CPORT_MAP</td>
-        <td class="parametervalue">CMD_PORT_0</td>
+        <td class="parametervalue">CMD_PORT_1</td>
        </tr>
        <tr>
         <td class="parametername">CV_ENUM_WFIFO1_CPORT_MAP</td>
@@ -6424,7 +6636,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">NUM_OF_PORTS</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">2</td>
        </tr>
        <tr>
         <td class="parametername">ENABLE_BONDING</td>
@@ -8497,6 +8709,184 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_pixel_conv"> </a>
+  <div>
+   <hr/>
+   <h2>pixel_conv</h2>Pixel_Conv v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_fifo">video_fifo</a>
+      </td>
+      <td class="from">out&#160;&#160;</td>
+      <td class="main" rowspan="10">pixel_conv</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;in</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_pll">video_pll</a>
+      </td>
+      <td class="from">outclk0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_125">clk_125</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video">video</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;in</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">SOURCE_SYMBOLS_PER_BEAT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">CYCLONEV</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone V</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_sd_cont"> </a>
+  <div>
+   <hr/>
+   <h2>sd_cont</h2>sd_cont v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu">cpu</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="12">sd_cont</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_50">clk_50</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;sd_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_125">clk_125</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_lpddr2">lpddr2</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avl_0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <a name="module_sram"> </a>
   <div>
    <hr/>
@@ -9071,7 +9461,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timestamp</td>
-        <td class="parametervalue">1483836197</td>
+        <td class="parametervalue">1484099345</td>
        </tr>
        <tr>
         <td class="parametername">AUTO_DEVICE_FAMILY</td>
@@ -9100,7 +9490,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TIMESTAMP</td>
-        <td class="parametervalue">1483836197</td>
+        <td class="parametervalue">1484099345</td>
        </tr>
       </table>
      </td>
@@ -9483,10 +9873,2824 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_video"> </a>
+  <div>
+   <hr/>
+   <h2>video</h2>altera_avalon_video_sync_generator v15.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_pixel_conv">pixel_conv</a>
+      </td>
+      <td class="from">out&#160;&#160;</td>
+      <td class="main" rowspan="8">video</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;in</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_pll">video_pll</a>
+      </td>
+      <td class="from">outclk0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_125">clk_125</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">DATA_STREAM_BIT_WIDTH</td>
+        <td class="parametervalue">24</td>
+       </tr>
+       <tr>
+        <td class="parametername">BEATS_PER_PIXEL</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">NUM_COLUMNS</td>
+        <td class="parametervalue">640</td>
+       </tr>
+       <tr>
+        <td class="parametername">NUM_ROWS</td>
+        <td class="parametervalue">480</td>
+       </tr>
+       <tr>
+        <td class="parametername">H_BLANK_PIXELS</td>
+        <td class="parametervalue">128</td>
+       </tr>
+       <tr>
+        <td class="parametername">H_FRONT_PORCH_PIXELS</td>
+        <td class="parametervalue">24</td>
+       </tr>
+       <tr>
+        <td class="parametername">H_SYNC_PULSE_PIXELS</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">H_SYNC_PULSE_POLARITY</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">V_BLANK_LINES</td>
+        <td class="parametervalue">45</td>
+       </tr>
+       <tr>
+        <td class="parametername">V_FRONT_PORCH_LINES</td>
+        <td class="parametervalue">10</td>
+       </tr>
+       <tr>
+        <td class="parametername">V_SYNC_PULSE_LINES</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">V_SYNC_PULSE_POLARITY</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">TOTAL_HSCAN_PIXELS</td>
+        <td class="parametervalue">768</td>
+       </tr>
+       <tr>
+        <td class="parametername">TOTAL_VSCAN_LINES</td>
+        <td class="parametervalue">525</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">CYCLONEV</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone V</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_video_clk"> </a>
+  <div>
+   <hr/>
+   <h2>video_clk</h2>altera_clock_bridge v15.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_pll">video_pll</a>
+      </td>
+      <td class="from">outclk0&#160;&#160;</td>
+      <td class="main" rowspan="2">video_clk</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;in_clk</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">DERIVED_CLOCK_RATE</td>
+        <td class="parametervalue">25000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">EXPLICIT_CLOCK_RATE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">NUM_CLOCK_OUTPUTS</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_video_dma"> </a>
+  <div>
+   <hr/>
+   <h2>video_dma</h2>altera_msgdma v15.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_cpu">cpu</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="14">video_dma</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;csr</td>
+     </tr>
+     <tr>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;descriptor_slave</td>
+     </tr>
+     <tr>
+      <td class="from">irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;csr_irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_125">clk_125</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">mm_read&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_lpddr2">lpddr2</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avl_1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">st_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_fifo">video_fifo</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;in</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">MODE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_FIX_ADDRESS_WIDTH</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">FIX_ADDRESS_WIDTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_FIFO_DEPTH</td>
+        <td class="parametervalue">1024</td>
+       </tr>
+       <tr>
+        <td class="parametername">DESCRIPTOR_FIFO_DEPTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESPONSE_PORT</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BYTE</td>
+        <td class="parametervalue">16777216</td>
+       </tr>
+       <tr>
+        <td class="parametername">TRANSFER_TYPE</td>
+        <td class="parametervalue">Full Word Accesses Only</td>
+       </tr>
+       <tr>
+        <td class="parametername">BURST_ENABLE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BURST_COUNT</td>
+        <td class="parametervalue">128</td>
+       </tr>
+       <tr>
+        <td class="parametername">BURST_WRAPPING_SUPPORT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">ENHANCED_FEATURES</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">STRIDE_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_STRIDE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">PROGRAMMABLE_BURST_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">STRIDE_ENABLE_DERIVED</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">PACKET_ENABLE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">PACKET_ENABLE_DERIVED</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">ERROR_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">ERROR_ENABLE_DERIVED</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">ERROR_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">CHANNEL_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CHANNEL_ENABLE_DERIVED</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CHANNEL_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">PREFETCHER_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">PREFETCHER_READ_BURST_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">PREFETCHER_DATA_WIDTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">PREFETCHER_MAX_READ_BURST_COUNT</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">CYCLONEV</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE</td>
+        <td class="parametervalue">5CGXFC5C6F27C7</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_SPEEDGRADE</td>
+        <td class="parametervalue">7_H6</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_MM_READ_ADDRESS_MAP</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='lpddr2.avl_1' start='0x0' end='0x20000000' /&gt;&lt;/address-map&gt;</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_MM_READ_ADDRESS_WIDTH</td>
+        <td class="parametervalue">AddressWidth = 29</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_MM_WRITE_ADDRESS_MAP</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_MM_WRITE_ADDRESS_WIDTH</td>
+        <td class="parametervalue">AddressWidth = -1</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_MAP</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_WIDTH</td>
+        <td class="parametervalue">AddressWidth = -1</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_MAP</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_WIDTH</td>
+        <td class="parametervalue">AddressWidth = -1</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone V</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BURST_ENABLE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">BURST_WRAPPING_SUPPORT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">CHANNEL_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CHANNEL_ENABLE_DERIVED</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CHANNEL_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_FIFO_DEPTH</td>
+        <td class="parametervalue">1024</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">DESCRIPTOR_FIFO_DEPTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">DMA_MODE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">ENHANCED_FEATURES</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">ERROR_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">ERROR_ENABLE_DERIVED</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">ERROR_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BURST_COUNT</td>
+        <td class="parametervalue">128</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BYTE</td>
+        <td class="parametervalue">16777216</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_STRIDE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">PACKET_ENABLE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">PACKET_ENABLE_DERIVED</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">PREFETCHER_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">PROGRAMMABLE_BURST_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESPONSE_PORT</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">STRIDE_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">STRIDE_ENABLE_DERIVED</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">TRANSFER_TYPE</td>
+        <td class="parametervalue">Full Word Accesses Only</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_video_fifo"> </a>
+  <div>
+   <hr/>
+   <h2>video_fifo</h2>altera_avalon_fifo v15.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_dma">video_dma</a>
+      </td>
+      <td class="from">st_source&#160;&#160;</td>
+      <td class="main" rowspan="14">video_fifo</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;in</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_clk_125">clk_125</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_in</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset_in</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset_out</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_pll">video_pll</a>
+      </td>
+      <td class="from">outclk0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_out</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_pixel_conv">pixel_conv</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;in</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">avalonMMAvalonMMDataWidth</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">avalonMMAvalonSTDataWidth</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">bitsPerSymbol</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">channelWidth</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">errorWidth</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">fifoDepth</td>
+        <td class="parametervalue">256</td>
+       </tr>
+       <tr>
+        <td class="parametername">fifoInputInterfaceOptions</td>
+        <td class="parametervalue">AVALONST_SINK</td>
+       </tr>
+       <tr>
+        <td class="parametername">fifoOutputInterfaceOptions</td>
+        <td class="parametervalue">AVALONST_SOURCE</td>
+       </tr>
+       <tr>
+        <td class="parametername">showHiddenFeatures</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">singleClockMode</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">singleResetMode</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">symbolsPerBeat</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">useBackpressure</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">useIRQ</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">usePacket</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">useReadControl</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">useRegister</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">useWriteControl</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamilyString</td>
+        <td class="parametervalue">CYCLONEV</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_use_avalonMM_wr_slave</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_use_avalonST_sink</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_use_avalonMM_rd_slave</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_use_avalonST_source</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_sink_source_avalonST_width</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">AVALONMM_AVALONMM_DATA_WIDTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">AVALONMM_AVALONST_DATA_WIDTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">BITS_PER_SYMBOL</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">CHANNEL_WIDTH</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">ERROR_WIDTH</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">FIFO_DEPTH</td>
+        <td class="parametervalue">256</td>
+       </tr>
+       <tr>
+        <td class="parametername">SINGLE_CLOCK_MODE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">SYMBOLS_PER_BEAT</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_AVALONMM_READ_SLAVE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_AVALONMM_WRITE_SLAVE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_AVALONST_SINK</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_AVALONST_SOURCE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_BACKPRESSURE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_IRQ</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_PACKET</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_READ_CONTROL</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">USE_WRITE_CONTROL</td>
+        <td class="parametervalue">0</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_video_pll"> </a>
+  <div>
+   <hr/>
+   <h2>video_pll</h2>altera_pll v15.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_50">clk_50</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="16">video_pll</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;refclk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_125">clk_125</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">outclk0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_pixel_conv">pixel_conv</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">outclk0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video">video</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">outclk0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_fifo">video_fifo</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk_out</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">outclk0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_clk">video_clk</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;in_clk</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">debug_print_output</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">debug_use_rbc_taf_method</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">device_family</td>
+        <td class="parametervalue">CYCLONEV</td>
+       </tr>
+       <tr>
+        <td class="parametername">device</td>
+        <td class="parametervalue">5CGXFC5C6F27C7</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_device_speed_grade</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_pll_mode</td>
+        <td class="parametervalue">Integer-N PLL</td>
+       </tr>
+       <tr>
+        <td class="parametername">fractional_vco_multiplier</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_reference_clock_frequency</td>
+        <td class="parametervalue">50.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">reference_clock_frequency</td>
+        <td class="parametervalue">50.0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_channel_spacing</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_operation_mode</td>
+        <td class="parametervalue">direct</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_feedback_clock</td>
+        <td class="parametervalue">Global Clock</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_fractional_cout</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_fractional_cout</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_dsm_out_sel</td>
+        <td class="parametervalue">1st_order</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_dsm_out_sel</td>
+        <td class="parametervalue">1st_order</td>
+       </tr>
+       <tr>
+        <td class="parametername">operation_mode</td>
+        <td class="parametervalue">direct</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_use_locked</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_en_adv_params</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_number_of_clocks</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">number_of_clocks</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">number_of_cascade_counters</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_multiply_factor</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_frac_multiply_factor</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_n</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter0</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency0</td>
+        <td class="parametervalue">25.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c0</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor0</td>
+        <td class="parametervalue">6</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor0</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor0</td>
+        <td class="parametervalue">12</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency0</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units0</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift0</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg0</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift0</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle0</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter1</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency1</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c1</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor1</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor1</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor1</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency1</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units1</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift1</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg1</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift1</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle1</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter2</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency2</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c2</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor2</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor2</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor2</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency2</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units2</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift2</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg2</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift2</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle2</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter3</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency3</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c3</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor3</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor3</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor3</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency3</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units3</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift3</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg3</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift3</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle3</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter4</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency4</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c4</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor4</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor4</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor4</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency4</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units4</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift4</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg4</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift4</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle4</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter5</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency5</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c5</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor5</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor5</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor5</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency5</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units5</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift5</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg5</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift5</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle5</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter6</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency6</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c6</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor6</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor6</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor6</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency6</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units6</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift6</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg6</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift6</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle6</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter7</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency7</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c7</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor7</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor7</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor7</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency7</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units7</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift7</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg7</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift7</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle7</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter8</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency8</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c8</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor8</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor8</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor8</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency8</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units8</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift8</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg8</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift8</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle8</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter9</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency9</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c9</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor9</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor9</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor9</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency9</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units9</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift9</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg9</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift9</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle9</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter10</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency10</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c10</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor10</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor10</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor10</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency10</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units10</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift10</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg10</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift10</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle10</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter11</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency11</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c11</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor11</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor11</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor11</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency11</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units11</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift11</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg11</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift11</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle11</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter12</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency12</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c12</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor12</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor12</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor12</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency12</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units12</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift12</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg12</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift12</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle12</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter13</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency13</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c13</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor13</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor13</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor13</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency13</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units13</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift13</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg13</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift13</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle13</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter14</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency14</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c14</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor14</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor14</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor14</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency14</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units14</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift14</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg14</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift14</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle14</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter15</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency15</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c15</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor15</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor15</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor15</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency15</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units15</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift15</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg15</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift15</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle15</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter16</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency16</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c16</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor16</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor16</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor16</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency16</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units16</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift16</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg16</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift16</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle16</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_counter17</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_output_clock_frequency17</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_divide_factor_c17</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_multiply_factor17</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_frac_multiply_factor17</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_divide_factor17</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_output_clock_frequency17</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_ps_units17</td>
+        <td class="parametervalue">ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift17</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phase_shift_deg17</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_actual_phase_shift17</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_duty_cycle17</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency0</td>
+        <td class="parametervalue">25.000000 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift0</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle0</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency1</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift1</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle1</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency2</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift2</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle2</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency3</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift3</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle3</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency4</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift4</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle4</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency5</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift5</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle5</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency6</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift6</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle6</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency7</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift7</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle7</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency8</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift8</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle8</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency9</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift9</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle9</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency10</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift10</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle10</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency11</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift11</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle11</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency12</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift12</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle12</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency13</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift13</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle13</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency14</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift14</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle14</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency15</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift15</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle15</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency16</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift16</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle16</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_clock_frequency17</td>
+        <td class="parametervalue">0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">phase_shift17</td>
+        <td class="parametervalue">0 ps</td>
+       </tr>
+       <tr>
+        <td class="parametername">duty_cycle17</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_pll_auto_reset</td>
+        <td class="parametervalue">Off</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_pll_bandwidth_preset</td>
+        <td class="parametervalue">Auto</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_en_reconf</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_en_dps_ports</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_en_phout_ports</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_phout_division</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_vcoph_div</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_type</td>
+        <td class="parametervalue">General</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_subtype</td>
+        <td class="parametervalue">General</td>
+       </tr>
+       <tr>
+        <td class="parametername">m_cnt_hi_div</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">m_cnt_lo_div</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">n_cnt_hi_div</td>
+        <td class="parametervalue">256</td>
+       </tr>
+       <tr>
+        <td class="parametername">n_cnt_lo_div</td>
+        <td class="parametervalue">256</td>
+       </tr>
+       <tr>
+        <td class="parametername">m_cnt_bypass_en</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">n_cnt_bypass_en</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">m_cnt_odd_div_duty_en</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">n_cnt_odd_div_duty_en</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div0</td>
+        <td class="parametervalue">6</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div0</td>
+        <td class="parametervalue">6</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst0</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst0</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src0</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en0</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en0</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div1</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div1</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst1</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst1</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src1</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en1</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en1</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div2</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div2</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst2</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst2</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src2</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en2</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en2</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div3</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div3</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst3</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst3</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src3</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en3</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en3</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div4</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div4</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst4</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst4</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src4</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en4</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en4</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div5</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div5</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst5</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst5</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src5</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en5</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en5</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div6</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div6</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst6</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst6</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src6</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en6</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en6</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div7</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div7</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst7</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst7</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src7</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en7</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en7</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div8</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div8</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst8</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst8</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src8</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en8</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en8</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div9</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div9</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst9</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst9</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src9</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en9</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en9</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div10</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div10</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst10</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst10</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src10</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en10</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en10</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div11</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div11</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst11</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst11</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src11</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en11</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en11</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div12</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div12</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst12</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst12</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src12</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en12</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en12</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div13</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div13</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst13</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst13</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src13</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en13</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en13</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div14</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div14</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst14</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst14</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src14</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en14</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en14</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div15</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div15</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst15</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst15</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src15</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en15</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en15</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div16</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div16</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst16</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst16</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src16</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en16</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en16</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_hi_div17</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_lo_div17</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_prst17</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_ph_mux_prst17</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_in_src17</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_bypass_en17</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">c_cnt_odd_div_duty_en17</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_vco_div</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_cp_current</td>
+        <td class="parametervalue">30</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_bwctrl</td>
+        <td class="parametervalue">2000</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_output_clk_frequency</td>
+        <td class="parametervalue">300.0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_fractional_division</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">mimic_fbclk_type</td>
+        <td class="parametervalue">none</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_fbclk_mux_1</td>
+        <td class="parametervalue">glb</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_fbclk_mux_2</td>
+        <td class="parametervalue">m_cnt</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_m_cnt_in_src</td>
+        <td class="parametervalue">ph_mux_clk</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_slf_rst</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_parameter_list</td>
+        <td class="parametervalue">M-Counter Hi Divide,M-Counter Low Divide,N-Counter Hi Divide,N-Counter Low Divide,M-Counter Bypass Enable,N-Counter Bypass Enable,M-Counter Odd Divide Enable,N-Counter Odd Divide Enable,C-Counter-0 Hi Divide,C-Counter-0 Low Divide,C-Counter-0 Coarse Phase Shift,C-Counter-0 VCO Phase Tap,C-Counter-0 Input Source,C-Counter-0 Bypass Enable,C-Counter-0 Odd Divide Enable,VCO Post Divide Counter Enable,Charge Pump current (uA),Loop Filter Bandwidth Resistor (Ohms) ,PLL Output VCO Frequency,K-Fractional Division Value (DSM),Feedback Clock Type,Feedback Clock MUX 1,Feedback Clock MUX 2,M Counter Source MUX,PLL Auto Reset</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_parameter_values</td>
+        <td class="parametervalue">3,3,256,256,false,true,false,false,6,6,1,0,ph_mux_clk,false,false,2,30,2000,300.0 MHz,1,none,glb,m_cnt,ph_mux_clk,false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_mif_generate</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_enable_mif_dps</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_dps_cntr</td>
+        <td class="parametervalue">C0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_dps_num</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_dps_dir</td>
+        <td class="parametervalue">Positive</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_refclk_switch</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_refclk1_frequency</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_switchover_mode</td>
+        <td class="parametervalue">Automatic Switchover</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_switchover_delay</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_active_clk</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_clk_bad</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">refclk1_frequency</td>
+        <td class="parametervalue">100.0 MHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_clk_loss_sw_en</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_manu_clk_sw_en</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_auto_clk_sw_en</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_clkin_1_src</td>
+        <td class="parametervalue">clk_0</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_clk_sw_dly</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_enable_cascade_out</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_cascade_outclk_index</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_enable_cascade_in</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">pll_clkin_0_src</td>
+        <td class="parametervalue">clk_0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gui_pll_cascading_mode</td>
+        <td class="parametervalue">Create an adjpllin signal to connect with an upstream PLL</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0.03 seconds</td>
-    <td class="r">rendering took 0.30 seconds</td>
+    <td class="l">generation took 0.05 seconds</td>
+    <td class="r">rendering took 0.77 seconds</td>
    </tr>
   </table>
  </body>

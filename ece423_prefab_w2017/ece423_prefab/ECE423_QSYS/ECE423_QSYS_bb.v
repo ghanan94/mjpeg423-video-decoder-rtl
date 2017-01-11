@@ -45,8 +45,7 @@ module ECE423_QSYS (
 	video_RGB_OUT,
 	video_HD,
 	video_VD,
-	video_DEN,
-	video_dma_reset_n_reset_n);	
+	video_DEN);	
 
 	input		clk_125_clk;
 	input		clk_50_clk;
@@ -94,5 +93,4 @@ module ECE423_QSYS (
 	output		video_HD;
 	output		video_VD;
 	output		video_DEN;
-	input		video_dma_reset_n_reset_n;
 endmodule

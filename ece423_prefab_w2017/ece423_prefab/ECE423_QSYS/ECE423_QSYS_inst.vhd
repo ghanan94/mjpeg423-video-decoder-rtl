@@ -45,8 +45,7 @@
 			video_RGB_OUT                                : out   std_logic_vector(23 downto 0);                    -- RGB_OUT
 			video_HD                                     : out   std_logic;                                        -- HD
 			video_VD                                     : out   std_logic;                                        -- VD
-			video_DEN                                    : out   std_logic;                                        -- DEN
-			video_dma_reset_n_reset_n                    : in    std_logic                     := 'X'              -- reset_n
+			video_DEN                                    : out   std_logic                                         -- DEN
 		);
 	end component ECE423_QSYS;
 
@@ -97,7 +96,6 @@
 			video_RGB_OUT                                => CONNECTED_TO_video_RGB_OUT,                                --              video.RGB_OUT
 			video_HD                                     => CONNECTED_TO_video_HD,                                     --                   .HD
 			video_VD                                     => CONNECTED_TO_video_VD,                                     --                   .VD
-			video_DEN                                    => CONNECTED_TO_video_DEN,                                    --                   .DEN
-			video_dma_reset_n_reset_n                    => CONNECTED_TO_video_dma_reset_n_reset_n                     --  video_dma_reset_n.reset_n
+			video_DEN                                    => CONNECTED_TO_video_DEN                                     --                   .DEN
 		);
 
