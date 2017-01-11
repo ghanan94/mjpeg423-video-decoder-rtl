@@ -111,8 +111,21 @@ wire lpddr2_local_cal_fail;
 		.sram_bridge_out_sram_tcm_outputenable_n_out	(SRAM_OE_n),           
 		.sram_bridge_out_sram_tcm_chipselect_n_out	(SRAM_CE_n),     
 		.sram_bridge_out_sram_tcm_write_n_out      	(SRAM_WE_n),
-		.sram_bridge_out_sram_tcm_byteenable_n_out	({SRAM_UB_n,SRAM_LB_n})
+		.sram_bridge_out_sram_tcm_byteenable_n_out	({SRAM_UB_n,SRAM_LB_n}),
+		
+		.i2c_sda_export										(I2C_SDA),
+		.i2c_scl_export										(I2C_SCL),
+		.video_clk_clk											(HDMI_TX_CLK),
+		.video_RGB_OUT											(HDMI_TX_D),
+		.video_HD												(HDMI_TX_HS),
+		.video_VD												(HDMI_TX_VS),
+		.video_DEN												(HDMI_TX_DE),
+		
+		.sd_sd_clk												(SD_CLK),
+		.sd_sd_cmd												(SD_CMD),
+		.sd_sd_dat												(SD_DAT)
 	  );
+	  
 
 assign  LEDR[8] = lpddr2_local_init_done;
 assign  LEDR[9] = lpddr2_local_cal_success;

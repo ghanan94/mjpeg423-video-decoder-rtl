@@ -1,4 +1,4 @@
-// (C) 2001-2016 Altera Corporation. All rights reserved.
+// (C) 2001-2015 Altera Corporation. All rights reserved.
 // Your use of Altera Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files any of the foregoing (including device programming or simulation 
@@ -43,9 +43,9 @@
 //   ARBITRATION_SHARES:  1
 //   ARBITRATION_SCHEME   "round-robin"
 //   PIPELINE_ARB:        1
-//   PKT_TRANS_LOCK:      70 (arbitration locking enabled)
-//   ST_DATA_W:           115
-//   ST_CHANNEL_W:        12
+//   PKT_TRANS_LOCK:      72 (arbitration locking enabled)
+//   ST_DATA_W:           117
+//   ST_CHANNEL_W:        15
 // ------------------------------------------
 
 module ECE423_QSYS_mm_interconnect_0_cmd_mux
@@ -54,8 +54,8 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux
     // Sinks
     // ----------------------
     input                       sink0_valid,
-    input [115-1   : 0]  sink0_data,
-    input [12-1: 0]  sink0_channel,
+    input [117-1   : 0]  sink0_data,
+    input [15-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
@@ -65,8 +65,8 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux
     // Source
     // ----------------------
     output                      src_valid,
-    output [115-1    : 0] src_data,
-    output [12-1 : 0] src_channel,
+    output [117-1    : 0] src_data,
+    output [15-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
     input                       src_ready,
@@ -77,13 +77,13 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 115 + 12 + 2;
+    localparam PAYLOAD_W        = 117 + 15 + 2;
     localparam NUM_INPUTS       = 1;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 1;
-    localparam ST_DATA_W        = 115;
-    localparam ST_CHANNEL_W     = 12;
-    localparam PKT_TRANS_LOCK   = 70;
+    localparam ST_DATA_W        = 117;
+    localparam ST_CHANNEL_W     = 15;
+    localparam PKT_TRANS_LOCK   = 72;
 
     assign	src_valid			=  sink0_valid;
     assign	src_data			=  sink0_data;
