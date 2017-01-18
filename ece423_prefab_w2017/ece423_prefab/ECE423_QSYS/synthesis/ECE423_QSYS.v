@@ -4,52 +4,53 @@
 
 `timescale 1 ps / 1 ps
 module ECE423_QSYS (
-		input  wire        clk_125_clk,                                  //            clk_125.clk
-		input  wire        clk_50_clk,                                   //             clk_50.clk
-		output wire        i2c_scl_export,                               //            i2c_scl.export
-		inout  wire        i2c_sda_export,                               //            i2c_sda.export
-		input  wire [3:0]  key_export,                                   //                key.export
-		output wire [7:0]  ledg_export,                                  //               ledg.export
-		output wire [7:0]  ledr_export,                                  //               ledr.export
-		output wire [9:0]  lpddr2_mem_ca,                                //             lpddr2.mem_ca
-		output wire [0:0]  lpddr2_mem_ck,                                //                   .mem_ck
-		output wire [0:0]  lpddr2_mem_ck_n,                              //                   .mem_ck_n
-		output wire [0:0]  lpddr2_mem_cke,                               //                   .mem_cke
-		output wire [0:0]  lpddr2_mem_cs_n,                              //                   .mem_cs_n
-		output wire [3:0]  lpddr2_mem_dm,                                //                   .mem_dm
-		inout  wire [31:0] lpddr2_mem_dq,                                //                   .mem_dq
-		inout  wire [3:0]  lpddr2_mem_dqs,                               //                   .mem_dqs
-		inout  wire [3:0]  lpddr2_mem_dqs_n,                             //                   .mem_dqs_n
-		input  wire        lpddr2_oct_rzqin,                             //         lpddr2_oct.rzqin
-		input  wire        lpddr2_pll_ref_clk_clk,                       // lpddr2_pll_ref_clk.clk
-		output wire        lpddr2_pll_sharing_pll_mem_clk,               // lpddr2_pll_sharing.pll_mem_clk
-		output wire        lpddr2_pll_sharing_pll_write_clk,             //                   .pll_write_clk
-		output wire        lpddr2_pll_sharing_pll_locked,                //                   .pll_locked
-		output wire        lpddr2_pll_sharing_pll_write_clk_pre_phy_clk, //                   .pll_write_clk_pre_phy_clk
-		output wire        lpddr2_pll_sharing_pll_addr_cmd_clk,          //                   .pll_addr_cmd_clk
-		output wire        lpddr2_pll_sharing_pll_avl_clk,               //                   .pll_avl_clk
-		output wire        lpddr2_pll_sharing_pll_config_clk,            //                   .pll_config_clk
-		output wire        lpddr2_pll_sharing_pll_mem_phy_clk,           //                   .pll_mem_phy_clk
-		output wire        lpddr2_pll_sharing_afi_phy_clk,               //                   .afi_phy_clk
-		output wire        lpddr2_pll_sharing_pll_avl_phy_clk,           //                   .pll_avl_phy_clk
-		output wire        lpddr2_status_local_init_done,                //      lpddr2_status.local_init_done
-		output wire        lpddr2_status_local_cal_success,              //                   .local_cal_success
-		output wire        lpddr2_status_local_cal_fail,                 //                   .local_cal_fail
-		input  wire        reset_reset_n,                                //              reset.reset_n
-		output wire        sd_sd_clk,                                    //                 sd.sd_clk
-		inout  wire        sd_sd_cmd,                                    //                   .sd_cmd
-		inout  wire [3:0]  sd_sd_dat,                                    //                   .sd_dat
-		inout  wire [15:0] sram_bridge_out_sram_tcm_data_out,            //    sram_bridge_out.sram_tcm_data_out
-		output wire [18:0] sram_bridge_out_sram_tcm_address_out,         //                   .sram_tcm_address_out
-		output wire [0:0]  sram_bridge_out_sram_tcm_outputenable_n_out,  //                   .sram_tcm_outputenable_n_out
-		output wire [0:0]  sram_bridge_out_sram_tcm_chipselect_n_out,    //                   .sram_tcm_chipselect_n_out
-		output wire [1:0]  sram_bridge_out_sram_tcm_byteenable_n_out,    //                   .sram_tcm_byteenable_n_out
-		output wire [0:0]  sram_bridge_out_sram_tcm_write_n_out,         //                   .sram_tcm_write_n_out
-		output wire [23:0] video_RGB_OUT,                                //              video.RGB_OUT
-		output wire        video_HD,                                     //                   .HD
-		output wire        video_VD,                                     //                   .VD
-		output wire        video_DEN,                                    //                   .DEN
-		output wire        video_clk_clk                                 //          video_clk.clk
+		input  wire        clk_125_clk,                                  //             clk_125.clk
+		input  wire        clk_50_clk,                                   //              clk_50.clk
+		output wire        i2c_scl_export,                               //             i2c_scl.export
+		inout  wire        i2c_sda_export,                               //             i2c_sda.export
+		input  wire [3:0]  key_export,                                   //                 key.export
+		output wire [7:0]  ledg_export,                                  //                ledg.export
+		output wire [7:0]  ledr_export,                                  //                ledr.export
+		output wire [9:0]  lpddr2_mem_ca,                                //              lpddr2.mem_ca
+		output wire [0:0]  lpddr2_mem_ck,                                //                    .mem_ck
+		output wire [0:0]  lpddr2_mem_ck_n,                              //                    .mem_ck_n
+		output wire [0:0]  lpddr2_mem_cke,                               //                    .mem_cke
+		output wire [0:0]  lpddr2_mem_cs_n,                              //                    .mem_cs_n
+		output wire [3:0]  lpddr2_mem_dm,                                //                    .mem_dm
+		inout  wire [31:0] lpddr2_mem_dq,                                //                    .mem_dq
+		inout  wire [3:0]  lpddr2_mem_dqs,                               //                    .mem_dqs
+		inout  wire [3:0]  lpddr2_mem_dqs_n,                             //                    .mem_dqs_n
+		input  wire        lpddr2_global_reset_reset_n,                  // lpddr2_global_reset.reset_n
+		input  wire        lpddr2_oct_rzqin,                             //          lpddr2_oct.rzqin
+		input  wire        lpddr2_pll_ref_clk_clk,                       //  lpddr2_pll_ref_clk.clk
+		output wire        lpddr2_pll_sharing_pll_mem_clk,               //  lpddr2_pll_sharing.pll_mem_clk
+		output wire        lpddr2_pll_sharing_pll_write_clk,             //                    .pll_write_clk
+		output wire        lpddr2_pll_sharing_pll_locked,                //                    .pll_locked
+		output wire        lpddr2_pll_sharing_pll_write_clk_pre_phy_clk, //                    .pll_write_clk_pre_phy_clk
+		output wire        lpddr2_pll_sharing_pll_addr_cmd_clk,          //                    .pll_addr_cmd_clk
+		output wire        lpddr2_pll_sharing_pll_avl_clk,               //                    .pll_avl_clk
+		output wire        lpddr2_pll_sharing_pll_config_clk,            //                    .pll_config_clk
+		output wire        lpddr2_pll_sharing_pll_mem_phy_clk,           //                    .pll_mem_phy_clk
+		output wire        lpddr2_pll_sharing_afi_phy_clk,               //                    .afi_phy_clk
+		output wire        lpddr2_pll_sharing_pll_avl_phy_clk,           //                    .pll_avl_phy_clk
+		output wire        lpddr2_status_local_init_done,                //       lpddr2_status.local_init_done
+		output wire        lpddr2_status_local_cal_success,              //                    .local_cal_success
+		output wire        lpddr2_status_local_cal_fail,                 //                    .local_cal_fail
+		input  wire        reset_reset_n,                                //               reset.reset_n
+		output wire        sd_sd_clk,                                    //                  sd.sd_clk
+		inout  wire        sd_sd_cmd,                                    //                    .sd_cmd
+		inout  wire [3:0]  sd_sd_dat,                                    //                    .sd_dat
+		inout  wire [15:0] sram_bridge_out_sram_tcm_data_out,            //     sram_bridge_out.sram_tcm_data_out
+		output wire [18:0] sram_bridge_out_sram_tcm_address_out,         //                    .sram_tcm_address_out
+		output wire [0:0]  sram_bridge_out_sram_tcm_outputenable_n_out,  //                    .sram_tcm_outputenable_n_out
+		output wire [0:0]  sram_bridge_out_sram_tcm_chipselect_n_out,    //                    .sram_tcm_chipselect_n_out
+		output wire [1:0]  sram_bridge_out_sram_tcm_byteenable_n_out,    //                    .sram_tcm_byteenable_n_out
+		output wire [0:0]  sram_bridge_out_sram_tcm_write_n_out,         //                    .sram_tcm_write_n_out
+		output wire [23:0] video_RGB_OUT,                                //               video.RGB_OUT
+		output wire        video_HD,                                     //                    .HD
+		output wire        video_VD,                                     //                    .VD
+		output wire        video_DEN,                                    //                    .DEN
+		output wire        video_clk_clk                                 //           video_clk.clk
 	);
 
 	wire          pixel_conv_out_valid;                                      // pixel_conv:valid_out -> video:valid
@@ -58,6 +59,7 @@ module ECE423_QSYS (
 	wire          pixel_conv_out_startofpacket;                              // pixel_conv:sop_out -> video:sop
 	wire          pixel_conv_out_endofpacket;                                // pixel_conv:eop_out -> video:eop
 	wire          pixel_conv_out_empty;                                      // pixel_conv:empty_out -> video:empty
+	wire          reset_controller_0_reset_out_reset;                        // reset_controller_0:reset_out -> [avalon_st_adapter_001:in_rst_0_reset, i2c_scl:reset_n, i2c_sda:reset_n, key:reset_n, ledg:reset_n, ledr:reset_n, lpddr2:mp_cmd_reset_n_0_reset_n, lpddr2:mp_cmd_reset_n_1_reset_n, lpddr2:mp_rfifo_reset_n_0_reset_n, lpddr2:mp_rfifo_reset_n_1_reset_n, lpddr2:mp_wfifo_reset_n_0_reset_n, lpddr2:soft_reset_n, mm_interconnect_0:lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset_reset, mm_interconnect_0:sysid_reset_reset_bridge_in_reset_reset, mm_interconnect_1:lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset, mm_interconnect_1:video_dma_reset_n_reset_bridge_in_reset_reset, rst_controller:reset_in1, rst_controller_001:reset_in0, rst_controller_002:reset_in0, sram:reset_reset, sram_bridge:reset, sram_sharer:reset_reset, sysid:reset_n, timer_0:reset_n, timer_1:reset_n, video_dma:reset_n_reset_n, video_fifo:wrreset_n, video_pll:rst]
 	wire          sram_sharer_tcm_request;                                   // sram_sharer:request -> sram_bridge:request
 	wire    [1:0] sram_sharer_tcm_sram_tcm_byteenable_n_out_out;             // sram_sharer:sram_tcm_byteenable_n_out -> sram_bridge:tcs_sram_tcm_byteenable_n_out
 	wire          sram_sharer_tcm_sram_tcm_data_out_outen;                   // sram_sharer:sram_tcm_data_outen -> sram_bridge:tcs_sram_tcm_data_outen
@@ -238,10 +240,9 @@ module ECE423_QSYS (
 	wire    [1:0] avalon_st_adapter_001_out_0_empty;                         // avalon_st_adapter_001:out_0_empty -> video_fifo:avalonst_sink_empty
 	wire          rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [cpu:reset_n, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:cpu_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire          rst_controller_reset_out_reset_req;                        // rst_controller:reset_req -> [cpu:reset_req, rst_translator:reset_req_in]
-	wire          cpu_debug_reset_request_reset;                             // cpu:debug_reset_request -> rst_controller:reset_in1
-	wire          rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> [avalon_st_adapter_001:in_rst_0_reset, i2c_scl:reset_n, i2c_sda:reset_n, key:reset_n, ledg:reset_n, ledr:reset_n, mm_interconnect_0:lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset_reset, mm_interconnect_0:sysid_reset_reset_bridge_in_reset_reset, mm_interconnect_1:lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset, mm_interconnect_1:video_dma_reset_n_reset_bridge_in_reset_reset, sram:reset_reset, sram_bridge:reset, sram_sharer:reset_reset, sysid:reset_n, timer_0:reset_n, timer_1:reset_n, video_dma:reset_n_reset_n, video_fifo:wrreset_n]
-	wire          rst_controller_002_reset_out_reset;                        // rst_controller_002:reset_out -> [avalon_st_adapter:in_rst_0_reset, pixel_conv:reset_n, video:reset_n, video_fifo:rdreset_n]
-	wire          rst_controller_003_reset_out_reset;                        // rst_controller_003:reset_out -> [mm_interconnect_0:sd_cont_reset_reset_bridge_in_reset_reset, sd_cont:reset]
+	wire          cpu_debug_reset_request_reset;                             // cpu:debug_reset_request -> rst_controller:reset_in0
+	wire          rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> [avalon_st_adapter:in_rst_0_reset, pixel_conv:reset_n, video:reset_n, video_fifo:rdreset_n]
+	wire          rst_controller_002_reset_out_reset;                        // rst_controller_002:reset_out -> [mm_interconnect_0:sd_cont_reset_reset_bridge_in_reset_reset, sd_cont:reset]
 
 	ECE423_QSYS_cpu cpu (
 		.clk                                 (clk_125_clk),                                       //                       clk.clk
@@ -277,7 +278,7 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_i2c_scl i2c_scl (
 		.clk        (clk_125_clk),                             //                 clk.clk
-		.reset_n    (~rst_controller_001_reset_out_reset),     //               reset.reset_n
+		.reset_n    (~reset_controller_0_reset_out_reset),     //               reset.reset_n
 		.address    (mm_interconnect_0_i2c_scl_s1_address),    //                  s1.address
 		.write_n    (~mm_interconnect_0_i2c_scl_s1_write),     //                    .write_n
 		.writedata  (mm_interconnect_0_i2c_scl_s1_writedata),  //                    .writedata
@@ -288,7 +289,7 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_i2c_sda i2c_sda (
 		.clk        (clk_125_clk),                             //                 clk.clk
-		.reset_n    (~rst_controller_001_reset_out_reset),     //               reset.reset_n
+		.reset_n    (~reset_controller_0_reset_out_reset),     //               reset.reset_n
 		.address    (mm_interconnect_0_i2c_sda_s1_address),    //                  s1.address
 		.write_n    (~mm_interconnect_0_i2c_sda_s1_write),     //                    .write_n
 		.writedata  (mm_interconnect_0_i2c_sda_s1_writedata),  //                    .writedata
@@ -312,7 +313,7 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_key key (
 		.clk        (clk_125_clk),                         //                 clk.clk
-		.reset_n    (~rst_controller_001_reset_out_reset), //               reset.reset_n
+		.reset_n    (~reset_controller_0_reset_out_reset), //               reset.reset_n
 		.address    (mm_interconnect_0_key_s1_address),    //                  s1.address
 		.write_n    (~mm_interconnect_0_key_s1_write),     //                    .write_n
 		.writedata  (mm_interconnect_0_key_s1_writedata),  //                    .writedata
@@ -324,7 +325,7 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_ledg ledg (
 		.clk        (clk_125_clk),                          //                 clk.clk
-		.reset_n    (~rst_controller_001_reset_out_reset),  //               reset.reset_n
+		.reset_n    (~reset_controller_0_reset_out_reset),  //               reset.reset_n
 		.address    (mm_interconnect_0_ledg_s1_address),    //                  s1.address
 		.write_n    (~mm_interconnect_0_ledg_s1_write),     //                    .write_n
 		.writedata  (mm_interconnect_0_ledg_s1_writedata),  //                    .writedata
@@ -335,7 +336,7 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_ledg ledr (
 		.clk        (clk_125_clk),                          //                 clk.clk
-		.reset_n    (~rst_controller_001_reset_out_reset),  //               reset.reset_n
+		.reset_n    (~reset_controller_0_reset_out_reset),  //               reset.reset_n
 		.address    (mm_interconnect_0_ledr_s1_address),    //                  s1.address
 		.write_n    (~mm_interconnect_0_ledr_s1_write),     //                    .write_n
 		.writedata  (mm_interconnect_0_ledr_s1_writedata),  //                    .writedata
@@ -346,8 +347,8 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_lpddr2 lpddr2 (
 		.pll_ref_clk                (lpddr2_pll_ref_clk_clk),                            //        pll_ref_clk.clk
-		.global_reset_n             (reset_reset_n),                                     //       global_reset.reset_n
-		.soft_reset_n               (reset_reset_n),                                     //         soft_reset.reset_n
+		.global_reset_n             (lpddr2_global_reset_reset_n),                       //       global_reset.reset_n
+		.soft_reset_n               (~reset_controller_0_reset_out_reset),               //         soft_reset.reset_n
 		.afi_clk                    (),                                                  //            afi_clk.clk
 		.afi_half_clk               (),                                                  //       afi_half_clk.clk
 		.afi_reset_n                (),                                                  //          afi_reset.reset_n
@@ -382,15 +383,15 @@ module ECE423_QSYS (
 		.avl_write_req_1            (mm_interconnect_1_lpddr2_avl_1_write),              //                   .write
 		.avl_size_1                 (mm_interconnect_1_lpddr2_avl_1_burstcount),         //                   .burstcount
 		.mp_cmd_clk_0_clk           (clk_125_clk),                                       //       mp_cmd_clk_0.clk
-		.mp_cmd_reset_n_0_reset_n   (reset_reset_n),                                     //   mp_cmd_reset_n_0.reset_n
+		.mp_cmd_reset_n_0_reset_n   (~reset_controller_0_reset_out_reset),               //   mp_cmd_reset_n_0.reset_n
 		.mp_cmd_clk_1_clk           (clk_125_clk),                                       //       mp_cmd_clk_1.clk
-		.mp_cmd_reset_n_1_reset_n   (reset_reset_n),                                     //   mp_cmd_reset_n_1.reset_n
+		.mp_cmd_reset_n_1_reset_n   (~reset_controller_0_reset_out_reset),               //   mp_cmd_reset_n_1.reset_n
 		.mp_rfifo_clk_0_clk         (clk_125_clk),                                       //     mp_rfifo_clk_0.clk
-		.mp_rfifo_reset_n_0_reset_n (reset_reset_n),                                     // mp_rfifo_reset_n_0.reset_n
+		.mp_rfifo_reset_n_0_reset_n (~reset_controller_0_reset_out_reset),               // mp_rfifo_reset_n_0.reset_n
 		.mp_wfifo_clk_0_clk         (clk_125_clk),                                       //     mp_wfifo_clk_0.clk
-		.mp_wfifo_reset_n_0_reset_n (reset_reset_n),                                     // mp_wfifo_reset_n_0.reset_n
+		.mp_wfifo_reset_n_0_reset_n (~reset_controller_0_reset_out_reset),               // mp_wfifo_reset_n_0.reset_n
 		.mp_rfifo_clk_1_clk         (clk_125_clk),                                       //     mp_rfifo_clk_1.clk
-		.mp_rfifo_reset_n_1_reset_n (reset_reset_n),                                     // mp_rfifo_reset_n_1.reset_n
+		.mp_rfifo_reset_n_1_reset_n (~reset_controller_0_reset_out_reset),               // mp_rfifo_reset_n_1.reset_n
 		.local_init_done            (lpddr2_status_local_init_done),                     //             status.local_init_done
 		.local_cal_success          (lpddr2_status_local_cal_success),                   //                   .local_cal_success
 		.local_cal_fail             (lpddr2_status_local_cal_fail),                      //                   .local_cal_fail
@@ -411,7 +412,7 @@ module ECE423_QSYS (
 		.SOURCE_SYMBOLS_PER_BEAT (1)
 	) pixel_conv (
 		.clk       (video_clk_clk),                         //       clk.clk
-		.reset_n   (~rst_controller_002_reset_out_reset),   // clk_reset.reset_n
+		.reset_n   (~rst_controller_001_reset_out_reset),   // clk_reset.reset_n
 		.ready_out (avalon_st_adapter_out_0_ready),         //        in.ready
 		.valid_in  (avalon_st_adapter_out_0_valid),         //          .valid
 		.data_in   (avalon_st_adapter_out_0_data),          //          .data
@@ -426,9 +427,72 @@ module ECE423_QSYS (
 		.empty_out (pixel_conv_out_empty)                   //          .empty
 	);
 
+	altera_reset_controller #(
+		.NUM_RESET_INPUTS          (1),
+		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
+		.SYNC_DEPTH                (2),
+		.RESET_REQUEST_PRESENT     (0),
+		.RESET_REQ_WAIT_TIME       (1),
+		.MIN_RST_ASSERTION_TIME    (3),
+		.RESET_REQ_EARLY_DSRT_TIME (1),
+		.USE_RESET_REQUEST_IN0     (0),
+		.USE_RESET_REQUEST_IN1     (0),
+		.USE_RESET_REQUEST_IN2     (0),
+		.USE_RESET_REQUEST_IN3     (0),
+		.USE_RESET_REQUEST_IN4     (0),
+		.USE_RESET_REQUEST_IN5     (0),
+		.USE_RESET_REQUEST_IN6     (0),
+		.USE_RESET_REQUEST_IN7     (0),
+		.USE_RESET_REQUEST_IN8     (0),
+		.USE_RESET_REQUEST_IN9     (0),
+		.USE_RESET_REQUEST_IN10    (0),
+		.USE_RESET_REQUEST_IN11    (0),
+		.USE_RESET_REQUEST_IN12    (0),
+		.USE_RESET_REQUEST_IN13    (0),
+		.USE_RESET_REQUEST_IN14    (0),
+		.USE_RESET_REQUEST_IN15    (0),
+		.ADAPT_RESET_REQUEST       (0)
+	) reset_controller_0 (
+		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
+		.clk            (clk_125_clk),                        //       clk.clk
+		.reset_out      (reset_controller_0_reset_out_reset), // reset_out.reset
+		.reset_req      (),                                   // (terminated)
+		.reset_req_in0  (1'b0),                               // (terminated)
+		.reset_in1      (1'b0),                               // (terminated)
+		.reset_req_in1  (1'b0),                               // (terminated)
+		.reset_in2      (1'b0),                               // (terminated)
+		.reset_req_in2  (1'b0),                               // (terminated)
+		.reset_in3      (1'b0),                               // (terminated)
+		.reset_req_in3  (1'b0),                               // (terminated)
+		.reset_in4      (1'b0),                               // (terminated)
+		.reset_req_in4  (1'b0),                               // (terminated)
+		.reset_in5      (1'b0),                               // (terminated)
+		.reset_req_in5  (1'b0),                               // (terminated)
+		.reset_in6      (1'b0),                               // (terminated)
+		.reset_req_in6  (1'b0),                               // (terminated)
+		.reset_in7      (1'b0),                               // (terminated)
+		.reset_req_in7  (1'b0),                               // (terminated)
+		.reset_in8      (1'b0),                               // (terminated)
+		.reset_req_in8  (1'b0),                               // (terminated)
+		.reset_in9      (1'b0),                               // (terminated)
+		.reset_req_in9  (1'b0),                               // (terminated)
+		.reset_in10     (1'b0),                               // (terminated)
+		.reset_req_in10 (1'b0),                               // (terminated)
+		.reset_in11     (1'b0),                               // (terminated)
+		.reset_req_in11 (1'b0),                               // (terminated)
+		.reset_in12     (1'b0),                               // (terminated)
+		.reset_req_in12 (1'b0),                               // (terminated)
+		.reset_in13     (1'b0),                               // (terminated)
+		.reset_req_in13 (1'b0),                               // (terminated)
+		.reset_in14     (1'b0),                               // (terminated)
+		.reset_req_in14 (1'b0),                               // (terminated)
+		.reset_in15     (1'b0),                               // (terminated)
+		.reset_req_in15 (1'b0)                                // (terminated)
+	);
+
 	sd_cont sd_cont (
 		.clk             (clk_50_clk),                                  //  clock.clk
-		.reset           (rst_controller_003_reset_out_reset),          //  reset.reset
+		.reset           (rst_controller_002_reset_out_reset),          //  reset.reset
 		.s_address       (mm_interconnect_0_sd_cont_slave_address),     //  slave.address
 		.s_read          (mm_interconnect_0_sd_cont_slave_read),        //       .read
 		.s_readdata      (mm_interconnect_0_sd_cont_slave_readdata),    //       .readdata
@@ -486,7 +550,7 @@ module ECE423_QSYS (
 		.CHIPSELECT_THROUGH_READLATENCY (0)
 	) sram (
 		.clk_clk                (clk_125_clk),                              //   clk.clk
-		.reset_reset            (rst_controller_001_reset_out_reset),       // reset.reset
+		.reset_reset            (reset_controller_0_reset_out_reset),       // reset.reset
 		.uas_address            (mm_interconnect_0_sram_uas_address),       //   uas.address
 		.uas_burstcount         (mm_interconnect_0_sram_uas_burstcount),    //      .burstcount
 		.uas_read               (mm_interconnect_0_sram_uas_read),          //      .read
@@ -512,7 +576,7 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_sram_bridge sram_bridge (
 		.clk                             (clk_125_clk),                                     //   clk.clk
-		.reset                           (rst_controller_001_reset_out_reset),              // reset.reset
+		.reset                           (reset_controller_0_reset_out_reset),              // reset.reset
 		.request                         (sram_sharer_tcm_request),                         //   tcs.request
 		.grant                           (sram_sharer_tcm_grant),                           //      .grant
 		.tcs_sram_tcm_data_out           (sram_sharer_tcm_sram_tcm_data_out_out),           //      .sram_tcm_data_out_out
@@ -533,7 +597,7 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_sram_sharer sram_sharer (
 		.clk_clk                     (clk_125_clk),                                     //   clk.clk
-		.reset_reset                 (rst_controller_001_reset_out_reset),              // reset.reset
+		.reset_reset                 (reset_controller_0_reset_out_reset),              // reset.reset
 		.request                     (sram_sharer_tcm_request),                         //   tcm.request
 		.grant                       (sram_sharer_tcm_grant),                           //      .grant
 		.sram_tcm_address_out        (sram_sharer_tcm_sram_tcm_address_out_out),        //      .sram_tcm_address_out_out
@@ -558,14 +622,14 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_sysid sysid (
 		.clock    (clk_125_clk),                                    //           clk.clk
-		.reset_n  (~rst_controller_001_reset_out_reset),            //         reset.reset_n
+		.reset_n  (~reset_controller_0_reset_out_reset),            //         reset.reset_n
 		.readdata (mm_interconnect_0_sysid_control_slave_readdata), // control_slave.readdata
 		.address  (mm_interconnect_0_sysid_control_slave_address)   //              .address
 	);
 
 	ECE423_QSYS_timer_0 timer_0 (
 		.clk        (clk_125_clk),                             //   clk.clk
-		.reset_n    (~rst_controller_001_reset_out_reset),     // reset.reset_n
+		.reset_n    (~reset_controller_0_reset_out_reset),     // reset.reset_n
 		.address    (mm_interconnect_0_timer_0_s1_address),    //    s1.address
 		.writedata  (mm_interconnect_0_timer_0_s1_writedata),  //      .writedata
 		.readdata   (mm_interconnect_0_timer_0_s1_readdata),   //      .readdata
@@ -576,7 +640,7 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_timer_1 timer_1 (
 		.clk        (clk_125_clk),                             //   clk.clk
-		.reset_n    (~rst_controller_001_reset_out_reset),     // reset.reset_n
+		.reset_n    (~reset_controller_0_reset_out_reset),     // reset.reset_n
 		.address    (mm_interconnect_0_timer_1_s1_address),    //    s1.address
 		.writedata  (mm_interconnect_0_timer_1_s1_writedata),  //      .writedata
 		.readdata   (mm_interconnect_0_timer_1_s1_readdata),   //      .readdata
@@ -602,7 +666,7 @@ module ECE423_QSYS (
 		.TOTAL_VSCAN_LINES     (525)
 	) video (
 		.clk     (video_clk_clk),                       //       clk.clk
-		.reset_n (~rst_controller_002_reset_out_reset), // clk_reset.reset_n
+		.reset_n (~rst_controller_001_reset_out_reset), // clk_reset.reset_n
 		.ready   (pixel_conv_out_ready),                //        in.ready
 		.valid   (pixel_conv_out_valid),                //          .valid
 		.data    (pixel_conv_out_data),                 //          .data
@@ -624,7 +688,7 @@ module ECE423_QSYS (
 		.mm_read_readdatavalid        (video_dma_mm_read_readdatavalid),                          //                 .readdatavalid
 		.mm_read_burstcount           (video_dma_mm_read_burstcount),                             //                 .burstcount
 		.clock_clk                    (clk_125_clk),                                              //            clock.clk
-		.reset_n_reset_n              (~rst_controller_001_reset_out_reset),                      //          reset_n.reset_n
+		.reset_n_reset_n              (~reset_controller_0_reset_out_reset),                      //          reset_n.reset_n
 		.csr_writedata                (mm_interconnect_0_video_dma_csr_writedata),                //              csr.writedata
 		.csr_write                    (mm_interconnect_0_video_dma_csr_write),                    //                 .write
 		.csr_byteenable               (mm_interconnect_0_video_dma_csr_byteenable),               //                 .byteenable
@@ -646,9 +710,9 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_video_fifo video_fifo (
 		.wrclock                       (clk_125_clk),                               //    clk_in.clk
-		.wrreset_n                     (~rst_controller_001_reset_out_reset),       //  reset_in.reset_n
+		.wrreset_n                     (~reset_controller_0_reset_out_reset),       //  reset_in.reset_n
 		.rdclock                       (video_clk_clk),                             //   clk_out.clk
-		.rdreset_n                     (~rst_controller_002_reset_out_reset),       // reset_out.reset_n
+		.rdreset_n                     (~rst_controller_001_reset_out_reset),       // reset_out.reset_n
 		.avalonst_sink_valid           (avalon_st_adapter_001_out_0_valid),         //        in.valid
 		.avalonst_sink_data            (avalon_st_adapter_001_out_0_data),          //          .data
 		.avalonst_sink_startofpacket   (avalon_st_adapter_001_out_0_startofpacket), //          .startofpacket
@@ -664,19 +728,19 @@ module ECE423_QSYS (
 	);
 
 	ECE423_QSYS_video_pll video_pll (
-		.refclk   (clk_50_clk),     //  refclk.clk
-		.rst      (~reset_reset_n), //   reset.reset
-		.outclk_0 (video_clk_clk),  // outclk0.clk
-		.locked   ()                // (terminated)
+		.refclk   (clk_50_clk),                         //  refclk.clk
+		.rst      (reset_controller_0_reset_out_reset), //   reset.reset
+		.outclk_0 (video_clk_clk),                      // outclk0.clk
+		.locked   ()                                    // (terminated)
 	);
 
 	ECE423_QSYS_mm_interconnect_0 mm_interconnect_0 (
 		.clk_125_clk_clk                                     (clk_125_clk),                                               //                                   clk_125_clk.clk
 		.clk_50_out_clk_clk                                  (clk_50_clk),                                                //                                clk_50_out_clk.clk
 		.cpu_reset_reset_bridge_in_reset_reset               (rst_controller_reset_out_reset),                            //               cpu_reset_reset_bridge_in_reset.reset
-		.lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                        // lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset.reset
-		.sd_cont_reset_reset_bridge_in_reset_reset           (rst_controller_003_reset_out_reset),                        //           sd_cont_reset_reset_bridge_in_reset.reset
-		.sysid_reset_reset_bridge_in_reset_reset             (rst_controller_001_reset_out_reset),                        //             sysid_reset_reset_bridge_in_reset.reset
+		.lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset_reset (reset_controller_0_reset_out_reset),                        // lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset.reset
+		.sd_cont_reset_reset_bridge_in_reset_reset           (rst_controller_002_reset_out_reset),                        //           sd_cont_reset_reset_bridge_in_reset.reset
+		.sysid_reset_reset_bridge_in_reset_reset             (reset_controller_0_reset_out_reset),                        //             sysid_reset_reset_bridge_in_reset.reset
 		.cpu_data_master_address                             (cpu_data_master_address),                                   //                               cpu_data_master.address
 		.cpu_data_master_waitrequest                         (cpu_data_master_waitrequest),                               //                                              .waitrequest
 		.cpu_data_master_burstcount                          (cpu_data_master_burstcount),                                //                                              .burstcount
@@ -792,8 +856,8 @@ module ECE423_QSYS (
 
 	ECE423_QSYS_mm_interconnect_1 mm_interconnect_1 (
 		.clk_125_clk_clk                                     (clk_125_clk),                                       //                                   clk_125_clk.clk
-		.lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                // lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset.reset
-		.video_dma_reset_n_reset_bridge_in_reset_reset       (rst_controller_001_reset_out_reset),                //       video_dma_reset_n_reset_bridge_in_reset.reset
+		.lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset (reset_controller_0_reset_out_reset),                // lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset.reset
+		.video_dma_reset_n_reset_bridge_in_reset_reset       (reset_controller_0_reset_out_reset),                //       video_dma_reset_n_reset_bridge_in_reset.reset
 		.video_dma_mm_read_address                           (video_dma_mm_read_address),                         //                             video_dma_mm_read.address
 		.video_dma_mm_read_waitrequest                       (video_dma_mm_read_waitrequest),                     //                                              .waitrequest
 		.video_dma_mm_read_burstcount                        (video_dma_mm_read_burstcount),                      //                                              .burstcount
@@ -843,7 +907,7 @@ module ECE423_QSYS (
 		.outReadyLatency (0)
 	) avalon_st_adapter (
 		.in_clk_0_clk        (video_clk_clk),                         // in_clk_0.clk
-		.in_rst_0_reset      (rst_controller_002_reset_out_reset),    // in_rst_0.reset
+		.in_rst_0_reset      (rst_controller_001_reset_out_reset),    // in_rst_0.reset
 		.in_0_data           (video_fifo_out_data),                   //     in_0.data
 		.in_0_valid          (video_fifo_out_valid),                  //         .valid
 		.in_0_ready          (video_fifo_out_ready),                  //         .ready
@@ -877,7 +941,7 @@ module ECE423_QSYS (
 		.outReadyLatency (1)
 	) avalon_st_adapter_001 (
 		.in_clk_0_clk        (clk_125_clk),                               // in_clk_0.clk
-		.in_rst_0_reset      (rst_controller_001_reset_out_reset),        // in_rst_0.reset
+		.in_rst_0_reset      (reset_controller_0_reset_out_reset),        // in_rst_0.reset
 		.in_0_data           (video_dma_st_source_data),                  //     in_0.data
 		.in_0_valid          (video_dma_st_source_valid),                 //         .valid
 		.in_0_ready          (video_dma_st_source_ready),                 //         .ready
@@ -918,8 +982,8 @@ module ECE423_QSYS (
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller (
-		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
-		.reset_in1      (cpu_debug_reset_request_reset),      // reset_in1.reset
+		.reset_in0      (cpu_debug_reset_request_reset),      // reset_in0.reset
+		.reset_in1      (reset_controller_0_reset_out_reset), // reset_in1.reset
 		.clk            (clk_125_clk),                        //       clk.clk
 		.reset_out      (rst_controller_reset_out_reset),     // reset_out.reset
 		.reset_req      (rst_controller_reset_out_reset_req), //          .reset_req
@@ -981,8 +1045,8 @@ module ECE423_QSYS (
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_001 (
-		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
-		.clk            (clk_125_clk),                        //       clk.clk
+		.reset_in0      (reset_controller_0_reset_out_reset), // reset_in0.reset
+		.clk            (video_clk_clk),                      //       clk.clk
 		.reset_out      (rst_controller_001_reset_out_reset), // reset_out.reset
 		.reset_req      (),                                   // (terminated)
 		.reset_req_in0  (1'b0),                               // (terminated)
@@ -1044,72 +1108,9 @@ module ECE423_QSYS (
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_002 (
-		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
-		.clk            (video_clk_clk),                      //       clk.clk
-		.reset_out      (rst_controller_002_reset_out_reset), // reset_out.reset
-		.reset_req      (),                                   // (terminated)
-		.reset_req_in0  (1'b0),                               // (terminated)
-		.reset_in1      (1'b0),                               // (terminated)
-		.reset_req_in1  (1'b0),                               // (terminated)
-		.reset_in2      (1'b0),                               // (terminated)
-		.reset_req_in2  (1'b0),                               // (terminated)
-		.reset_in3      (1'b0),                               // (terminated)
-		.reset_req_in3  (1'b0),                               // (terminated)
-		.reset_in4      (1'b0),                               // (terminated)
-		.reset_req_in4  (1'b0),                               // (terminated)
-		.reset_in5      (1'b0),                               // (terminated)
-		.reset_req_in5  (1'b0),                               // (terminated)
-		.reset_in6      (1'b0),                               // (terminated)
-		.reset_req_in6  (1'b0),                               // (terminated)
-		.reset_in7      (1'b0),                               // (terminated)
-		.reset_req_in7  (1'b0),                               // (terminated)
-		.reset_in8      (1'b0),                               // (terminated)
-		.reset_req_in8  (1'b0),                               // (terminated)
-		.reset_in9      (1'b0),                               // (terminated)
-		.reset_req_in9  (1'b0),                               // (terminated)
-		.reset_in10     (1'b0),                               // (terminated)
-		.reset_req_in10 (1'b0),                               // (terminated)
-		.reset_in11     (1'b0),                               // (terminated)
-		.reset_req_in11 (1'b0),                               // (terminated)
-		.reset_in12     (1'b0),                               // (terminated)
-		.reset_req_in12 (1'b0),                               // (terminated)
-		.reset_in13     (1'b0),                               // (terminated)
-		.reset_req_in13 (1'b0),                               // (terminated)
-		.reset_in14     (1'b0),                               // (terminated)
-		.reset_req_in14 (1'b0),                               // (terminated)
-		.reset_in15     (1'b0),                               // (terminated)
-		.reset_req_in15 (1'b0)                                // (terminated)
-	);
-
-	altera_reset_controller #(
-		.NUM_RESET_INPUTS          (1),
-		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
-		.SYNC_DEPTH                (2),
-		.RESET_REQUEST_PRESENT     (0),
-		.RESET_REQ_WAIT_TIME       (1),
-		.MIN_RST_ASSERTION_TIME    (3),
-		.RESET_REQ_EARLY_DSRT_TIME (1),
-		.USE_RESET_REQUEST_IN0     (0),
-		.USE_RESET_REQUEST_IN1     (0),
-		.USE_RESET_REQUEST_IN2     (0),
-		.USE_RESET_REQUEST_IN3     (0),
-		.USE_RESET_REQUEST_IN4     (0),
-		.USE_RESET_REQUEST_IN5     (0),
-		.USE_RESET_REQUEST_IN6     (0),
-		.USE_RESET_REQUEST_IN7     (0),
-		.USE_RESET_REQUEST_IN8     (0),
-		.USE_RESET_REQUEST_IN9     (0),
-		.USE_RESET_REQUEST_IN10    (0),
-		.USE_RESET_REQUEST_IN11    (0),
-		.USE_RESET_REQUEST_IN12    (0),
-		.USE_RESET_REQUEST_IN13    (0),
-		.USE_RESET_REQUEST_IN14    (0),
-		.USE_RESET_REQUEST_IN15    (0),
-		.ADAPT_RESET_REQUEST       (0)
-	) rst_controller_003 (
-		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
+		.reset_in0      (reset_controller_0_reset_out_reset), // reset_in0.reset
 		.clk            (clk_50_clk),                         //       clk.clk
-		.reset_out      (rst_controller_003_reset_out_reset), // reset_out.reset
+		.reset_out      (rst_controller_002_reset_out_reset), // reset_out.reset
 		.reset_req      (),                                   // (terminated)
 		.reset_req_in0  (1'b0),                               // (terminated)
 		.reset_in1      (1'b0),                               // (terminated)

@@ -41,11 +41,12 @@ module ECE423_QSYS (
 	sram_bridge_out_sram_tcm_chipselect_n_out,
 	sram_bridge_out_sram_tcm_byteenable_n_out,
 	sram_bridge_out_sram_tcm_write_n_out,
-	video_clk_clk,
 	video_RGB_OUT,
 	video_HD,
 	video_VD,
-	video_DEN);	
+	video_DEN,
+	video_clk_clk,
+	lpddr2_global_reset_reset_n);	
 
 	input		clk_125_clk;
 	input		clk_50_clk;
@@ -88,9 +89,10 @@ module ECE423_QSYS (
 	output	[0:0]	sram_bridge_out_sram_tcm_chipselect_n_out;
 	output	[1:0]	sram_bridge_out_sram_tcm_byteenable_n_out;
 	output	[0:0]	sram_bridge_out_sram_tcm_write_n_out;
-	output		video_clk_clk;
 	output	[23:0]	video_RGB_OUT;
 	output		video_HD;
 	output		video_VD;
 	output		video_DEN;
+	output		video_clk_clk;
+	input		lpddr2_global_reset_reset_n;
 endmodule
