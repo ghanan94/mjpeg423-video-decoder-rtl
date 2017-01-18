@@ -58,7 +58,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -71,7 +71,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -84,7 +84,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -105,7 +105,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -126,7 +126,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -147,7 +147,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -168,7 +168,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -189,7 +189,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -210,7 +210,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -259,6 +259,14 @@
          type = "int";
       }
    }
+   element reset_controller_0
+   {
+      datum _sortIndex
+      {
+         value = "23";
+         type = "int";
+      }
+   }
    element sd_cont
    {
       datum _sortIndex
@@ -289,7 +297,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -310,7 +318,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -323,7 +331,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -336,7 +344,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -357,7 +365,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -378,7 +386,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -495,6 +503,11 @@
    type="conduit"
    dir="end" />
  <interface name="lpddr2" internal="lpddr2.memory" type="conduit" dir="end" />
+ <interface
+   name="lpddr2_global_reset"
+   internal="lpddr2.global_reset"
+   type="reset"
+   dir="end" />
  <interface name="lpddr2_oct" internal="lpddr2.oct" type="conduit" dir="end" />
  <interface
    name="lpddr2_pll_ref_clk"
@@ -1117,6 +1130,36 @@
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="SOURCE_SYMBOLS_PER_BEAT" value="1" />
  </module>
+ <module
+   name="reset_controller_0"
+   kind="altera_reset_controller"
+   version="15.1"
+   enabled="1">
+  <parameter name="MIN_RST_ASSERTION_TIME" value="3" />
+  <parameter name="NUM_RESET_INPUTS" value="1" />
+  <parameter name="OUTPUT_RESET_SYNC_EDGES" value="deassert" />
+  <parameter name="RESET_REQUEST_PRESENT" value="0" />
+  <parameter name="RESET_REQ_EARLY_DSRT_TIME" value="1" />
+  <parameter name="RESET_REQ_WAIT_TIME" value="1" />
+  <parameter name="SYNC_DEPTH" value="2" />
+  <parameter name="USE_RESET_REQUEST_IN0" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN1" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN10" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN11" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN12" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN13" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN14" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN15" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN2" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN3" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN4" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN5" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN6" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN7" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN8" value="0" />
+  <parameter name="USE_RESET_REQUEST_IN9" value="0" />
+  <parameter name="USE_RESET_REQUEST_INPUT" value="0" />
+ </module>
  <module name="sd_cont" kind="sd_cont" version="1.0" enabled="1" />
  <module
    name="sram"
@@ -1664,6 +1707,15 @@
  <connection
    kind="avalon"
    version="15.1"
+   start="sd_cont.master"
+   end="video_dma.descriptor_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x201014c0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.1"
    start="video_dma.mm_read"
    end="lpddr2.avl_1">
   <parameter name="arbitrationPriority" value="1" />
@@ -1698,6 +1750,11 @@
  <connection kind="clock" version="15.1" start="clk_125.clk" end="ledg.clk" />
  <connection kind="clock" version="15.1" start="clk_125.clk" end="i2c_scl.clk" />
  <connection kind="clock" version="15.1" start="clk_125.clk" end="i2c_sda.clk" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
+   end="reset_controller_0.clk" />
  <connection
    kind="clock"
    version="15.1"
@@ -1783,129 +1840,7 @@
    kind="reset"
    version="15.1"
    start="clk_125.clk_reset"
-   end="video.clk_reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="pixel_conv.clk_reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="lpddr2.global_reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="lpddr2.mp_cmd_reset_n_0" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="lpddr2.mp_cmd_reset_n_1" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="lpddr2.mp_rfifo_reset_n_0" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="lpddr2.mp_rfifo_reset_n_1" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="lpddr2.mp_wfifo_reset_n_0" />
- <connection kind="reset" version="15.1" start="clk_125.clk_reset" end="cpu.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="timer_0.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="sysid.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="jtag_uart.reset" />
- <connection kind="reset" version="15.1" start="clk_125.clk_reset" end="key.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="sram_bridge.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="sram_sharer.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="sram.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="timer_1.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="ledg.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="ledr.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="i2c_scl.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="i2c_sda.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="video_pll.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="sd_cont.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="video_fifo.reset_in" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="video_dma.reset_n" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="video_fifo.reset_out" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
-   end="lpddr2.soft_reset" />
+   end="reset_controller_0.reset_in0" />
  <connection
    kind="reset"
    version="15.1"
@@ -1916,6 +1851,136 @@
    version="15.1"
    start="cpu.debug_reset_request"
    end="jtag_uart.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="video.clk_reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="pixel_conv.clk_reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="lpddr2.mp_cmd_reset_n_0" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="lpddr2.mp_cmd_reset_n_1" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="lpddr2.mp_rfifo_reset_n_0" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="lpddr2.mp_rfifo_reset_n_1" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="lpddr2.mp_wfifo_reset_n_0" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="video_pll.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="sd_cont.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="cpu.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="sysid.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="timer_1.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="timer_0.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="jtag_uart.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="key.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="sram.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="sram_sharer.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="sram_bridge.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="ledr.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="ledg.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="i2c_scl.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="i2c_sda.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="video_fifo.reset_in" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="video_dma.reset_n" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="video_fifo.reset_out" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="lpddr2.soft_reset" />
  <connection
    kind="tristate_conduit"
    version="15.1"

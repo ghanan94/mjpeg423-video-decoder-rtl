@@ -3,12 +3,12 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="207" />
+   <connections preferredWidth="383" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library,Library/Basic Functions,Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library/Basic Functions/Bridges and Adaptors,Library/Basic Functions/Bridges and Adaptors/Clock" />
+   expandedCategories="Library/Basic Functions/Clocks; PLLs and Resets,Library/Interface Protocols,Library/Interface Protocols/Transceiver PHY,Library,Library/Basic Functions/Simulation; Debug and Verification,Library/Basic Functions/Bridges and Adaptors,Library/Basic Functions/Simulation; Debug and Verification/Simulation,Library/Basic Functions,Library/Basic Functions/Bridges and Adaptors/Reset" />
  <window width="1936" height="1056" x="-8" y="-8" />
  <generation greybox="1" />
 </preferences>

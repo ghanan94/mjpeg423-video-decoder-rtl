@@ -185,7 +185,11 @@ module ECE423_QSYS_mm_interconnect_0_router_008
 
 
         if (destid == 0 ) begin
-            src_channel = 15'b1;
+            src_channel = 15'b01;
+        end
+
+        if (destid == 2 ) begin
+            src_channel = 15'b10;
         end
 
 

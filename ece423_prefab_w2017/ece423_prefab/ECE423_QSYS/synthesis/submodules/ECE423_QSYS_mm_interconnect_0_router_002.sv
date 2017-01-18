@@ -135,21 +135,27 @@ module ECE423_QSYS_mm_interconnect_0_router_002
     // during address decoding
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h20000000 - 64'h0); 
+    localparam PAD1 = log2ceil(64'h201014d0 - 64'h201014c0); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h20000000;
+    localparam ADDR_RANGE = 64'h201014d0;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
                                         PKT_ADDR_H :
                                         PKT_ADDR_L + RANGE_ADDR_WIDTH - 1;
 
-    localparam RG = RANGE_ADDR_WIDTH;
+    localparam RG = RANGE_ADDR_WIDTH-1;
     localparam REAL_ADDRESS_RANGE = OPTIMIZED_ADDR_H - PKT_ADDR_L;
 
+      reg [PKT_ADDR_W-1 : 0] address;
+      always @* begin
+        address = {PKT_ADDR_W{1'b0}};
+        address [REAL_ADDRESS_RANGE:0] = sink_data[OPTIMIZED_ADDR_H : PKT_ADDR_L];
+      end   
 
     // -------------------------------------------------------
     // Pass almost everything through, untouched
@@ -164,6 +170,11 @@ module ECE423_QSYS_mm_interconnect_0_router_002
 
 
 
+    // -------------------------------------------------------
+    // Write and read transaction signals
+    // -------------------------------------------------------
+    wire write_transaction;
+    assign write_transaction = sink_data[PKT_TRANS_WRITE];
 
 
     ECE423_QSYS_mm_interconnect_0_router_002_default_decode the_default_decode(
@@ -182,13 +193,18 @@ module ECE423_QSYS_mm_interconnect_0_router_002
         // Address Decoder
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
-           
-         
-          // ( 0 .. 20000000 )
-          src_channel = 15'b1;
-          src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 7;
-	     
-        
+
+    // ( 0x0 .. 0x20000000 )
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 30'h0   ) begin
+            src_channel = 15'b01;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 7;
+    end
+
+    // ( 0x201014c0 .. 0x201014d0 )
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 30'h201014c0  && write_transaction  ) begin
+            src_channel = 15'b10;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 14;
+    end
 
 end
 
