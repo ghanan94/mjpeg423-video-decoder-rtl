@@ -100,7 +100,8 @@ wire lpddr2_local_cal_fail;
 		.lpddr2_pll_ref_clk_clk								(CLOCK_50_B5B),
 		.lpddr2_status_local_init_done					(lpddr2_local_init_done),   	
 		.lpddr2_status_local_cal_success					(lpddr2_local_cal_success), 	
-		.lpddr2_status_local_cal_fail						(lpddr2_local_cal_fail),    
+		.lpddr2_status_local_cal_fail						(lpddr2_local_cal_fail),
+		.lpddr2_global_reset_reset_n						(1'b1),
         
 		.key_export												(KEY),
 		.ledr_export											(LEDR[7:0]),
