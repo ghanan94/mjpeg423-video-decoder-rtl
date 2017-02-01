@@ -209,17 +209,14 @@ begin
 			& " " & integer'image(to_integer(signed(o7)))
 		);
 
-		wait until rising_edge(clock);
-
-		report(integer'image(to_integer(signed(o0)))
-			& " " & integer'image(to_integer(signed(o1)))
-			& " " & integer'image(to_integer(signed(o2)))
-			& " " & integer'image(to_integer(signed(o3)))
-			& " " & integer'image(to_integer(signed(o4)))
-			& " " & integer'image(to_integer(signed(o5)))
-			& " " & integer'image(to_integer(signed(o6)))
-			& " " & integer'image(to_integer(signed(o7)))
-		);
+		assert(signed(o0) = 100) report("o0 is not " & integer'image(100));
+		assert(signed(o1) = 0) report("o1 is not " & integer'image(0));
+		assert(signed(o2) = 0) report("o2 is not " & integer'image(0));
+		assert(signed(o3) = 0) report("o3 is not " & integer'image(0));
+		assert(signed(o4) = 0) report("o4 is not " & integer'image(0));
+		assert(signed(o5) = 0) report("o5 is not " & integer'image(0));
+		assert(signed(o6) = 0) report("o6 is not " & integer'image(0));
+		assert(signed(o7) = 0) report("o7 is not " & integer'image(0));
 
 		wait until rising_edge(clock);
 
@@ -233,17 +230,14 @@ begin
 			& " " & integer'image(to_integer(signed(o7)))
 		);
 
-		wait until rising_edge(clock);
-
-		report(integer'image(to_integer(signed(o0)))
-			& " " & integer'image(to_integer(signed(o1)))
-			& " " & integer'image(to_integer(signed(o2)))
-			& " " & integer'image(to_integer(signed(o3)))
-			& " " & integer'image(to_integer(signed(o4)))
-			& " " & integer'image(to_integer(signed(o5)))
-			& " " & integer'image(to_integer(signed(o6)))
-			& " " & integer'image(to_integer(signed(o7)))
-		);
+		assert(signed(o0) = 0) report("o0 is not " & integer'image(0));
+		assert(signed(o1) = 100) report("o1 is not " & integer'image(100));
+		assert(signed(o2) = 0) report("o2 is not " & integer'image(0));
+		assert(signed(o3) = 0) report("o3 is not " & integer'image(0));
+		assert(signed(o4) = 0) report("o4 is not " & integer'image(0));
+		assert(signed(o5) = 0) report("o5 is not " & integer'image(0));
+		assert(signed(o6) = 0) report("o6 is not " & integer'image(0));
+		assert(signed(o7) = 0) report("o7 is not " & integer'image(0));
 
 		wait until rising_edge(clock);
 
@@ -257,17 +251,14 @@ begin
 			& " " & integer'image(to_integer(signed(o7)))
 		);
 
-		wait until rising_edge(clock);
-
-		report(integer'image(to_integer(signed(o0)))
-			& " " & integer'image(to_integer(signed(o1)))
-			& " " & integer'image(to_integer(signed(o2)))
-			& " " & integer'image(to_integer(signed(o3)))
-			& " " & integer'image(to_integer(signed(o4)))
-			& " " & integer'image(to_integer(signed(o5)))
-			& " " & integer'image(to_integer(signed(o6)))
-			& " " & integer'image(to_integer(signed(o7)))
-		);
+		assert(signed(o0) = 0) report("o0 is not " & integer'image(0));
+		assert(signed(o1) = 0) report("o1 is not " & integer'image(0));
+		assert(signed(o2) = 100) report("o2 is not " & integer'image(100));
+		assert(signed(o3) = 0) report("o3 is not " & integer'image(0));
+		assert(signed(o4) = 0) report("o4 is not " & integer'image(0));
+		assert(signed(o5) = 0) report("o5 is not " & integer'image(0));
+		assert(signed(o6) = 0) report("o6 is not " & integer'image(0));
+		assert(signed(o7) = 0) report("o7 is not " & integer'image(0));
 
 		wait until rising_edge(clock);
 
@@ -281,6 +272,15 @@ begin
 			& " " & integer'image(to_integer(signed(o7)))
 		);
 
+		assert(signed(o0) = 0) report("o0 is not " & integer'image(0));
+		assert(signed(o1) = 0) report("o1 is not " & integer'image(0));
+		assert(signed(o2) = 0) report("o2 is not " & integer'image(0));
+		assert(signed(o3) = 100) report("o3 is not " & integer'image(100));
+		assert(signed(o4) = 0) report("o4 is not " & integer'image(0));
+		assert(signed(o5) = 0) report("o5 is not " & integer'image(0));
+		assert(signed(o6) = 0) report("o6 is not " & integer'image(0));
+		assert(signed(o7) = 0) report("o7 is not " & integer'image(0));
+
 		wait until rising_edge(clock);
 
 		report(integer'image(to_integer(signed(o0)))
@@ -292,6 +292,78 @@ begin
 			& " " & integer'image(to_integer(signed(o6)))
 			& " " & integer'image(to_integer(signed(o7)))
 		);
+
+		assert(signed(o0) = 0) report("o0 is not " & integer'image(0));
+		assert(signed(o1) = 0) report("o1 is not " & integer'image(0));
+		assert(signed(o2) = 0) report("o2 is not " & integer'image(0));
+		assert(signed(o3) = 0) report("o3 is not " & integer'image(0));
+		assert(signed(o4) = 100) report("o4 is not " & integer'image(100));
+		assert(signed(o5) = 0) report("o5 is not " & integer'image(0));
+		assert(signed(o6) = 0) report("o6 is not " & integer'image(0));
+		assert(signed(o7) = 0) report("o7 is not " & integer'image(0));
+
+		wait until rising_edge(clock);
+
+		report(integer'image(to_integer(signed(o0)))
+			& " " & integer'image(to_integer(signed(o1)))
+			& " " & integer'image(to_integer(signed(o2)))
+			& " " & integer'image(to_integer(signed(o3)))
+			& " " & integer'image(to_integer(signed(o4)))
+			& " " & integer'image(to_integer(signed(o5)))
+			& " " & integer'image(to_integer(signed(o6)))
+			& " " & integer'image(to_integer(signed(o7)))
+		);
+
+		assert(signed(o0) = 0) report("o0 is not " & integer'image(0));
+		assert(signed(o1) = 0) report("o1 is not " & integer'image(0));
+		assert(signed(o2) = 0) report("o2 is not " & integer'image(0));
+		assert(signed(o3) = 0) report("o3 is not " & integer'image(0));
+		assert(signed(o4) = 0) report("o4 is not " & integer'image(0));
+		assert(signed(o5) = 100) report("o5 is not " & integer'image(100));
+		assert(signed(o6) = 0) report("o6 is not " & integer'image(0));
+		assert(signed(o7) = 0) report("o7 is not " & integer'image(0));
+
+		wait until rising_edge(clock);
+
+		report(integer'image(to_integer(signed(o0)))
+			& " " & integer'image(to_integer(signed(o1)))
+			& " " & integer'image(to_integer(signed(o2)))
+			& " " & integer'image(to_integer(signed(o3)))
+			& " " & integer'image(to_integer(signed(o4)))
+			& " " & integer'image(to_integer(signed(o5)))
+			& " " & integer'image(to_integer(signed(o6)))
+			& " " & integer'image(to_integer(signed(o7)))
+		);
+
+		assert(signed(o0) = 0) report("o0 is not " & integer'image(0));
+		assert(signed(o1) = 0) report("o1 is not " & integer'image(0));
+		assert(signed(o2) = 0) report("o2 is not " & integer'image(0));
+		assert(signed(o3) = 0) report("o3 is not " & integer'image(0));
+		assert(signed(o4) = 0) report("o4 is not " & integer'image(0));
+		assert(signed(o5) = 0) report("o5 is not " & integer'image(0));
+		assert(signed(o6) = 100) report("o6 is not " & integer'image(100));
+		assert(signed(o7) = 0) report("o7 is not " & integer'image(0));
+
+		wait until rising_edge(clock);
+
+		report(integer'image(to_integer(signed(o0)))
+			& " " & integer'image(to_integer(signed(o1)))
+			& " " & integer'image(to_integer(signed(o2)))
+			& " " & integer'image(to_integer(signed(o3)))
+			& " " & integer'image(to_integer(signed(o4)))
+			& " " & integer'image(to_integer(signed(o5)))
+			& " " & integer'image(to_integer(signed(o6)))
+			& " " & integer'image(to_integer(signed(o7)))
+		);
+
+		assert(signed(o0) = 0) report("o0 is not " & integer'image(0));
+		assert(signed(o1) = 0) report("o1 is not " & integer'image(0));
+		assert(signed(o2) = 0) report("o2 is not " & integer'image(0));
+		assert(signed(o3) = 0) report("o3 is not " & integer'image(0));
+		assert(signed(o4) = 0) report("o4 is not " & integer'image(0));
+		assert(signed(o5) = 0) report("o5 is not " & integer'image(0));
+		assert(signed(o6) = 0) report("o6 is not " & integer'image(0));
+		assert(signed(o7) = 100) report("o7 is not " & integer'image(100));
 
 		wait; -- finished sim
 	end process;

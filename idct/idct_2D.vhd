@@ -175,7 +175,7 @@ begin
 	end process;
 
 	--
-	--
+	-- Next column to compute
 	--
 	process
 	begin
@@ -193,49 +193,22 @@ begin
 	--
 	-- Input to 1D IDCT
 	--
---	process
---	begin
---		-- wait until rising_edge(clk);
---
---		if (current_activity = COMPUTING_ROWS) then
---			-- Calculating first pass
---			i0 <= i_row0;
---			i1 <= i_row1;
---			i2 <= i_row2;
---			i3 <= i_row3;
---			i4 <= i_row4;
---			i5 <= i_row5;
---			i6 <= i_row6;
---			i7 <= i_row7;
---		else
---			-- calculating second pass
---			i0 <= temp_block(0)(to_integer(next_column_to_compute));
---			i1 <= temp_block(1)(to_integer(next_column_to_compute));
---			i2 <= temp_block(2)(to_integer(next_column_to_compute));
---			i3 <= temp_block(3)(to_integer(next_column_to_compute));
---			i4 <= temp_block(4)(to_integer(next_column_to_compute));
---			i5 <= temp_block(5)(to_integer(next_column_to_compute));
---			i6 <= temp_block(6)(to_integer(next_column_to_compute));
---			i7 <= temp_block(7)(to_integer(next_column_to_compute));
---		end if;
---	end process;
-
 	i0 <= i_row0 when (current_activity = COMPUTING_ROWS)
-		else temp_block(0)(to_integer(next_column_to_compute));
+		else temp_block(0)(to_integer(processing_count(2 downto 0)));
 	i1 <= i_row1 when (current_activity = COMPUTING_ROWS)
-		else temp_block(1)(to_integer(next_column_to_compute));
+		else temp_block(1)(to_integer(processing_count(2 downto 0)));
 	i2 <= i_row2 when (current_activity = COMPUTING_ROWS)
-		else temp_block(2)(to_integer(next_column_to_compute));
+		else temp_block(2)(to_integer(processing_count(2 downto 0)));
 	i3 <= i_row3 when (current_activity = COMPUTING_ROWS)
-		else temp_block(3)(to_integer(next_column_to_compute));
+		else temp_block(3)(to_integer(processing_count(2 downto 0)));
 	i4 <= i_row4 when (current_activity = COMPUTING_ROWS)
-		else temp_block(4)(to_integer(next_column_to_compute));
+		else temp_block(4)(to_integer(processing_count(2 downto 0)));
 	i5 <= i_row5 when (current_activity = COMPUTING_ROWS)
-		else temp_block(5)(to_integer(next_column_to_compute));
+		else temp_block(5)(to_integer(processing_count(2 downto 0)));
 	i6 <= i_row6 when (current_activity = COMPUTING_ROWS)
-		else temp_block(6)(to_integer(next_column_to_compute));
+		else temp_block(6)(to_integer(processing_count(2 downto 0)));
 	i7 <= i_row7 when (current_activity = COMPUTING_ROWS)
-		else temp_block(7)(to_integer(next_column_to_compute));
+		else temp_block(7)(to_integer(processing_count(2 downto 0)));
 
 	--
 	-- Output from 1D IDCT
@@ -269,7 +242,6 @@ begin
 	--
 	-- Outputs
 	--
-
 	--
 	-- Update row to be flushed
 	--
