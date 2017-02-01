@@ -1,15 +1,14 @@
--- Code your testbench here
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity idct_2D_tb is
+entity idct_2D_tb_1 is
 	generic (
     	PERIOD : real := 20.0
     );
-end idct_2D_tb;
+end idct_2D_tb_1;
 
-architecture main of idct_2D_tb is
+architecture main of idct_2D_tb_1 is
 	constant CLK_PERIOD : time := PERIOD * 1 ns;
 
 	signal clock : std_logic := '0';
