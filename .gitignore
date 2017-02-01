@@ -25,3 +25,6 @@ cov*/
 transcript*
 sc_dpiheader.h
 vsim.dbg
+
+#keep .keep files
+!.keep
