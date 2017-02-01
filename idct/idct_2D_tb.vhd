@@ -199,21 +199,6 @@ begin
 		wait until rising_edge(clock);
 		wait until rising_edge(clock);
 		wait until rising_edge(clock);
-		wait until rising_edge(clock);
-		wait until rising_edge(clock);
-		wait until rising_edge(clock);
-
-		report(integer'image(to_integer(signed(o0)))
-			& " " & integer'image(to_integer(signed(o1)))
-			& " " & integer'image(to_integer(signed(o2)))
-			& " " & integer'image(to_integer(signed(o3)))
-			& " " & integer'image(to_integer(signed(o4)))
-			& " " & integer'image(to_integer(signed(o5)))
-			& " " & integer'image(to_integer(signed(o6)))
-			& " " & integer'image(to_integer(signed(o7)))
-		);
-
-		wait until rising_edge(clock);
 
 		report(integer'image(to_integer(signed(o0)))
 			& " " & integer'image(to_integer(signed(o1)))
