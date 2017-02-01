@@ -15,14 +15,14 @@ architecture main of idct_2D_tb is
 	signal clock : std_logic := '0';
 	signal reset : std_logic := '1';
 
-	signal i0: std_logic_vector(15 downto 0);
-	signal i1: std_logic_vector(15 downto 0);
-	signal i2: std_logic_vector(15 downto 0);
-	signal i3: std_logic_vector(15 downto 0);
-	signal i4: std_logic_vector(15 downto 0);
-	signal i5: std_logic_vector(15 downto 0);
-	signal i6: std_logic_vector(15 downto 0);
-	signal i7: std_logic_vector(15 downto 0);
+	signal i0: std_logic_vector(15 downto 0) := (others => '0');
+	signal i1: std_logic_vector(15 downto 0) := (others => '0');
+	signal i2: std_logic_vector(15 downto 0) := (others => '0');
+	signal i3: std_logic_vector(15 downto 0) := (others => '0');
+	signal i4: std_logic_vector(15 downto 0) := (others => '0');
+	signal i5: std_logic_vector(15 downto 0) := (others => '0');
+	signal i6: std_logic_vector(15 downto 0) := (others => '0');
+	signal i7: std_logic_vector(15 downto 0) := (others => '0');
 
 	signal o0: std_logic_vector(15 downto 0);
 	signal o1: std_logic_vector(15 downto 0);
@@ -33,12 +33,12 @@ architecture main of idct_2D_tb is
 	signal o6: std_logic_vector(15 downto 0);
 	signal o7: std_logic_vector(15 downto 0);
 
-	signal trigger_row : std_logic;
-	signal read_row : std_logic;
+	signal trigger_row : std_logic := '0';
+	signal read_row : std_logic := '0';
 	signal row_ready : std_logic;
 begin
 
-	i1d : entity work.idct_2D port map (
+	i2d : entity work.idct_2D port map (
 		clk => clock,
 		reset => reset,
 
@@ -80,6 +80,8 @@ begin
 		wait until rising_edge(clock);
 		reset <= '0';
 		wait until rising_edge(clock);
+		reset <= '1';
+		wait until rising_edge(clock);
 
 		--
 		-- PASS 1
@@ -87,6 +89,7 @@ begin
 		report("PASS 1");
 
 		wait until rising_edge(clock);
+		trigger_row <= '1';
 
 		i0 <= std_logic_vector(to_signed(100, i0'length));
 		i1 <= std_logic_vector(to_signed(0, i1'length));
@@ -173,6 +176,20 @@ begin
 		i5 <= std_logic_vector(to_signed(0, i5'length));
 		i6 <= std_logic_vector(to_signed(0, i6'length));
 		i7 <= std_logic_vector(to_signed(100, i7'length));
+
+		wait until rising_edge(clock);
+
+		trigger_row <= '0';
+
+		wait until rising_edge(clock);
+		wait until rising_edge(clock);
+		wait until rising_edge(clock);
+		wait until rising_edge(clock);
+		wait until rising_edge(clock);
+		wait until rising_edge(clock);
+		wait until rising_edge(clock);
+
+		read_row <= '1';
 
 		wait until rising_edge(clock);
 		wait until rising_edge(clock);

@@ -41,12 +41,12 @@ architecture main of idct_2D is
 
   signal temp_block : blk;
 
-  signal next_output_column : unsigned (2 downto 0);
   signal next_column_to_compute : unsigned (2 downto 0);
 
   signal state : unsigned (3 downto 0);
   signal count : unsigned (2 downto 0);
-  signal row_being_outputed : unsigned (2 downto 0);
+  signal processing_count : unsigned (3 downto 0);
+  signal row_being_outputed : unsigned (3 downto 0);
 
   --
   -- current state, either is_rowing = 0, is_columning = 1, is_flushing = 2
@@ -110,10 +110,10 @@ begin
     else
       state(3 downto 1) <= state(2 downto 0);
 
-      if ((i_trigger_row = '1' and current_activity = 0) or (current_activity = 1)) then
-	state(0) <= '1';
-      else 
-	state(0) <= '0';
+      if (processing_count /= 8 and ((i_trigger_row = '1' and current_activity = 0) or (current_activity = 1))) then
+		state(0) <= '1';
+      else
+		state(0) <= '0';
       end if;
     end if;
   end process;
@@ -133,6 +133,21 @@ begin
   end process;
 
   --
+  --
+  --
+  process
+  begin
+  	wait until rising_edge(clk);
+
+	if (internal_reset = '1' or (count = 7 AND state(3) = '1')) then
+	  processing_count <= to_unsigned(0, processing_count'length);
+	-- elsif ((current_activity = 0 and i_trigger_row = '1') or (current_activity = 1)) then
+	elsif (processing_count /= 8 and ((i_trigger_row = '1' and current_activity = 0) or (current_activity = 1))) then
+	  processing_count <= processing_count + 1;
+	end if;
+  end process;
+
+  --
   -- Rowing?
   --
   process
@@ -142,14 +157,14 @@ begin
     if (internal_reset = '1') then
       -- By default first thing to do is the rows
       current_activity <= to_unsigned(0, current_activity'length);
-    elsif (count = 7) then   
+    elsif (count = 7 AND state(3) = '1') then
       -- After 8 rows or columns update activity
       current_activity <= current_activity + 1;
     end if;
   end process;
 
   --
-  -- 
+  --
   --
   process
   begin
@@ -251,15 +266,15 @@ begin
   begin
     wait until rising_edge(clk);
 
-    if (current_activity /= 2) then 
+    if (current_activity /= 2) then
       row_being_outputed <= to_unsigned(0, row_being_outputed'length);
     elsif (i_read_row = '1') then
       row_being_outputed <= row_being_outputed + 1;
-    end if; 
+    end if;
   end process;
 
 
-  internal_reset <= '1' when (reset = '0' OR (i_read_row = '1' AND row_being_outputed = 7)) else '0';
+  internal_reset <= '1' when (reset = '0' OR (i_read_row = '1' AND row_being_outputed = 8)) else '0';
   pass <= '1' when (current_activity = 1) else '0';
 
 end architecture main;
