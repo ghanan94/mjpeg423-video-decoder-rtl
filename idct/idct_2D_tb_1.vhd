@@ -81,13 +81,7 @@ begin
 		wait until rising_edge(clock);
 		reset <= '1';
 		wait until rising_edge(clock);
-
-		--
-		-- PASS 1
-		--
-		report("PASS 1");
-
-		wait until rising_edge(clock);
+		
 		trigger_row <= '1';
 
 		i0 <= std_logic_vector(to_signed(100, i0'length));
