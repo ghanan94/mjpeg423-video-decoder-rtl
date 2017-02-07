@@ -247,7 +247,7 @@ begin
 
 	internal_reset <= '1' when ((reset = '0')
 		OR ((current_activity = OUTPUTTING_ROWS)
-			AND (started_processing_count = 7))) else '0';
+			AND (started_processing_count = 7) AND (i_read_row = '1'))) else '0';
 	pass <= '1' when (current_activity = COMPUTING_COLUMNS) else '0';
 	idct_1d_done <= idct_1d_pineline_tracker(2);
 	idct_1d_almost_done <= idct_1d_pineline_tracker(1);
