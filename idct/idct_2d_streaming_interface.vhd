@@ -31,10 +31,16 @@ architecture main of idct_2D_streaming_interface is
   signal i_trigger_row : std_logic;
   signal i_read_row : std_logic;
   signal o_row_ready : std_logic;
+  
   signal input_row_offset : unsigned (2 downto 0);
   signal input_row_count : unsigned (3 downto 0);
   signal internal_o_ready : std_logic;
   signal input_row_offset_MSB_prev : std_logic;
+
+  signal output_row_offset : unsigned (2 downto 0);
+  signal output_row_count : unsigned (3 downto 0);
+
+  signal internal_reset : std_logic;
   
   begin
 
@@ -64,11 +70,14 @@ architecture main of idct_2D_streaming_interface is
     o_row_ready => o_row_ready
   );
 
+--
+-- Update input_row_offset
+--
 process
 begin
   wait until rising_edge(clk);
 
-  if (reset = '0') then
+  if (internal_reset = '1') then
 	input_row_offset <= (others => '0');
   elsif (i_valid = '1' AND internal_o_ready = '1') then
 	input_row_offset <= input_row_offset + 1;
@@ -84,7 +93,7 @@ process
 begin
   wait until rising_edge(clk);
 
-  if (reset = '0') then
+  if (internal_reset = '1') then
 	input_row_count <= (others => '0');
   elsif (i_valid = '1' AND internal_o_ready = '1' AND input_row_offset(1 downto 0) = 3) then
 	input_row_count <= input_row_count + 1;
@@ -112,11 +121,50 @@ process
 begin
   wait until rising_edge(clk);
 
-  if (reset = '0') then
+  if (internal_reset = '1') then
 	input_row_offset_MSB_prev <= '0';
   else
     input_row_offset_MSB_prev <= input_row_offset(2);
   end if;
 end process;
+
+--
+-- Update output_row_offset
+--
+process
+begin
+  wait until rising_edge(clk);
+
+  if (internal_reset = '1') then
+	output_row_offset <= (others => '0');
+  elsif (i_ready = '1' AND o_row_ready = '1') then
+	output_row_offset <= output_row_offset + 1;
+  end if;
+end process;
+
+--
+-- Update output_row_count
+--
+process
+begin
+  wait until rising_edge(clk);
+
+  if (internal_reset = '1') then
+	output_row_count <= (others => '0');
+  elsif (i_read_row = '1') then
+	output_row_count <= output_row_count + 1;
+  end if;
+end process;
+
+o_valid <= o_row_ready;
+i_read_row <= '1' when (i_ready = '1' AND o_row_ready = '1' AND output_row_offset(1 downto 0) = 3) else '0';
+
+internal_reset <= '1' when ((i_read_row = '1' AND output_row_count = 7) OR reset = '0') else '0';
+
+--
+-- O_data
+--
+o_data(15 downto 0)  <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '0')));
+o_data(31 downto 16) <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '1')));
 
 end architecture main;
