@@ -113,7 +113,7 @@
    {
       datum baseAddress
       {
-         value = "537924832";
+         value = "537924912";
          type = "String";
       }
    }
@@ -134,8 +134,16 @@
    {
       datum baseAddress
       {
-         value = "537924816";
+         value = "537924896";
          type = "String";
+      }
+   }
+   element idct_accelerator_2d
+   {
+      datum _sortIndex
+      {
+         value = "24";
+         type = "int";
       }
    }
    element jtag_uart
@@ -155,7 +163,7 @@
    {
       datum baseAddress
       {
-         value = "537924872";
+         value = "537924968";
          type = "String";
       }
    }
@@ -176,7 +184,7 @@
    {
       datum baseAddress
       {
-         value = "537924848";
+         value = "537924928";
          type = "String";
       }
    }
@@ -197,7 +205,7 @@
    {
       datum baseAddress
       {
-         value = "537924736";
+         value = "537924768";
          type = "String";
       }
    }
@@ -218,7 +226,7 @@
    {
       datum baseAddress
       {
-         value = "537924704";
+         value = "537924736";
          type = "String";
       }
    }
@@ -248,6 +256,54 @@
       datum baseAddress
       {
          value = "0";
+         type = "String";
+      }
+   }
+   element mdma_from_idct_accel
+   {
+      datum _sortIndex
+      {
+         value = "26";
+         type = "int";
+      }
+   }
+   element mdma_from_idct_accel.csr
+   {
+      datum baseAddress
+      {
+         value = "537924672";
+         type = "String";
+      }
+   }
+   element mdma_from_idct_accel.descriptor_slave
+   {
+      datum baseAddress
+      {
+         value = "537924864";
+         type = "String";
+      }
+   }
+   element mdma_to_idct_accel
+   {
+      datum _sortIndex
+      {
+         value = "25";
+         type = "int";
+      }
+   }
+   element mdma_to_idct_accel.csr
+   {
+      datum baseAddress
+      {
+         value = "537924704";
+         type = "String";
+      }
+   }
+   element mdma_to_idct_accel.descriptor_slave
+   {
+      datum baseAddress
+      {
+         value = "537924880";
          type = "String";
       }
    }
@@ -352,7 +408,7 @@
    {
       datum baseAddress
       {
-         value = "537924864";
+         value = "537924960";
          type = "String";
       }
    }
@@ -373,7 +429,7 @@
    {
       datum baseAddress
       {
-         value = "537924768";
+         value = "537924800";
          type = "String";
       }
    }
@@ -426,7 +482,7 @@
    {
       datum baseAddress
       {
-         value = "537924672";
+         value = "537924832";
          type = "String";
       }
    }
@@ -434,7 +490,7 @@
    {
       datum baseAddress
       {
-         value = "537924800";
+         value = "537924944";
          type = "String";
       }
    }
@@ -568,7 +624,7 @@
   <parameter name="dataAddrWidth" value="30" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /><slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /><slave name='cpu.debug_mem_slave' start='0x20100800' end='0x20101000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sd_cont.slave' start='0x20101000' end='0x20101400' type='sd_cont.slave' /><slave name='timer_1.s1' start='0x20101400' end='0x20101440' type='altera_avalon_timer.s1' /><slave name='video_dma.csr' start='0x20101440' end='0x20101460' type='altera_msgdma.csr' /><slave name='ledr.s1' start='0x20101460' end='0x20101480' type='altera_avalon_pio.s1' /><slave name='ledg.s1' start='0x20101480' end='0x201014A0' type='altera_avalon_pio.s1' /><slave name='timer_0.s1' start='0x201014A0' end='0x201014C0' type='altera_avalon_timer.s1' /><slave name='video_dma.descriptor_slave' start='0x201014C0' end='0x201014D0' type='altera_msgdma.descriptor_slave' /><slave name='i2c_sda.s1' start='0x201014D0' end='0x201014E0' type='altera_avalon_pio.s1' /><slave name='i2c_scl.s1' start='0x201014E0' end='0x201014F0' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x201014F0' end='0x20101500' type='altera_avalon_pio.s1' /><slave name='sysid.control_slave' start='0x20101500' end='0x20101508' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x20101508' end='0x20101510' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /><slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /><slave name='cpu.debug_mem_slave' start='0x20100800' end='0x20101000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sd_cont.slave' start='0x20101000' end='0x20101400' type='sd_cont.slave' /><slave name='timer_1.s1' start='0x20101400' end='0x20101440' type='altera_avalon_timer.s1' /><slave name='mdma_from_idct_accel.csr' start='0x20101440' end='0x20101460' type='altera_msgdma.csr' /><slave name='mdma_to_idct_accel.csr' start='0x20101460' end='0x20101480' type='altera_msgdma.csr' /><slave name='ledr.s1' start='0x20101480' end='0x201014A0' type='altera_avalon_pio.s1' /><slave name='ledg.s1' start='0x201014A0' end='0x201014C0' type='altera_avalon_pio.s1' /><slave name='timer_0.s1' start='0x201014C0' end='0x201014E0' type='altera_avalon_timer.s1' /><slave name='video_dma.csr' start='0x201014E0' end='0x20101500' type='altera_msgdma.csr' /><slave name='mdma_from_idct_accel.descriptor_slave' start='0x20101500' end='0x20101510' type='altera_msgdma.descriptor_slave' /><slave name='mdma_to_idct_accel.descriptor_slave' start='0x20101510' end='0x20101520' type='altera_msgdma.descriptor_slave' /><slave name='i2c_sda.s1' start='0x20101520' end='0x20101530' type='altera_avalon_pio.s1' /><slave name='i2c_scl.s1' start='0x20101530' end='0x20101540' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x20101540' end='0x20101550' type='altera_avalon_pio.s1' /><slave name='video_dma.descriptor_slave' start='0x20101550' end='0x20101560' type='altera_msgdma.descriptor_slave' /><slave name='sysid.control_slave' start='0x20101560' end='0x20101568' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x20101568' end='0x20101570' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -614,7 +670,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="31" />
+  <parameter name="internalIrqMaskSystemInfo" value="127" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -752,6 +808,11 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="1" />
  </module>
+ <module
+   name="idct_accelerator_2d"
+   kind="2d_idct_accelerator"
+   version="2.0"
+   enabled="1" />
  <module
    name="jtag_uart"
    kind="altera_avalon_jtag_uart"
@@ -969,7 +1030,7 @@
   <parameter name="NUM_DLL_SHARING_INTERFACES" value="1" />
   <parameter name="NUM_EXTRA_REPORT_PATH" value="10" />
   <parameter name="NUM_OCT_SHARING_INTERFACES" value="1" />
-  <parameter name="NUM_OF_PORTS" value="2" />
+  <parameter name="NUM_OF_PORTS" value="3" />
   <parameter name="NUM_PLL_SHARING_INTERFACES" value="1" />
   <parameter name="OCT_SHARING_MODE" value="None" />
   <parameter name="P2C_READ_CLOCK_ADD_PHASE" value="0.0" />
@@ -1125,6 +1186,98 @@
   <parameter name="USE_SEQUENCER_BFM" value="false" />
   <parameter name="WEIGHT_PORT" value="0,0,0,0,0,0" />
   <parameter name="WRBUFFER_ADDR_WIDTH" value="6" />
+ </module>
+ <module
+   name="mdma_from_idct_accel"
+   kind="altera_msgdma"
+   version="15.1"
+   enabled="1">
+  <parameter name="AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_MAP" value="" />
+  <parameter
+     name="AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_WIDTH"
+     value="AddressWidth = -1" />
+  <parameter name="AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_MAP" value="" />
+  <parameter
+     name="AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_WIDTH"
+     value="AddressWidth = -1" />
+  <parameter name="AUTO_DEVICE" value="5CGXFC5C6F27C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7_H6" />
+  <parameter name="AUTO_MM_READ_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_MM_READ_ADDRESS_WIDTH" value="AddressWidth = -1" />
+  <parameter name="AUTO_MM_WRITE_ADDRESS_MAP"><![CDATA[<address-map><slave name='lpddr2.avl_2' start='0x0' end='0x20000000' /></address-map>]]></parameter>
+  <parameter name="AUTO_MM_WRITE_ADDRESS_WIDTH" value="AddressWidth = 29" />
+  <parameter name="BURST_ENABLE" value="1" />
+  <parameter name="BURST_WRAPPING_SUPPORT" value="1" />
+  <parameter name="CHANNEL_ENABLE" value="0" />
+  <parameter name="CHANNEL_WIDTH" value="8" />
+  <parameter name="DATA_FIFO_DEPTH" value="1024" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="DESCRIPTOR_FIFO_DEPTH" value="16" />
+  <parameter name="ENHANCED_FEATURES" value="0" />
+  <parameter name="ERROR_ENABLE" value="0" />
+  <parameter name="ERROR_WIDTH" value="8" />
+  <parameter name="FIX_ADDRESS_WIDTH" value="32" />
+  <parameter name="MAX_BURST_COUNT" value="128" />
+  <parameter name="MAX_BYTE" value="536870912" />
+  <parameter name="MAX_STRIDE" value="1" />
+  <parameter name="MODE" value="2" />
+  <parameter name="PACKET_ENABLE" value="0" />
+  <parameter name="PREFETCHER_DATA_WIDTH" value="32" />
+  <parameter name="PREFETCHER_ENABLE" value="0" />
+  <parameter name="PREFETCHER_MAX_READ_BURST_COUNT" value="2" />
+  <parameter name="PREFETCHER_READ_BURST_ENABLE" value="0" />
+  <parameter name="PROGRAMMABLE_BURST_ENABLE" value="0" />
+  <parameter name="RESPONSE_PORT" value="2" />
+  <parameter name="STRIDE_ENABLE" value="0" />
+  <parameter name="TRANSFER_TYPE">Full Word Accesses Only</parameter>
+  <parameter name="USE_FIX_ADDRESS_WIDTH" value="0" />
+ </module>
+ <module
+   name="mdma_to_idct_accel"
+   kind="altera_msgdma"
+   version="15.1"
+   enabled="1">
+  <parameter name="AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_MAP" value="" />
+  <parameter
+     name="AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_WIDTH"
+     value="AddressWidth = -1" />
+  <parameter name="AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_MAP" value="" />
+  <parameter
+     name="AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_WIDTH"
+     value="AddressWidth = -1" />
+  <parameter name="AUTO_DEVICE" value="5CGXFC5C6F27C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7_H6" />
+  <parameter name="AUTO_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='lpddr2.avl_1' start='0x0' end='0x20000000' /></address-map>]]></parameter>
+  <parameter name="AUTO_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 29" />
+  <parameter name="AUTO_MM_WRITE_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_MM_WRITE_ADDRESS_WIDTH" value="AddressWidth = -1" />
+  <parameter name="BURST_ENABLE" value="1" />
+  <parameter name="BURST_WRAPPING_SUPPORT" value="1" />
+  <parameter name="CHANNEL_ENABLE" value="0" />
+  <parameter name="CHANNEL_WIDTH" value="8" />
+  <parameter name="DATA_FIFO_DEPTH" value="1024" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="DESCRIPTOR_FIFO_DEPTH" value="16" />
+  <parameter name="ENHANCED_FEATURES" value="0" />
+  <parameter name="ERROR_ENABLE" value="0" />
+  <parameter name="ERROR_WIDTH" value="8" />
+  <parameter name="FIX_ADDRESS_WIDTH" value="32" />
+  <parameter name="MAX_BURST_COUNT" value="128" />
+  <parameter name="MAX_BYTE" value="536870912" />
+  <parameter name="MAX_STRIDE" value="1" />
+  <parameter name="MODE" value="1" />
+  <parameter name="PACKET_ENABLE" value="0" />
+  <parameter name="PREFETCHER_DATA_WIDTH" value="32" />
+  <parameter name="PREFETCHER_ENABLE" value="0" />
+  <parameter name="PREFETCHER_MAX_READ_BURST_COUNT" value="2" />
+  <parameter name="PREFETCHER_READ_BURST_ENABLE" value="0" />
+  <parameter name="PROGRAMMABLE_BURST_ENABLE" value="0" />
+  <parameter name="RESPONSE_PORT" value="2" />
+  <parameter name="STRIDE_ENABLE" value="0" />
+  <parameter name="TRANSFER_TYPE">Full Word Accesses Only</parameter>
+  <parameter name="USE_FIX_ADDRESS_WIDTH" value="0" />
  </module>
  <module name="pixel_conv" kind="Pixel_Conv" version="1.0" enabled="1">
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
@@ -1580,7 +1733,7 @@
    start="cpu.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101508" />
+  <parameter name="baseAddress" value="0x20101568" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1598,7 +1751,7 @@
    start="cpu.data_master"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101500" />
+  <parameter name="baseAddress" value="0x20101560" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1606,6 +1759,24 @@
    version="15.1"
    start="cpu.data_master"
    end="video_dma.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x201014e0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.1"
+   start="cpu.data_master"
+   end="mdma_to_idct_accel.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x20101460" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.1"
+   start="cpu.data_master"
+   end="mdma_from_idct_accel.csr">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x20101440" />
   <parameter name="defaultConnection" value="false" />
@@ -1625,17 +1796,35 @@
    start="cpu.data_master"
    end="video_dma.descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014c0" />
+  <parameter name="baseAddress" value="0x20101550" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.1"
+   start="cpu.data_master"
+   end="mdma_to_idct_accel.descriptor_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x20101510" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.1"
+   start="cpu.data_master"
+   end="mdma_from_idct_accel.descriptor_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x20101500" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu.data_master" end="timer_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014a0" />
+  <parameter name="baseAddress" value="0x201014c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu.data_master" end="key.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014f0" />
+  <parameter name="baseAddress" value="0x20101540" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu.data_master" end="timer_1.s1">
@@ -1645,22 +1834,22 @@
  </connection>
  <connection kind="avalon" version="15.1" start="cpu.data_master" end="ledg.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101480" />
+  <parameter name="baseAddress" value="0x201014a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu.data_master" end="ledr.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101460" />
+  <parameter name="baseAddress" value="0x20101480" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu.data_master" end="i2c_scl.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014e0" />
+  <parameter name="baseAddress" value="0x20101530" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu.data_master" end="i2c_sda.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014d0" />
+  <parameter name="baseAddress" value="0x20101520" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1710,7 +1899,7 @@
    start="sd_cont.master"
    end="video_dma.descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014c0" />
+  <parameter name="baseAddress" value="0x20101550" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1723,6 +1912,29 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
+   kind="avalon"
+   version="15.1"
+   start="mdma_to_idct_accel.mm_read"
+   end="lpddr2.avl_1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.1"
+   start="mdma_from_idct_accel.mm_write"
+   end="lpddr2.avl_2">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon_streaming"
+   version="15.1"
+   start="idct_accelerator_2d.avalon_streaming_source"
+   end="mdma_from_idct_accel.st_sink" />
+ <connection
    kind="avalon_streaming"
    version="15.1"
    start="video_fifo.out"
@@ -1732,6 +1944,11 @@
    version="15.1"
    start="pixel_conv.out"
    end="video.in" />
+ <connection
+   kind="avalon_streaming"
+   version="15.1"
+   start="mdma_to_idct_accel.st_source"
+   end="idct_accelerator_2d.avalon_streaming_sink" />
  <connection
    kind="avalon_streaming"
    version="15.1"
@@ -1765,12 +1982,32 @@
    kind="clock"
    version="15.1"
    start="clk_125.clk"
+   end="idct_accelerator_2d.clock" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
+   end="mdma_to_idct_accel.clock" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
+   end="mdma_from_idct_accel.clock" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
    end="lpddr2.mp_cmd_clk_0" />
  <connection
    kind="clock"
    version="15.1"
    start="clk_125.clk"
    end="lpddr2.mp_cmd_clk_1" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
+   end="lpddr2.mp_cmd_clk_2" />
  <connection
    kind="clock"
    version="15.1"
@@ -1786,6 +2023,11 @@
    version="15.1"
    start="clk_125.clk"
    end="lpddr2.mp_wfifo_clk_0" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
+   end="lpddr2.mp_wfifo_clk_1" />
  <connection
    kind="clock"
    version="15.1"
@@ -1823,6 +2065,20 @@
    start="cpu.irq"
    end="video_dma.csr_irq">
   <parameter name="irqNumber" value="3" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.1"
+   start="cpu.irq"
+   end="mdma_to_idct_accel.csr_irq">
+  <parameter name="irqNumber" value="5" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.1"
+   start="cpu.irq"
+   end="mdma_from_idct_accel.csr_irq">
+  <parameter name="irqNumber" value="6" />
  </connection>
  <connection kind="interrupt" version="15.1" start="cpu.irq" end="timer_0.irq">
   <parameter name="irqNumber" value="0" />
@@ -1875,6 +2131,11 @@
    kind="reset"
    version="15.1"
    start="reset_controller_0.reset_out"
+   end="lpddr2.mp_cmd_reset_n_2" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
    end="lpddr2.mp_rfifo_reset_n_0" />
  <connection
    kind="reset"
@@ -1886,6 +2147,11 @@
    version="15.1"
    start="reset_controller_0.reset_out"
    end="lpddr2.mp_wfifo_reset_n_0" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="lpddr2.mp_wfifo_reset_n_1" />
  <connection
    kind="reset"
    version="15.1"
@@ -1965,12 +2231,27 @@
    kind="reset"
    version="15.1"
    start="reset_controller_0.reset_out"
+   end="idct_accelerator_2d.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
    end="video_fifo.reset_in" />
  <connection
    kind="reset"
    version="15.1"
    start="reset_controller_0.reset_out"
    end="video_dma.reset_n" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="mdma_to_idct_accel.reset_n" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="mdma_from_idct_accel.reset_n" />
  <connection
    kind="reset"
    version="15.1"

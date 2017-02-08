@@ -16,6 +16,7 @@ module ECE423_QSYS (
 	lpddr2_mem_dq,
 	lpddr2_mem_dqs,
 	lpddr2_mem_dqs_n,
+	lpddr2_global_reset_reset_n,
 	lpddr2_oct_rzqin,
 	lpddr2_pll_ref_clk_clk,
 	lpddr2_pll_sharing_pll_mem_clk,
@@ -45,8 +46,7 @@ module ECE423_QSYS (
 	video_HD,
 	video_VD,
 	video_DEN,
-	video_clk_clk,
-	lpddr2_global_reset_reset_n);	
+	video_clk_clk);	
 
 	input		clk_125_clk;
 	input		clk_50_clk;
@@ -64,6 +64,7 @@ module ECE423_QSYS (
 	inout	[31:0]	lpddr2_mem_dq;
 	inout	[3:0]	lpddr2_mem_dqs;
 	inout	[3:0]	lpddr2_mem_dqs_n;
+	input		lpddr2_global_reset_reset_n;
 	input		lpddr2_oct_rzqin;
 	input		lpddr2_pll_ref_clk_clk;
 	output		lpddr2_pll_sharing_pll_mem_clk;
@@ -94,5 +95,4 @@ module ECE423_QSYS (
 	output		video_VD;
 	output		video_DEN;
 	output		video_clk_clk;
-	input		lpddr2_global_reset_reset_n;
 endmodule
