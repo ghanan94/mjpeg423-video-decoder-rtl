@@ -20,9 +20,9 @@
 // Altera IRQ Mapper
 //
 // Parameters
-//   NUM_RCVRS        : 5
+//   NUM_RCVRS        : 7
 //   SENDER_IRW_WIDTH : 32
-//   IRQ_MAP          : 0:3,1:0,2:1,3:2,4:4
+//   IRQ_MAP          : 0:3,1:5,2:6,3:0,4:1,5:2,6:4
 //
 // -------------------------------------------------------
 
@@ -44,6 +44,8 @@ module ECE423_QSYS_irq_mapper
     input                receiver2_irq,
     input                receiver3_irq,
     input                receiver4_irq,
+    input                receiver5_irq,
+    input                receiver6_irq,
 
     // -------------------
     // Command Source (Output)
@@ -56,10 +58,12 @@ module ECE423_QSYS_irq_mapper
 	sender_irq = 0;
 
         sender_irq[3] = receiver0_irq;
-        sender_irq[0] = receiver1_irq;
-        sender_irq[1] = receiver2_irq;
-        sender_irq[2] = receiver3_irq;
-        sender_irq[4] = receiver4_irq;
+        sender_irq[5] = receiver1_irq;
+        sender_irq[6] = receiver2_irq;
+        sender_irq[0] = receiver3_irq;
+        sender_irq[1] = receiver4_irq;
+        sender_irq[2] = receiver5_irq;
+        sender_irq[4] = receiver6_irq;
     end
 
 endmodule

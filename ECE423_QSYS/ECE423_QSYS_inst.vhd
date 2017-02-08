@@ -16,6 +16,7 @@
 			lpddr2_mem_dq                                : inout std_logic_vector(31 downto 0) := (others => 'X'); -- mem_dq
 			lpddr2_mem_dqs                               : inout std_logic_vector(3 downto 0)  := (others => 'X'); -- mem_dqs
 			lpddr2_mem_dqs_n                             : inout std_logic_vector(3 downto 0)  := (others => 'X'); -- mem_dqs_n
+			lpddr2_global_reset_reset_n                  : in    std_logic                     := 'X';             -- reset_n
 			lpddr2_oct_rzqin                             : in    std_logic                     := 'X';             -- rzqin
 			lpddr2_pll_ref_clk_clk                       : in    std_logic                     := 'X';             -- clk
 			lpddr2_pll_sharing_pll_mem_clk               : out   std_logic;                                        -- pll_mem_clk
@@ -45,8 +46,7 @@
 			video_HD                                     : out   std_logic;                                        -- HD
 			video_VD                                     : out   std_logic;                                        -- VD
 			video_DEN                                    : out   std_logic;                                        -- DEN
-			video_clk_clk                                : out   std_logic;                                        -- clk
-			lpddr2_global_reset_reset_n                  : in    std_logic                     := 'X'              -- reset_n
+			video_clk_clk                                : out   std_logic                                         -- clk
 		);
 	end component ECE423_QSYS;
 
@@ -68,6 +68,7 @@
 			lpddr2_mem_dq                                => CONNECTED_TO_lpddr2_mem_dq,                                --                    .mem_dq
 			lpddr2_mem_dqs                               => CONNECTED_TO_lpddr2_mem_dqs,                               --                    .mem_dqs
 			lpddr2_mem_dqs_n                             => CONNECTED_TO_lpddr2_mem_dqs_n,                             --                    .mem_dqs_n
+			lpddr2_global_reset_reset_n                  => CONNECTED_TO_lpddr2_global_reset_reset_n,                  -- lpddr2_global_reset.reset_n
 			lpddr2_oct_rzqin                             => CONNECTED_TO_lpddr2_oct_rzqin,                             --          lpddr2_oct.rzqin
 			lpddr2_pll_ref_clk_clk                       => CONNECTED_TO_lpddr2_pll_ref_clk_clk,                       --  lpddr2_pll_ref_clk.clk
 			lpddr2_pll_sharing_pll_mem_clk               => CONNECTED_TO_lpddr2_pll_sharing_pll_mem_clk,               --  lpddr2_pll_sharing.pll_mem_clk
@@ -97,7 +98,6 @@
 			video_HD                                     => CONNECTED_TO_video_HD,                                     --                    .HD
 			video_VD                                     => CONNECTED_TO_video_VD,                                     --                    .VD
 			video_DEN                                    => CONNECTED_TO_video_DEN,                                    --                    .DEN
-			video_clk_clk                                => CONNECTED_TO_video_clk_clk,                                --           video_clk.clk
-			lpddr2_global_reset_reset_n                  => CONNECTED_TO_lpddr2_global_reset_reset_n                   -- lpddr2_global_reset.reset_n
+			video_clk_clk                                => CONNECTED_TO_video_clk_clk                                 --           video_clk.clk
 		);
 
