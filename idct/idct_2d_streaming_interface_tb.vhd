@@ -847,7 +847,7 @@ begin
     -- Wait for module to be done processing our row data
     --
     wait until rising_edge(src_valid);
-    report("Time for T1 Output");
+    report("Time for T2 Output");
 
     --
     -- T2: Row 0
@@ -1225,13 +1225,14 @@ begin
 
     wait until rising_edge(clk);
     assert(src_valid = '0');
+    
     --
     -- Wait for module to be done processing our row data
     --
-    wait until rising_edge(src_valid);
-    report("Time for T2 Output");
+    --wait until rising_edge(src_valid);
+    --report("Time for Tn Output");
 
-    wait until rising_edge(clk);
+    --wait until rising_edge(clk);
 
     report("Done Outputs");
     wait;
