@@ -21,6 +21,9 @@ architecture main of idct_2D_streaming_interface_tb is
   signal src_data : std_logic_vector(31 downto 0);
   signal src_valid : std_logic;
   signal src_ready : std_logic := '0';
+
+  signal dest_data_2 : std_logic_vector(31 downto 0);
+  signal src_data_2 : std_logic_vector(31 downto 0);
 begin
 
   idct_2d_streamer : entity work.idct_2D_streaming_interface(main)
@@ -28,14 +31,24 @@ begin
     clk => clk,
     reset_n => reset,
 
-    o_data => src_data, 
+    o_data => src_data_2, 
     o_valid => src_valid,
     i_ready => src_ready, 
 
-    i_data => dest_data, 
+    i_data => dest_data_2, 
     i_valid => dest_valid, 
     o_ready => dest_ready
   );
+
+  dest_data_2(31 downto 24) <= dest_data(7 downto 0);
+  dest_data_2(23 downto 16) <= dest_data(15 downto 8);
+  dest_data_2(15 downto 8) <= dest_data(23 downto 16);
+  dest_data_2(7 downto 0) <= dest_data(31 downto 24);
+
+  src_data(31 downto 24) <= src_data_2(7 downto 0);
+  src_data(23 downto 16) <= src_data_2(15 downto 8);
+  src_data(15 downto 8) <= src_data_2(23 downto 16);
+  src_data(7 downto 0) <= src_data_2(31 downto 24);
 
   -- clock
   process
