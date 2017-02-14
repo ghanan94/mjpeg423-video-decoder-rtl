@@ -49,6 +49,22 @@
          type = "String";
       }
    }
+   element ECE423_QSYS
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element ECE423_QSYS
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element clk_125
    {
       datum _sortIndex
@@ -2231,11 +2247,6 @@
    kind="reset"
    version="15.1"
    start="reset_controller_0.reset_out"
-   end="idct_accelerator_2d.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="reset_controller_0.reset_out"
    end="video_fifo.reset_in" />
  <connection
    kind="reset"
@@ -2252,6 +2263,11 @@
    version="15.1"
    start="reset_controller_0.reset_out"
    end="mdma_from_idct_accel.reset_n" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="idct_accelerator_2d.reset_n" />
  <connection
    kind="reset"
    version="15.1"

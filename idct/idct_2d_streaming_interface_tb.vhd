@@ -26,7 +26,7 @@ begin
   idct_2d_streamer : entity work.idct_2D_streaming_interface(main)
   port map (
     clk => clk,
-    reset => reset,
+    reset_n => reset,
 
     o_data => src_data, 
     o_valid => src_valid,
@@ -51,6 +51,7 @@ begin
   begin
     wait until rising_edge(clk);
     reset <= '0';
+    wait until rising_edge(clk);
     wait until rising_edge(clk);
     reset <= '1';
     wait;

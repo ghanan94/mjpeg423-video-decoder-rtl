@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="ECE423_QSYS" kind="system" version="15.1" fabric="QSYS">
  <!-- Format version 15.1 185 (Future versions may contain additional information.) -->
- <!-- 2017.02.07.20:37:13 -->
+ <!-- 2017.02.13.16:19:17 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1486517606</value>
+  <value>1487020509</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -5689,51 +5689,6 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="15.1">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="associatedClock">
-    <type>java.lang.String</type>
-    <value>clock</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="synchronousEdges">
-    <type>com.altera.sopcmodel.reset.Reset$Edges</type>
-    <value>DEASSERT</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>reset</type>
-   <isStart>false</isStart>
-   <port>
-    <name>reset</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>reset</role>
-   </port>
-  </interface>
   <interface
      name="avalon_streaming_sink"
      kind="avalon_streaming_sink"
@@ -5751,7 +5706,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="associatedReset">
     <type>java.lang.String</type>
-    <value>reset</value>
+    <value>reset_n</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -5891,7 +5846,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="associatedReset">
     <type>java.lang.String</type>
-    <value>reset</value>
+    <value>reset_n</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -6012,6 +5967,51 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>1</width>
     <role>valid</role>
+   </port>
+  </interface>
+  <interface name="reset_n" kind="reset_sink" version="15.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>clock</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="synchronousEdges">
+    <type>com.altera.sopcmodel.reset.Reset$Edges</type>
+    <value>DEASSERT</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>reset</type>
+   <isStart>false</isStart>
+   <port>
+    <name>reset_n</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>reset_n</role>
    </port>
   </interface>
  </module>
@@ -31262,7 +31262,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1486517606</value>
+   <value>1487020509</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -31282,7 +31282,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1486517606</value>
+   <value>1487020509</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -31298,7 +31298,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1486517606</value>
+   <value>1487020509</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -55288,33 +55288,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="reset_controller_0.reset_out/idct_accelerator_2d.reset"
-   kind="reset"
-   version="15.1"
-   start="reset_controller_0.reset_out"
-   end="idct_accelerator_2d.reset">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>reset_controller_0</startModule>
-  <startConnectionPoint>reset_out</startConnectionPoint>
-  <endModule>idct_accelerator_2d</endModule>
-  <endConnectionPoint>reset</endConnectionPoint>
- </connection>
- <connection
    name="reset_controller_0.reset_out/video_fifo.reset_in"
    kind="reset"
    version="15.1"
@@ -55420,6 +55393,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>reset_controller_0</startModule>
   <startConnectionPoint>reset_out</startConnectionPoint>
   <endModule>mdma_from_idct_accel</endModule>
+  <endConnectionPoint>reset_n</endConnectionPoint>
+ </connection>
+ <connection
+   name="reset_controller_0.reset_out/idct_accelerator_2d.reset_n"
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="idct_accelerator_2d.reset_n">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>reset_controller_0</startModule>
+  <startConnectionPoint>reset_out</startConnectionPoint>
+  <endModule>idct_accelerator_2d</endModule>
   <endConnectionPoint>reset_n</endConnectionPoint>
  </connection>
  <connection
@@ -58614,5 +58614,5 @@ parameters are a RESULT of the module parameters. -->
   <version>15.1</version>
  </plugin>
  <reportVersion>15.1 185</reportVersion>
- <uniqueIdentifier>08606E7A773A0000015A1B5ADD7A</uniqueIdentifier>
+ <uniqueIdentifier>08606E7A773A0000015A395497C5</uniqueIdentifier>
 </EnsembleReport>

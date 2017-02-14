@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity idct_2D_streaming_interface is
 port(
   signal clk: in std_logic;				-- CPU system clock (always required)
-  signal reset: in std_logic;
+  signal reset_n: in std_logic;
 
 --
 -- Data SOURCE Streaming Interface
@@ -46,7 +46,7 @@ architecture main of idct_2D_streaming_interface is
 
   i2d : entity work.idct_2D port map (
   	clk => clk,
-  	reset => reset,
+  	reset => reset_n,
 
     i_row0 => temp_i_row(0),
     i_row1 => temp_i_row(1),
@@ -100,7 +100,7 @@ begin
   end if;
 end process;
 
-internal_o_ready <= (reset AND NOT input_row_count(3));
+internal_o_ready <= (reset_n AND NOT input_row_count(3));
 o_ready <= internal_o_ready;
 
 --
@@ -159,7 +159,7 @@ end process;
 o_valid <= o_row_ready;
 i_read_row <= '1' when (i_ready = '1' AND o_row_ready = '1' AND output_row_offset(1 downto 0) = 3) else '0';
 
-internal_reset <= '1' when ((i_read_row = '1' AND output_row_count = 7) OR reset = '0') else '0';
+internal_reset <= '1' when ((i_read_row = '1' AND output_row_count = 7) OR reset_n = '0') else '0';
 
 --
 -- O_data
