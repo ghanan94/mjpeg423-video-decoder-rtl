@@ -136,18 +136,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "HDMI_TX_DE",
-					"strict" : false
-				},
-				{
-					"name" : "HDMI_TX_HS",
-					"strict" : false
-				},
-				{
-					"name" : "HDMI_TX_VS",
-					"strict" : false
-				},
-				{
 					"name" : "SRAM_A[0]",
 					"strict" : false
 				},
@@ -200,7 +188,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "HDMI_TX_DE",
+					"strict" : false
+				},
+				{
+					"name" : "HDMI_TX_HS",
+					"strict" : false
+				},
+				{
+					"name" : "HDMI_TX_VS",
+					"strict" : false
+				},
+				{
 					"name" : "I2C_SCL",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_WE_n",
 					"strict" : false
 				},
 				{
@@ -269,10 +273,6 @@
 				},
 				{
 					"name" : "SRAM_OE_n",
-					"strict" : false
-				},
-				{
-					"name" : "SRAM_WE_n",
 					"strict" : false
 				},
 				{
