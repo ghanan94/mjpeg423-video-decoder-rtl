@@ -30,6 +30,12 @@ state.START_TX_FIFO 1 0 0 1
 state.START_RX_FIFO 1 0 1 0 
 state.DATA_TRANSFER 1 1 0 0 
 
+State Machine - |ECE423_C5G|ECE423_QSYS:u0|idct_2D_streaming_interface:idct_accelerator_2d|idct_2D:i2d|current_activity
+Name current_activity.OUTPUTTING_ROWS current_activity.COMPUTING_COLUMNS current_activity.COMPUTING_ROWS 
+current_activity.COMPUTING_ROWS 0 0 0 
+current_activity.COMPUTING_COLUMNS 0 1 1 
+current_activity.OUTPUTTING_ROWS 1 0 1 
+
 State Machine - |ECE423_C5G|ECE423_QSYS:u0|ECE423_QSYS_cpu:cpu|ECE423_QSYS_cpu_cpu:cpu|ECE423_QSYS_cpu_cpu_nios2_oci:the_ECE423_QSYS_cpu_cpu_nios2_oci|ECE423_QSYS_cpu_cpu_debug_slave_wrapper:the_ECE423_QSYS_cpu_cpu_debug_slave_wrapper|ECE423_QSYS_cpu_cpu_debug_slave_tck:the_ECE423_QSYS_cpu_cpu_debug_slave_tck|DRsize
 Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
 DRsize.000 0 0 0 0 0 0 
@@ -38,12 +44,6 @@ DRsize.010 0 0 0 1 0 1
 DRsize.011 0 0 1 0 0 1 
 DRsize.100 0 1 0 0 0 1 
 DRsize.101 1 0 0 0 0 1 
-
-State Machine - |ECE423_C5G|ECE423_QSYS:u0|idct_2D_streaming_interface:idct_accelerator_2d|idct_2D:i2d|current_activity
-Name current_activity.OUTPUTTING_ROWS current_activity.COMPUTING_COLUMNS current_activity.COMPUTING_ROWS 
-current_activity.COMPUTING_ROWS 0 0 0 
-current_activity.COMPUTING_COLUMNS 0 1 1 
-current_activity.OUTPUTTING_ROWS 1 0 1 
 
 State Machine - |ECE423_C5G|ECE423_QSYS:u0|ECE423_QSYS_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:i2c_sda_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 

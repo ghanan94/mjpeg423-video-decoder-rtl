@@ -37,10 +37,13 @@ architecture main of idct_2D_streaming_interface is
   signal internal_o_ready : std_logic;
   signal input_row_offset_MSB_prev : std_logic;
 
-  signal output_row_offset : unsigned (2 downto 0);
+  signal output_row_offset : unsigned (1 downto 0);
   signal output_row_count : unsigned (3 downto 0);
 
   signal internal_reset : std_logic;
+
+  type arr is array (0 to 3) of signed(15 downto 0);
+  signal intermediate_o : arr;
   
   begin
 
@@ -111,11 +114,11 @@ begin
   wait until rising_edge(clk);
 
   -- When data comes in from the MM - ST interface, it comes in as big endian.
-  temp_i_row(to_integer((input_row_offset(1 downto 0) & '0')))(15 downto 8) <= i_data(23 downto 16);
-  temp_i_row(to_integer((input_row_offset(1 downto 0) & '0')))(7 downto 0) <= i_data(31 downto 24);
+  temp_i_row(to_integer(input_row_offset(1 downto 0) & '0'))(15 downto 8) <= i_data(23 downto 16);
+  temp_i_row(to_integer(input_row_offset(1 downto 0) & '0'))(7 downto 0) <= i_data(31 downto 24);
 
-  temp_i_row(to_integer((input_row_offset(1 downto 0) & '1')))(15 downto 8) <= i_data(7 downto 0);
-  temp_i_row(to_integer((input_row_offset(1 downto 0) & '1')))(7 downto 0) <= i_data(15 downto 8);
+  temp_i_row(to_integer(input_row_offset(1 downto 0) & '1'))(15 downto 8) <= i_data(7 downto 0);
+  temp_i_row(to_integer(input_row_offset(1 downto 0) & '1'))(7 downto 0) <= i_data(15 downto 8);
 end process;
 
 --
@@ -161,16 +164,32 @@ begin
 end process;
 
 o_valid <= o_row_ready;
-i_read_row <= '1' when (i_ready = '1' AND o_row_ready = '1' AND output_row_offset(1 downto 0) = 3) else '0';
+i_read_row <= '1' when (i_ready = '1' AND o_row_ready = '1' AND output_row_offset(0) = '1') else '0';
 
 internal_reset <= '1' when ((i_read_row = '1' AND output_row_count = 7) OR reset_n = '0') else '0';
 
 --
 -- O_data
 --
-o_data(23 downto 16)  <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '0')))(15 downto 8);
-o_data(31 downto 24)  <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '0')))(7 downto 0);
-o_data(7 downto 0) <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '1')))(15 downto 8);
-o_data(15 downto 8) <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '1')))(7 downto 0);
+intermediate_o(0) <= signed(temp_o_row(to_integer(unsigned'(output_row_offset(0) & "00"))));
+intermediate_o(1) <= signed(temp_o_row(to_integer(unsigned'(output_row_offset(0) & "01"))));
+intermediate_o(2) <= signed(temp_o_row(to_integer(unsigned'(output_row_offset(0) & "10"))));
+intermediate_o(3) <= signed(temp_o_row(to_integer(unsigned'(output_row_offset(0) & "11"))));
+
+o_data(31 downto 24) <= (others => '0') when (intermediate_o(0) < 0) else
+(others => '1') when (intermediate_o(0) > 255) else
+std_logic_vector(intermediate_o(0)(7 downto 0));
+
+o_data(23 downto 16) <= (others => '0') when (intermediate_o(1) < 0) else
+(others => '1') when (intermediate_o(1) > 255) else
+std_logic_vector(intermediate_o(1)(7 downto 0));
+
+o_data(15 downto 8) <= (others => '0') when (intermediate_o(2) < 0) else
+(others => '1') when (intermediate_o(2) > 255) else
+std_logic_vector(intermediate_o(2)(7 downto 0));
+
+o_data(7 downto 0) <= (others => '0') when (intermediate_o(3) < 0) else
+(others => '1') when (intermediate_o(3) > 255) else
+std_logic_vector(intermediate_o(3)(7 downto 0));
 
 end architecture main;
