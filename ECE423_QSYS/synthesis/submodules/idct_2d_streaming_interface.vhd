@@ -110,8 +110,12 @@ process
 begin
   wait until rising_edge(clk);
 
-  temp_i_row(to_integer((input_row_offset(1 downto 0) & '0'))) <= i_data(15 downto 0);
-  temp_i_row(to_integer((input_row_offset(1 downto 0) & '1'))) <= i_data(31 downto 16);
+  -- When data comes in from the MM - ST interface, it comes in as big endian.
+  temp_i_row(to_integer((input_row_offset(1 downto 0) & '0')))(15 downto 8) <= i_data(23 downto 16);
+  temp_i_row(to_integer((input_row_offset(1 downto 0) & '0')))(7 downto 0) <= i_data(31 downto 24);
+
+  temp_i_row(to_integer((input_row_offset(1 downto 0) & '1')))(15 downto 8) <= i_data(7 downto 0);
+  temp_i_row(to_integer((input_row_offset(1 downto 0) & '1')))(7 downto 0) <= i_data(15 downto 8);
 end process;
 
 --
@@ -164,7 +168,9 @@ internal_reset <= '1' when ((i_read_row = '1' AND output_row_count = 7) OR reset
 --
 -- O_data
 --
-o_data(15 downto 0)  <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '0')));
-o_data(31 downto 16) <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '1')));
+o_data(23 downto 16)  <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '0')))(15 downto 8);
+o_data(31 downto 24)  <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '0')))(7 downto 0);
+o_data(7 downto 0) <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '1')))(15 downto 8);
+o_data(15 downto 8) <= temp_o_row(to_integer((output_row_offset(1 downto 0) & '1')))(7 downto 0);
 
 end architecture main;
