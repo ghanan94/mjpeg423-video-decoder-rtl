@@ -65,7 +65,7 @@ module ECE423_QSYS (
 	wire          mdma_to_idct_accel_st_source_valid;                                  // mdma_to_idct_accel:st_source_valid -> idct_accelerator_2d:i_valid
 	wire   [31:0] mdma_to_idct_accel_st_source_data;                                   // mdma_to_idct_accel:st_source_data -> idct_accelerator_2d:i_data
 	wire          mdma_to_idct_accel_st_source_ready;                                  // idct_accelerator_2d:o_ready -> mdma_to_idct_accel:st_source_ready
-	wire          reset_controller_0_reset_out_reset;                                  // reset_controller_0:reset_out -> [avalon_st_adapter_001:in_rst_0_reset, i2c_scl:reset_n, i2c_sda:reset_n, idct_accelerator_2d:reset, key:reset_n, ledg:reset_n, ledr:reset_n, lpddr2:mp_cmd_reset_n_0_reset_n, lpddr2:mp_cmd_reset_n_1_reset_n, lpddr2:mp_cmd_reset_n_2_reset_n, lpddr2:mp_rfifo_reset_n_0_reset_n, lpddr2:mp_rfifo_reset_n_1_reset_n, lpddr2:mp_wfifo_reset_n_0_reset_n, lpddr2:mp_wfifo_reset_n_1_reset_n, lpddr2:soft_reset_n, mdma_from_idct_accel:reset_n_reset_n, mdma_to_idct_accel:reset_n_reset_n, mm_interconnect_0:lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset_reset, mm_interconnect_0:sysid_reset_reset_bridge_in_reset_reset, mm_interconnect_1:lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset, mm_interconnect_1:video_dma_reset_n_reset_bridge_in_reset_reset, mm_interconnect_2:lpddr2_mp_cmd_reset_n_2_reset_bridge_in_reset_reset, mm_interconnect_2:mdma_from_idct_accel_reset_n_reset_bridge_in_reset_reset, rst_controller:reset_in1, rst_controller_001:reset_in0, rst_controller_002:reset_in0, sram:reset_reset, sram_bridge:reset, sram_sharer:reset_reset, sysid:reset_n, timer_0:reset_n, timer_1:reset_n, video_dma:reset_n_reset_n, video_fifo:wrreset_n, video_pll:rst]
+	wire          reset_controller_0_reset_out_reset;                                  // reset_controller_0:reset_out -> [avalon_st_adapter_001:in_rst_0_reset, i2c_scl:reset_n, i2c_sda:reset_n, idct_accelerator_2d:reset_n, key:reset_n, ledg:reset_n, ledr:reset_n, lpddr2:mp_cmd_reset_n_0_reset_n, lpddr2:mp_cmd_reset_n_1_reset_n, lpddr2:mp_cmd_reset_n_2_reset_n, lpddr2:mp_rfifo_reset_n_0_reset_n, lpddr2:mp_rfifo_reset_n_1_reset_n, lpddr2:mp_wfifo_reset_n_0_reset_n, lpddr2:mp_wfifo_reset_n_1_reset_n, lpddr2:soft_reset_n, mdma_from_idct_accel:reset_n_reset_n, mdma_to_idct_accel:reset_n_reset_n, mm_interconnect_0:lpddr2_mp_cmd_reset_n_0_reset_bridge_in_reset_reset, mm_interconnect_0:sysid_reset_reset_bridge_in_reset_reset, mm_interconnect_1:lpddr2_mp_cmd_reset_n_1_reset_bridge_in_reset_reset, mm_interconnect_1:video_dma_reset_n_reset_bridge_in_reset_reset, mm_interconnect_2:lpddr2_mp_cmd_reset_n_2_reset_bridge_in_reset_reset, mm_interconnect_2:mdma_from_idct_accel_reset_n_reset_bridge_in_reset_reset, rst_controller:reset_in1, rst_controller_001:reset_in0, rst_controller_002:reset_in0, sram:reset_reset, sram_bridge:reset, sram_sharer:reset_reset, sysid:reset_n, timer_0:reset_n, timer_1:reset_n, video_dma:reset_n_reset_n, video_fifo:wrreset_n, video_pll:rst]
 	wire          sram_sharer_tcm_request;                                             // sram_sharer:request -> sram_bridge:request
 	wire    [1:0] sram_sharer_tcm_sram_tcm_byteenable_n_out_out;                       // sram_sharer:sram_tcm_byteenable_n_out -> sram_bridge:tcs_sram_tcm_byteenable_n_out
 	wire          sram_sharer_tcm_sram_tcm_data_out_outen;                             // sram_sharer:sram_tcm_data_outen -> sram_bridge:tcs_sram_tcm_data_outen
@@ -351,13 +351,13 @@ module ECE423_QSYS (
 
 	idct_2D_streaming_interface idct_accelerator_2d (
 		.clk     (clk_125_clk),                                       //                   clock.clk
-		.reset   (reset_controller_0_reset_out_reset),                //                   reset.reset
 		.i_data  (mdma_to_idct_accel_st_source_data),                 //   avalon_streaming_sink.data
 		.i_valid (mdma_to_idct_accel_st_source_valid),                //                        .valid
 		.o_ready (mdma_to_idct_accel_st_source_ready),                //                        .ready
 		.i_ready (idct_accelerator_2d_avalon_streaming_source_ready), // avalon_streaming_source.ready
 		.o_data  (idct_accelerator_2d_avalon_streaming_source_data),  //                        .data
-		.o_valid (idct_accelerator_2d_avalon_streaming_source_valid)  //                        .valid
+		.o_valid (idct_accelerator_2d_avalon_streaming_source_valid), //                        .valid
+		.reset_n (~reset_controller_0_reset_out_reset)                //                 reset_n.reset_n
 	);
 
 	ECE423_QSYS_jtag_uart jtag_uart (
