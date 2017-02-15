@@ -25,7 +25,7 @@ end entity ycbcr_to_rgb;
 architecture main of ycbcr_to_rgb is
 	constant w_size : unsigned(15 downto 0) := to_unsigned(640, 16); 
 	signal store_row : unsigned(2 downto 0);
-	signal store_col : unsigned(10 downto 0);
+	signal store_col : unsigned(2 downto 0);
 	signal store_block : unsigned(6 downto 0);
 
 	signal ready : std_logic;
@@ -77,7 +77,8 @@ begin
 
 		if (reset_n = '0') then
 			store_col <= to_unsigned(0, store_col'length);
-		elsif (current_state = STORING AND store_ok = '1') then
+		elsif ((current_state = STORING AND store_ok = '1')
+			OR (current_state = OUTPUTTING AND output_ok = '1')) then
 			store_col <= store_col + 1;
 		end if;
 	end process;
