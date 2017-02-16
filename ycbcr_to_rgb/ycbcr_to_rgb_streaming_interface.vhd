@@ -85,12 +85,6 @@ begin
   );
 
   ycbr_to_rgb_inst_i_valid <= valid_words;
-
-  o_rgb_data(7 downto 0) <= ycbr_to_rgb_inst_o_alpha;
-  o_rgb_data(15 downto 8) <= ycbr_to_rgb_inst_o_red;
-  o_rgb_data(23 downto 16) <= ycbr_to_rgb_inst_o_green;
-  o_rgb_data(31 downto 24) <= ycbr_to_rgb_inst_o_blue;
-  o_rgb_valid <= ycbr_to_rgb_inst_o_valid;
   ycbr_to_rgb_inst_i_ready <= i_rgb_ready;
 
   process(y_data, cb_data, cr_data, word_offset)
@@ -204,5 +198,10 @@ begin
   o_y_ready <= y_ready;
   o_cb_ready <= cb_ready;
   o_cr_ready <= cr_ready;
+  o_rgb_data(7 downto 0) <= ycbr_to_rgb_inst_o_alpha;
+  o_rgb_data(15 downto 8) <= ycbr_to_rgb_inst_o_red;
+  o_rgb_data(23 downto 16) <= ycbr_to_rgb_inst_o_green;
+  o_rgb_data(31 downto 24) <= ycbr_to_rgb_inst_o_blue;
+  o_rgb_valid <= ycbr_to_rgb_inst_o_valid;
 
 end architecture main;
