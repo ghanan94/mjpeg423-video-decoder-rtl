@@ -84,9 +84,6 @@ begin
     o_alpha => ycbr_to_rgb_inst_o_alpha
   );
 
-  ycbr_to_rgb_inst_i_y <= y_data((to_integer(word_offset & "111")) downto (to_integer(word_offset & "000")));
-  ycbr_to_rgb_inst_i_cb <= cb_data((to_integer(word_offset & "111")) downto (to_integer(word_offset & "000")));
-  ycbr_to_rgb_inst_i_cr <= cr_data((to_integer(word_offset & "111")) downto (to_integer(word_offset & "000")));
   ycbr_to_rgb_inst_i_valid <= valid_words;
 
   o_rgb_data(7 downto 0) <= ycbr_to_rgb_inst_o_alpha;
@@ -96,8 +93,36 @@ begin
   o_rgb_valid <= ycbr_to_rgb_inst_o_valid;
   ycbr_to_rgb_inst_i_ready <= i_rgb_ready;
 
+  process(y_data, cb_data, cr_data, word_offset)
+  begin
+    case word_offset is 
+      when "00" =>
+        ycbr_to_rgb_inst_i_y <= y_data(31 downto 24);
+        ycbr_to_rgb_inst_i_cb <= cb_data(31 downto 24);
+        ycbr_to_rgb_inst_i_cr <= cr_data(31 downto 24);
+      when "01" =>
+        ycbr_to_rgb_inst_i_y <= y_data(23 downto 16);
+        ycbr_to_rgb_inst_i_cb <= cb_data(23 downto 16);
+        ycbr_to_rgb_inst_i_cr <= cr_data(23 downto 16);
+      when "10" =>
+        ycbr_to_rgb_inst_i_y <= y_data(15 downto 8);
+        ycbr_to_rgb_inst_i_cb <= cb_data(15 downto 8);
+        ycbr_to_rgb_inst_i_cr <= cr_data(15 downto 8);
+      when "11" =>
+        ycbr_to_rgb_inst_i_y <= y_data(7 downto 0);
+        ycbr_to_rgb_inst_i_cb <= cb_data(7 downto 0);
+        ycbr_to_rgb_inst_i_cr <= cr_data(7 downto 0);
+      when others =>
+        ycbr_to_rgb_inst_i_y <= (others => '0');
+        ycbr_to_rgb_inst_i_cb <= (others => '0');
+        ycbr_to_rgb_inst_i_cr <= (others => '0');
+    end case;
+  end process;
+
   process
   begin
+    wait until rising_edge(clk);
+
     if (reset_n = '0') then
       valid_y_word <= '0';
     elsif (word_offset = 3) then
@@ -109,6 +134,17 @@ begin
 
   process
   begin
+    wait until rising_edge(clk);
+    
+    if (i_y_valid = '1' and y_ready = '1') then
+      y_data <= i_y_data;
+    end if;
+  end process;
+
+  process
+  begin
+    wait until rising_edge(clk);
+
     if (reset_n = '0') then
       valid_cb_word <= '0';
     elsif (word_offset = 3) then
@@ -120,6 +156,17 @@ begin
 
   process
   begin
+    wait until rising_edge(clk);
+
+    if (i_cb_valid = '1' and cb_ready = '1') then
+      cb_data <= i_cb_data;
+    end if;
+  end process;
+
+  process
+  begin
+    wait until rising_edge(clk);
+
     if (reset_n = '0') then
       valid_cr_word <= '0';
     elsif (word_offset = 3) then
@@ -131,6 +178,17 @@ begin
 
   process
   begin
+    wait until rising_edge(clk);
+
+    if (i_cr_valid = '1' and cr_ready = '1') then
+      cr_data <= i_cr_data;
+    end if;
+  end process;
+
+  process
+  begin
+    wait until rising_edge(clk);
+
     if (reset_n = '0') then
       word_offset <= to_unsigned(0, word_offset'length);
     elsif (ycbr_to_rgb_inst_o_ready = '1' AND valid_words = '1') then
