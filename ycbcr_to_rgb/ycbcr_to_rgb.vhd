@@ -31,9 +31,9 @@ architecture main of ycbcr_to_rgb is
 	signal ready : std_logic;
 	signal valid : std_logic;
 
-	type row_mem is array(0 to 639) of unsigned(7 downto 0);
-	type block_mem is array(0 to 7) of row_mem;
-
+	--type row_mem is array(0 to 639) of unsigned(7 downto 0);
+	--type block_mem is array(0 to 7) of row_mem;
+	type block_mem is array(0 to 5119) of unsigned(7 downto 0);
 	signal red_mem  : block_mem;
 	signal green_mem  : block_mem;
 	signal blue_mem  : block_mem;
@@ -105,16 +105,16 @@ begin
 		wait until rising_edge(clk);
 
 		if (current_state = STORING) then
-			red_mem(to_integer(store_row))(to_integer(store_block & store_col)) <= unsigned(i_cr);
-			green_mem(to_integer(store_row))(to_integer(store_block & store_col)) <= unsigned(i_y);
-			blue_mem(to_integer(store_row))(to_integer(store_block & store_col)) <= unsigned(i_cb);
+			red_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)) <= unsigned(i_cr);
+			green_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)) <= unsigned(i_y);
+			blue_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)) <= unsigned(i_cb);
 		end if;
 	end process;
 
 	o_alpha <= (others => '0');
-	o_red <= std_logic_vector(red_mem(to_integer(store_row))(to_integer(store_block & store_col)));
-	o_green <= std_logic_vector(green_mem(to_integer(store_row))(to_integer(store_block & store_col)));
-	o_blue <= std_logic_vector(blue_mem(to_integer(store_row))(to_integer(store_block & store_col)));
+	o_red <= std_logic_vector(red_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
+	o_green <= std_logic_vector(green_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
+	o_blue <= std_logic_vector(blue_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
 
 
 	store_ok <= '1' when (i_valid = '1' and ready = '1') else '0';
