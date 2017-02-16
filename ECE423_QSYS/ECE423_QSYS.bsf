@@ -419,7 +419,7 @@ agreement for further details.
 		(text "DEN" (rect 277 1003 572 2016)(font "Arial" (color 0 0 0)))
 		(text "video_clk" (rect 481 211 1016 435)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "clk" (rect 465 235 948 480)(font "Arial" (color 0 0 0)))
-		(text " system " (rect 717 1024 1482 2058)(font "Arial" ))
+		(text " ECE423_QSYS " (rect 680 1024 1438 2058)(font "Arial" ))
 		(line (pt 272 32)(pt 480 32)(line_width 1))
 		(line (pt 480 32)(pt 480 1024)(line_width 1))
 		(line (pt 272 1024)(pt 480 1024)(line_width 1))

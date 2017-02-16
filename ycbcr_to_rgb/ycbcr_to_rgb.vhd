@@ -33,17 +33,51 @@ architecture main of ycbcr_to_rgb is
 
 	--type row_mem is array(0 to 639) of unsigned(7 downto 0);
 	--type block_mem is array(0 to 7) of row_mem;
-	type block_mem is array(0 to 5119) of unsigned(7 downto 0);
-	signal red_mem  : block_mem;
-	signal green_mem  : block_mem;
-	signal blue_mem  : block_mem;
+	--type block_mem is array(0 to 5119) of unsigned(7 downto 0);
+	--signal red_mem  : block_mem;
+	--signal green_mem  : block_mem;
+	--signal blue_mem  : block_mem;
 
 	signal store_ok : std_logic;
 	signal output_ok : std_logic;
+	signal rd_addr : integer RANGE 0 to 5119;
+	signal wr_addr : integer RANGE 0 to 5119;
+	signal we : std_logic;
 
 	type current_activity_states is (STORING, OUTPUTTING);
 	signal current_state : current_activity_states;
 begin
+	we <= '1' when (current_state = STORING) else '0';
+
+	wr_addr <= to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col);
+	rd_addr <= 0 when wr_addr = 5119 else wr_addr + 1; --to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col);
+
+	red_ram : entity work.ram_infer(rtl) port map (
+		clock => clk,
+		read_address => rd_addr,
+		write_address => wr_addr,
+		q => o_red,
+		data => i_cr,
+		we => we
+	);
+
+	green_ram : entity work.ram_infer(rtl) port map (
+		clock => clk,
+		read_address => rd_addr,
+		write_address => wr_addr,
+		q => o_green,
+		data => i_y,
+		we => we
+	);
+
+	blue_ram : entity work.ram_infer(rtl) port map (
+		clock => clk,
+		read_address => rd_addr,
+		write_address => wr_addr,
+		q => o_blue,
+		data => i_cb,
+		we => we
+	);
 
 	process
 	begin
@@ -100,21 +134,10 @@ begin
 		end if;
 	end process;
 
-	process
-	begin
-		wait until rising_edge(clk);
-
-		if (current_state = STORING) then
-			red_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)) <= unsigned(i_cr);
-			green_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)) <= unsigned(i_y);
-			blue_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)) <= unsigned(i_cb);
-		end if;
-	end process;
-
 	o_alpha <= (others => '0');
-	o_red <= std_logic_vector(red_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
-	o_green <= std_logic_vector(green_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
-	o_blue <= std_logic_vector(blue_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
+	--o_red <= std_logic_vector(red_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
+	--o_green <= std_logic_vector(green_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
+	--o_blue <= std_logic_vector(blue_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
 
 
 	store_ok <= '1' when (i_valid = '1' and ready = '1') else '0';
