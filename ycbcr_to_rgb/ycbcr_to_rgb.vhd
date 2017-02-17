@@ -135,10 +135,6 @@ begin
 	end process;
 
 	o_alpha <= (others => '0');
-	--o_red <= std_logic_vector(red_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
-	--o_green <= std_logic_vector(green_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
-	--o_blue <= std_logic_vector(blue_mem(to_integer(((("0000000" & store_row) * 80) + ("000" & store_block)) & store_col)));
-
 
 	store_ok <= '1' when (i_valid = '1' and ready = '1') else '0';
 	output_ok <= '1' when (valid = '1' and i_ready = '1') else '0';
