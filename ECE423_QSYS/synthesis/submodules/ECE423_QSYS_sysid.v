@@ -49,7 +49,7 @@ module ECE423_QSYS_sysid (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1487107871 : 0;
+  assign readdata = address ? 1487291941 : 0;
 
 endmodule
 

@@ -1,5 +1,22 @@
 *.flock
-
+*.hdb
+*.idb
+*.rdb
+*.cdb
+*.tdb
+*.ddb
+*.rcfdb
+*.bpm
+*.logdb
+*.tdf
+*.tcl~
+*.qmsg
+*.ammdb
+*.hier_info
+*.hif
+*.kpt
+*.dpi
+*.qws
 
 #ModelSim Ignores
 # ignore ModelSim generated files and directories (temp files and so on)

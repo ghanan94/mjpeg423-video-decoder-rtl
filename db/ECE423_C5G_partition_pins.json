@@ -104,6 +104,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[7]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[0]",
 					"strict" : false
 				},
@@ -180,66 +212,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "SRAM_LB_n",
-					"strict" : false
-				},
-				{
-					"name" : "SRAM_UB_n",
-					"strict" : false
-				},
-				{
-					"name" : "HDMI_TX_DE",
-					"strict" : false
-				},
-				{
-					"name" : "HDMI_TX_HS",
-					"strict" : false
-				},
-				{
-					"name" : "HDMI_TX_VS",
-					"strict" : false
-				},
-				{
-					"name" : "I2C_SCL",
-					"strict" : false
-				},
-				{
-					"name" : "SRAM_WE_n",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[0]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[1]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[3]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[4]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[5]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[6]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[7]",
-					"strict" : false
-				},
-				{
 					"name" : "SRAM_A[11]",
 					"strict" : false
 				},
@@ -265,6 +237,34 @@
 				},
 				{
 					"name" : "SRAM_A[17]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_LB_n",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_UB_n",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_WE_n",
+					"strict" : false
+				},
+				{
+					"name" : "HDMI_TX_DE",
+					"strict" : false
+				},
+				{
+					"name" : "HDMI_TX_HS",
+					"strict" : false
+				},
+				{
+					"name" : "HDMI_TX_VS",
+					"strict" : false
+				},
+				{
+					"name" : "I2C_SCL",
 					"strict" : false
 				},
 				{
@@ -305,6 +305,22 @@
 				},
 				{
 					"name" : "DDR2LP_DQS_p[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SD_DAT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SD_DAT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SD_DAT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SD_DAT[3]",
 					"strict" : false
 				},
 				{
@@ -376,31 +392,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "SD_DAT[0]",
-					"strict" : false
-				},
-				{
-					"name" : "SD_DAT[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SD_DAT[2]",
-					"strict" : false
-				},
-				{
-					"name" : "SD_DAT[3]",
-					"strict" : false
-				},
-				{
 					"name" : "I2C_SDA",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_125_p",
+					"name" : "CLOCK_50_B7A",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50_B7A",
+					"name" : "CLOCK_125_p",
 					"strict" : false
 				},
 				{
