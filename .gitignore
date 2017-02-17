@@ -16,6 +16,7 @@
 *.hif
 *.kpt
 *.dpi
+*.qws
 
 #ModelSim Ignores
 # ignore ModelSim generated files and directories (temp files and so on)
