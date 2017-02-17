@@ -2,7 +2,7 @@ set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_TOOL
 set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_TOOL_VERSION "15.1"
 set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "ECE423_QSYS" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../ECE423_QSYS.sopcinfo"]
-set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name SLD_INFO "QSYS_NAME ECE423_QSYS HAS_SOPCINFO 1 GENERATION_ID 1487270318"
+set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name SLD_INFO "QSYS_NAME ECE423_QSYS HAS_SOPCINFO 1 GENERATION_ID 1487272172"
 set_global_assignment -library "ECE423_QSYS" -name MISC_FILE [file join $::quartus(qip_path) "../ECE423_QSYS.cmp"]
 set_global_assignment -library "ECE423_QSYS" -name SLD_FILE [file join $::quartus(qip_path) "ECE423_QSYS.regmap"]
 set_global_assignment -library "ECE423_QSYS" -name SLD_FILE [file join $::quartus(qip_path) "ECE423_QSYS.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_COMP
 set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTQ4NzI3MDMxOA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTQ4NzI3MjE3Mg==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNHWEZDNUM2RjI3Qzc=::QXV0byBERVZJQ0U="
 set_global_assignment -entity "ECE423_QSYS" -library "ECE423_QSYS" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::N19INg==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -7063,6 +7063,7 @@ set_global_assignment -library "ECE423_QSYS" -name SYSTEMVERILOG_FILE [file join
 set_global_assignment -library "ECE423_QSYS" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/ECE423_QSYS_mm_interconnect_0_router.sv"]
 set_global_assignment -library "ECE423_QSYS" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/ycbcr_to_rgb_streaming_interface.vhd"]
 set_global_assignment -library "ECE423_QSYS" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/ycbcr_to_rgb.vhd"]
+set_global_assignment -library "ECE423_QSYS" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/ram_infer.vhd"]
 set_global_assignment -library "ECE423_QSYS" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ECE423_QSYS_video_pll.v"]
 set_global_assignment -library "ECE423_QSYS" -name QIP_FILE [file join $::quartus(qip_path) "submodules/ECE423_QSYS_video_pll.qip"]
 set_global_assignment -library "ECE423_QSYS" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ECE423_QSYS_video_fifo.v"]
