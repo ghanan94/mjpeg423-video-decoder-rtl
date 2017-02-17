@@ -143,7 +143,7 @@ begin
       valid_cb_word <= '0';
     elsif (word_offset = 3) then
       valid_cb_word <= '0';
-    elsif (i_y_valid = '1' AND cb_ready = '1') then
+    elsif (i_cb_valid = '1' AND cb_ready = '1') then
       valid_cb_word <= '1';
     end if;
   end process;
@@ -165,7 +165,7 @@ begin
       valid_cr_word <= '0';
     elsif (word_offset = 3) then
       valid_cr_word <= '0';
-    elsif (i_y_valid = '1' AND cr_ready = '1') then
+    elsif (i_cr_valid = '1' AND cr_ready = '1') then
       valid_cr_word <= '1';
     end if;
   end process;
