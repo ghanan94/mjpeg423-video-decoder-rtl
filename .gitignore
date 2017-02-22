@@ -1,1 +1,47 @@
 *.flock
+*.hdb
+*.idb
+*.rdb
+*.cdb
+*.tdb
+*.ddb
+*.rcfdb
+*.bpm
+*.logdb
+*.tdf
+*.tcl~
+*.qmsg
+*.ammdb
+*.hier_info
+*.hif
+*.kpt
+*.dpi
+*.qws
+
+#ModelSim Ignores
+# ignore ModelSim generated files and directories (temp files and so on)
+[_@]*
+
+# ignore compilation output of ModelSim
+*.mti
+*.dat
+*.dbs
+*.psm
+*.bak
+*.cmp
+*.jpg
+*.html
+*.bsf
+
+# ignore simulation output of ModelSim
+wlf*
+*.wlf
+*.vstf
+*.ucdb
+cov*/
+transcript*
+sc_dpiheader.h
+vsim.dbg
+
+#keep .keep files
+!.keep

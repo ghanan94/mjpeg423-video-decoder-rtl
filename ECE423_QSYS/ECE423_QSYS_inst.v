@@ -15,6 +15,7 @@
 		.lpddr2_mem_dq                                (<connected-to-lpddr2_mem_dq>),                                //                    .mem_dq
 		.lpddr2_mem_dqs                               (<connected-to-lpddr2_mem_dqs>),                               //                    .mem_dqs
 		.lpddr2_mem_dqs_n                             (<connected-to-lpddr2_mem_dqs_n>),                             //                    .mem_dqs_n
+		.lpddr2_global_reset_reset_n                  (<connected-to-lpddr2_global_reset_reset_n>),                  // lpddr2_global_reset.reset_n
 		.lpddr2_oct_rzqin                             (<connected-to-lpddr2_oct_rzqin>),                             //          lpddr2_oct.rzqin
 		.lpddr2_pll_ref_clk_clk                       (<connected-to-lpddr2_pll_ref_clk_clk>),                       //  lpddr2_pll_ref_clk.clk
 		.lpddr2_pll_sharing_pll_mem_clk               (<connected-to-lpddr2_pll_sharing_pll_mem_clk>),               //  lpddr2_pll_sharing.pll_mem_clk
@@ -44,7 +45,6 @@
 		.video_HD                                     (<connected-to-video_HD>),                                     //                    .HD
 		.video_VD                                     (<connected-to-video_VD>),                                     //                    .VD
 		.video_DEN                                    (<connected-to-video_DEN>),                                    //                    .DEN
-		.video_clk_clk                                (<connected-to-video_clk_clk>),                                //           video_clk.clk
-		.lpddr2_global_reset_reset_n                  (<connected-to-lpddr2_global_reset_reset_n>)                   // lpddr2_global_reset.reset_n
+		.video_clk_clk                                (<connected-to-video_clk_clk>)                                 //           video_clk.clk
 	);
 
