@@ -39,13 +39,13 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         ECE423_QSYS_mm_interconnect_0_cmd_mux_001
-//   NUM_INPUTS:          2
-//   ARBITRATION_SHARES:  1 1
+//   NUM_INPUTS:          3
+//   ARBITRATION_SHARES:  1 1 1
 //   ARBITRATION_SCHEME   "round-robin"
 //   PIPELINE_ARB:        1
 //   PKT_TRANS_LOCK:      72 (arbitration locking enabled)
-//   ST_DATA_W:           119
-//   ST_CHANNEL_W:        27
+//   ST_DATA_W:           121
+//   ST_CHANNEL_W:        36
 // ------------------------------------------
 
 module ECE423_QSYS_mm_interconnect_0_cmd_mux_001
@@ -54,26 +54,33 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux_001
     // Sinks
     // ----------------------
     input                       sink0_valid,
-    input [119-1   : 0]  sink0_data,
-    input [27-1: 0]  sink0_channel,
+    input [121-1   : 0]  sink0_data,
+    input [36-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
 
     input                       sink1_valid,
-    input [119-1   : 0]  sink1_data,
-    input [27-1: 0]  sink1_channel,
+    input [121-1   : 0]  sink1_data,
+    input [36-1: 0]  sink1_channel,
     input                       sink1_startofpacket,
     input                       sink1_endofpacket,
     output                      sink1_ready,
+
+    input                       sink2_valid,
+    input [121-1   : 0]  sink2_data,
+    input [36-1: 0]  sink2_channel,
+    input                       sink2_startofpacket,
+    input                       sink2_endofpacket,
+    output                      sink2_ready,
 
 
     // ----------------------
     // Source
     // ----------------------
     output                      src_valid,
-    output [119-1    : 0] src_data,
-    output [27-1 : 0] src_channel,
+    output [121-1    : 0] src_data,
+    output [36-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
     input                       src_ready,
@@ -84,12 +91,12 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux_001
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 119 + 27 + 2;
-    localparam NUM_INPUTS       = 2;
+    localparam PAYLOAD_W        = 121 + 36 + 2;
+    localparam NUM_INPUTS       = 3;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 1;
-    localparam ST_DATA_W        = 119;
-    localparam ST_CHANNEL_W     = 27;
+    localparam ST_DATA_W        = 121;
+    localparam ST_CHANNEL_W     = 36;
     localparam PKT_TRANS_LOCK   = 72;
 
     // ------------------------------------------
@@ -107,13 +114,16 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux_001
 
     wire [PAYLOAD_W - 1 : 0] sink0_payload;
     wire [PAYLOAD_W - 1 : 0] sink1_payload;
+    wire [PAYLOAD_W - 1 : 0] sink2_payload;
 
     assign valid[0] = sink0_valid;
     assign valid[1] = sink1_valid;
+    assign valid[2] = sink2_valid;
 
     wire [NUM_INPUTS - 1 : 0] eop;
     assign eop[0] = sink0_endofpacket;
     assign eop[1] = sink1_endofpacket;
+    assign eop[2] = sink2_endofpacket;
 
     // ------------------------------------------
     // ------------------------------------------
@@ -124,6 +134,7 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux_001
     always @* begin
       lock[0] = sink0_data[72];
       lock[1] = sink1_data[72];
+      lock[2] = sink2_data[72];
     end
     reg [NUM_INPUTS - 1 : 0] locked = '0;
     always @(posedge clk or posedge reset) begin
@@ -165,8 +176,10 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux_001
     // Input  |  arb shares  |  counter load value
     // 0      |      1       |  0
     // 1      |      1       |  0
+    // 2      |      1       |  0
      wire [SHARE_COUNTER_W - 1 : 0] share_0 = 1'd0;
      wire [SHARE_COUNTER_W - 1 : 0] share_1 = 1'd0;
+     wire [SHARE_COUNTER_W - 1 : 0] share_2 = 1'd0;
 
     // ------------------------------------------
     // Choose the share value corresponding to the grant.
@@ -175,7 +188,8 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux_001
     always @* begin
       next_grant_share =
     share_0 & { SHARE_COUNTER_W {next_grant[0]} } |
-    share_1 & { SHARE_COUNTER_W {next_grant[1]} };
+    share_1 & { SHARE_COUNTER_W {next_grant[1]} } |
+    share_2 & { SHARE_COUNTER_W {next_grant[2]} };
     end
 
     // ------------------------------------------
@@ -298,13 +312,15 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux_001
 
     assign sink0_ready = src_ready && grant[0];
     assign sink1_ready = src_ready && grant[1];
+    assign sink2_ready = src_ready && grant[2];
 
     assign src_valid = |(grant & valid);
 
     always @* begin
       src_payload =
       sink0_payload & {PAYLOAD_W {grant[0]} } |
-      sink1_payload & {PAYLOAD_W {grant[1]} };
+      sink1_payload & {PAYLOAD_W {grant[1]} } |
+      sink2_payload & {PAYLOAD_W {grant[2]} };
     end
 
     // ------------------------------------------
@@ -315,6 +331,8 @@ module ECE423_QSYS_mm_interconnect_0_cmd_mux_001
     sink0_startofpacket,sink0_endofpacket};
     assign sink1_payload = {sink1_channel,sink1_data,
     sink1_startofpacket,sink1_endofpacket};
+    assign sink2_payload = {sink2_channel,sink2_data,
+    sink2_startofpacket,sink2_endofpacket};
 
     assign {src_channel,src_data,src_startofpacket,src_endofpacket} = src_payload;
 endmodule
