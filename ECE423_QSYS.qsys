@@ -74,7 +74,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -87,7 +87,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -116,7 +116,7 @@
    {
       datum _sortIndex
       {
-         value = "32";
+         value = "28";
          type = "int";
       }
    }
@@ -145,7 +145,7 @@
    {
       datum baseAddress
       {
-         value = "537924848";
+         value = "537923984";
          type = "String";
       }
    }
@@ -166,11 +166,27 @@
    {
       datum baseAddress
       {
-         value = "537924832";
+         value = "537923968";
          type = "String";
       }
    }
-   element idct_accelerator_2d
+   element idct_accelerator_2d_cb
+   {
+      datum _sortIndex
+      {
+         value = "35";
+         type = "int";
+      }
+   }
+   element idct_accelerator_2d_cr
+   {
+      datum _sortIndex
+      {
+         value = "37";
+         type = "int";
+      }
+   }
+   element idct_accelerator_2d_y
    {
       datum _sortIndex
       {
@@ -192,7 +208,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -200,7 +216,7 @@
    {
       datum baseAddress
       {
-         value = "537924912";
+         value = "537924080";
          type = "String";
       }
    }
@@ -208,7 +224,7 @@
    {
       datum _sortIndex
       {
-         value = "33";
+         value = "29";
          type = "int";
       }
    }
@@ -216,7 +232,7 @@
    {
       datum baseAddress
       {
-         value = "536875456";
+         value = "536876192";
          type = "String";
       }
    }
@@ -237,7 +253,7 @@
    {
       datum baseAddress
       {
-         value = "537924864";
+         value = "537924000";
          type = "String";
       }
    }
@@ -258,7 +274,7 @@
    {
       datum baseAddress
       {
-         value = "537924704";
+         value = "537923808";
          type = "String";
       }
    }
@@ -279,7 +295,7 @@
    {
       datum baseAddress
       {
-         value = "537924672";
+         value = "537923776";
          type = "String";
       }
    }
@@ -324,7 +340,7 @@
    {
       datum _sortIndex
       {
-         value = "34";
+         value = "30";
          type = "int";
       }
    }
@@ -332,7 +348,7 @@
    {
       datum baseAddress
       {
-         value = "536875344";
+         value = "536876176";
          type = "String";
       }
    }
@@ -340,7 +356,7 @@
    {
       datum baseAddress
       {
-         value = "537924816";
+         value = "537924032";
          type = "String";
       }
    }
@@ -348,7 +364,7 @@
    {
       datum _sortIndex
       {
-         value = "35";
+         value = "31";
          type = "int";
       }
    }
@@ -356,7 +372,7 @@
    {
       datum baseAddress
       {
-         value = "537924800";
+         value = "537924048";
          type = "String";
       }
    }
@@ -364,31 +380,7 @@
    {
       datum baseAddress
       {
-         value = "536875328";
-         type = "String";
-      }
-   }
-   element mdma_from_idct_accel
-   {
-      datum _sortIndex
-      {
-         value = "26";
-         type = "int";
-      }
-   }
-   element mdma_from_idct_accel.csr
-   {
-      datum baseAddress
-      {
-         value = "536875264";
-         type = "String";
-      }
-   }
-   element mdma_from_idct_accel.descriptor_slave
-   {
-      datum baseAddress
-      {
-         value = "536875424";
+         value = "536876160";
          type = "String";
       }
    }
@@ -396,7 +388,7 @@
    {
       datum _sortIndex
       {
-         value = "31";
+         value = "27";
          type = "int";
       }
    }
@@ -404,7 +396,7 @@
    {
       datum baseAddress
       {
-         value = "536875136";
+         value = "537923648";
          type = "String";
       }
    }
@@ -412,107 +404,11 @@
    {
       datum baseAddress
       {
-         value = "536875360";
+         value = "537923904";
          type = "String";
       }
    }
-   element mdma_to_idct_accel
-   {
-      datum _sortIndex
-      {
-         value = "25";
-         type = "int";
-      }
-   }
-   element mdma_to_idct_accel.csr
-   {
-      datum baseAddress
-      {
-         value = "536875296";
-         type = "String";
-      }
-   }
-   element mdma_to_idct_accel.descriptor_slave
-   {
-      datum baseAddress
-      {
-         value = "536875440";
-         type = "String";
-      }
-   }
-   element mdma_to_ycbcr_to_rgb_accel_cb
-   {
-      datum _sortIndex
-      {
-         value = "30";
-         type = "int";
-      }
-   }
-   element mdma_to_ycbcr_to_rgb_accel_cb.csr
-   {
-      datum baseAddress
-      {
-         value = "536875232";
-         type = "String";
-      }
-   }
-   element mdma_to_ycbcr_to_rgb_accel_cb.descriptor_slave
-   {
-      datum baseAddress
-      {
-         value = "536875408";
-         type = "String";
-      }
-   }
-   element mdma_to_ycbcr_to_rgb_accel_cr
-   {
-      datum _sortIndex
-      {
-         value = "29";
-         type = "int";
-      }
-   }
-   element mdma_to_ycbcr_to_rgb_accel_cr.csr
-   {
-      datum baseAddress
-      {
-         value = "536875200";
-         type = "String";
-      }
-   }
-   element mdma_to_ycbcr_to_rgb_accel_cr.descriptor_slave
-   {
-      datum baseAddress
-      {
-         value = "536875392";
-         type = "String";
-      }
-   }
-   element mdma_to_ycbcr_to_rgb_accel_y
-   {
-      datum _sortIndex
-      {
-         value = "28";
-         type = "int";
-      }
-   }
-   element mdma_to_ycbcr_to_rgb_accel_y.csr
-   {
-      datum baseAddress
-      {
-         value = "536875168";
-         type = "String";
-      }
-   }
-   element mdma_to_ycbcr_to_rgb_accel_y.descriptor_slave
-   {
-      datum baseAddress
-      {
-         value = "536875376";
-         type = "String";
-      }
-   }
-   element mutex_0
+   element mdma_to_idct_accel_cb
    {
       datum _sortIndex
       {
@@ -520,11 +416,83 @@
          type = "int";
       }
    }
+   element mdma_to_idct_accel_cb.csr
+   {
+      datum baseAddress
+      {
+         value = "537923712";
+         type = "String";
+      }
+   }
+   element mdma_to_idct_accel_cb.descriptor_slave
+   {
+      datum baseAddress
+      {
+         value = "537923936";
+         type = "String";
+      }
+   }
+   element mdma_to_idct_accel_cr
+   {
+      datum _sortIndex
+      {
+         value = "38";
+         type = "int";
+      }
+   }
+   element mdma_to_idct_accel_cr.csr
+   {
+      datum baseAddress
+      {
+         value = "537923744";
+         type = "String";
+      }
+   }
+   element mdma_to_idct_accel_cr.descriptor_slave
+   {
+      datum baseAddress
+      {
+         value = "537923952";
+         type = "String";
+      }
+   }
+   element mdma_to_idct_accel_y
+   {
+      datum _sortIndex
+      {
+         value = "25";
+         type = "int";
+      }
+   }
+   element mdma_to_idct_accel_y.csr
+   {
+      datum baseAddress
+      {
+         value = "537923680";
+         type = "String";
+      }
+   }
+   element mdma_to_idct_accel_y.descriptor_slave
+   {
+      datum baseAddress
+      {
+         value = "537923920";
+         type = "String";
+      }
+   }
+   element mutex_0
+   {
+      datum _sortIndex
+      {
+         value = "32";
+         type = "int";
+      }
+   }
    element mutex_0.s1
    {
       datum baseAddress
       {
-         value = "537924896";
+         value = "537924064";
          type = "String";
       }
    }
@@ -548,6 +516,11 @@
          value = "23";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element sd_cont
    {
@@ -558,7 +531,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -566,7 +539,7 @@
    {
       datum baseAddress
       {
-         value = "537923584";
+         value = "536875008";
          type = "String";
       }
    }
@@ -626,7 +599,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -634,7 +607,7 @@
    {
       datum baseAddress
       {
-         value = "537924904";
+         value = "537924072";
          type = "String";
       }
    }
@@ -647,7 +620,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -655,7 +628,7 @@
    {
       datum baseAddress
       {
-         value = "537924736";
+         value = "537923840";
          type = "String";
       }
    }
@@ -668,7 +641,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -676,7 +649,7 @@
    {
       datum baseAddress
       {
-         value = "537924608";
+         value = "537923584";
          type = "String";
       }
    }
@@ -684,7 +657,7 @@
    {
       datum _sortIndex
       {
-         value = "37";
+         value = "33";
          type = "int";
       }
    }
@@ -692,7 +665,7 @@
    {
       datum baseAddress
       {
-         value = "536875072";
+         value = "536876096";
          type = "String";
       }
    }
@@ -700,7 +673,7 @@
    {
       datum _sortIndex
       {
-         value = "38";
+         value = "34";
          type = "int";
       }
    }
@@ -708,7 +681,7 @@
    {
       datum baseAddress
       {
-         value = "536875008";
+         value = "536876032";
          type = "String";
       }
    }
@@ -747,7 +720,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -755,7 +728,7 @@
    {
       datum baseAddress
       {
-         value = "537924768";
+         value = "537923872";
          type = "String";
       }
    }
@@ -763,7 +736,7 @@
    {
       datum baseAddress
       {
-         value = "537924880";
+         value = "537924016";
          type = "String";
       }
    }
@@ -797,7 +770,7 @@
    {
       datum _sortIndex
       {
-         value = "27";
+         value = "26";
          type = "int";
       }
       datum sopceditor_expanded
@@ -920,7 +893,7 @@
   <parameter name="dataAddrWidth" value="30" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /><slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /><slave name='cpu_0.debug_mem_slave' start='0x20100800' end='0x20101000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sd_cont.slave' start='0x20101000' end='0x20101400' type='sd_cont.slave' /><slave name='timer_0_1.s1' start='0x20101400' end='0x20101440' type='altera_avalon_timer.s1' /><slave name='ledr.s1' start='0x20101440' end='0x20101460' type='altera_avalon_pio.s1' /><slave name='ledg.s1' start='0x20101460' end='0x20101480' type='altera_avalon_pio.s1' /><slave name='timer_0_0.s1' start='0x20101480' end='0x201014A0' type='altera_avalon_timer.s1' /><slave name='video_dma.csr' start='0x201014A0' end='0x201014C0' type='altera_msgdma.csr' /><slave name='mailbox_simple_cpu1_to_cpu0.avmm_msg_receiver' start='0x201014C0' end='0x201014D0' type='altera_avalon_mailbox_simple.avmm_msg_receiver' /><slave name='mailbox_simple_cpu0_to_cpu1.avmm_msg_sender' start='0x201014D0' end='0x201014E0' type='altera_avalon_mailbox_simple.avmm_msg_sender' /><slave name='i2c_sda.s1' start='0x201014E0' end='0x201014F0' type='altera_avalon_pio.s1' /><slave name='i2c_scl.s1' start='0x201014F0' end='0x20101500' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x20101500' end='0x20101510' type='altera_avalon_pio.s1' /><slave name='video_dma.descriptor_slave' start='0x20101510' end='0x20101520' type='altera_msgdma.descriptor_slave' /><slave name='mutex_0.s1' start='0x20101520' end='0x20101528' type='altera_avalon_mutex.s1' /><slave name='sysid.control_slave' start='0x20101528' end='0x20101530' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x20101530' end='0x20101538' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /><slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /><slave name='cpu_0.debug_mem_slave' start='0x20100800' end='0x20101000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer_0_1.s1' start='0x20101000' end='0x20101040' type='altera_avalon_timer.s1' /><slave name='mdma_from_ycbcr_to_rgb_accel.csr' start='0x20101040' end='0x20101060' type='altera_msgdma.csr' /><slave name='mdma_to_idct_accel_y.csr' start='0x20101060' end='0x20101080' type='altera_msgdma.csr' /><slave name='mdma_to_idct_accel_cb.csr' start='0x20101080' end='0x201010A0' type='altera_msgdma.csr' /><slave name='mdma_to_idct_accel_cr.csr' start='0x201010A0' end='0x201010C0' type='altera_msgdma.csr' /><slave name='ledr.s1' start='0x201010C0' end='0x201010E0' type='altera_avalon_pio.s1' /><slave name='ledg.s1' start='0x201010E0' end='0x20101100' type='altera_avalon_pio.s1' /><slave name='timer_0_0.s1' start='0x20101100' end='0x20101120' type='altera_avalon_timer.s1' /><slave name='video_dma.csr' start='0x20101120' end='0x20101140' type='altera_msgdma.csr' /><slave name='mdma_from_ycbcr_to_rgb_accel.descriptor_slave' start='0x20101140' end='0x20101150' type='altera_msgdma.descriptor_slave' /><slave name='mdma_to_idct_accel_y.descriptor_slave' start='0x20101150' end='0x20101160' type='altera_msgdma.descriptor_slave' /><slave name='mdma_to_idct_accel_cb.descriptor_slave' start='0x20101160' end='0x20101170' type='altera_msgdma.descriptor_slave' /><slave name='mdma_to_idct_accel_cr.descriptor_slave' start='0x20101170' end='0x20101180' type='altera_msgdma.descriptor_slave' /><slave name='i2c_sda.s1' start='0x20101180' end='0x20101190' type='altera_avalon_pio.s1' /><slave name='i2c_scl.s1' start='0x20101190' end='0x201011A0' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x201011A0' end='0x201011B0' type='altera_avalon_pio.s1' /><slave name='video_dma.descriptor_slave' start='0x201011B0' end='0x201011C0' type='altera_msgdma.descriptor_slave' /><slave name='mailbox_simple_cpu0_to_cpu1.avmm_msg_sender' start='0x201011C0' end='0x201011D0' type='altera_avalon_mailbox_simple.avmm_msg_sender' /><slave name='mailbox_simple_cpu1_to_cpu0.avmm_msg_receiver' start='0x201011D0' end='0x201011E0' type='altera_avalon_mailbox_simple.avmm_msg_receiver' /><slave name='mutex_0.s1' start='0x201011E0' end='0x201011E8' type='altera_avalon_mutex.s1' /><slave name='sysid.control_slave' start='0x201011E8' end='0x201011F0' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x201011F0' end='0x201011F8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -966,7 +939,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="127" />
+  <parameter name="internalIrqMaskSystemInfo" value="2047" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -1096,7 +1069,7 @@
   <parameter name="dataAddrWidth" value="30" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /><slave name='cpu_1.debug_mem_slave' start='0x20000800' end='0x20001000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer_1_1.s1' start='0x20001000' end='0x20001040' type='altera_avalon_timer.s1' /><slave name='timer_1_0.s1' start='0x20001040' end='0x20001080' type='altera_avalon_timer.s1' /><slave name='mdma_from_ycbcr_to_rgb_accel.csr' start='0x20001080' end='0x200010A0' type='altera_msgdma.csr' /><slave name='mdma_to_ycbcr_to_rgb_accel_y.csr' start='0x200010A0' end='0x200010C0' type='altera_msgdma.csr' /><slave name='mdma_to_ycbcr_to_rgb_accel_cr.csr' start='0x200010C0' end='0x200010E0' type='altera_msgdma.csr' /><slave name='mdma_to_ycbcr_to_rgb_accel_cb.csr' start='0x200010E0' end='0x20001100' type='altera_msgdma.csr' /><slave name='mdma_from_idct_accel.csr' start='0x20001100' end='0x20001120' type='altera_msgdma.csr' /><slave name='mdma_to_idct_accel.csr' start='0x20001120' end='0x20001140' type='altera_msgdma.csr' /><slave name='mailbox_simple_cpu1_to_cpu0.avmm_msg_sender' start='0x20001140' end='0x20001150' type='altera_avalon_mailbox_simple.avmm_msg_sender' /><slave name='mailbox_simple_cpu0_to_cpu1.avmm_msg_receiver' start='0x20001150' end='0x20001160' type='altera_avalon_mailbox_simple.avmm_msg_receiver' /><slave name='mdma_from_ycbcr_to_rgb_accel.descriptor_slave' start='0x20001160' end='0x20001170' type='altera_msgdma.descriptor_slave' /><slave name='mdma_to_ycbcr_to_rgb_accel_y.descriptor_slave' start='0x20001170' end='0x20001180' type='altera_msgdma.descriptor_slave' /><slave name='mdma_to_ycbcr_to_rgb_accel_cr.descriptor_slave' start='0x20001180' end='0x20001190' type='altera_msgdma.descriptor_slave' /><slave name='mdma_to_ycbcr_to_rgb_accel_cb.descriptor_slave' start='0x20001190' end='0x200011A0' type='altera_msgdma.descriptor_slave' /><slave name='mdma_from_idct_accel.descriptor_slave' start='0x200011A0' end='0x200011B0' type='altera_msgdma.descriptor_slave' /><slave name='mdma_to_idct_accel.descriptor_slave' start='0x200011B0' end='0x200011C0' type='altera_msgdma.descriptor_slave' /><slave name='jtag_uart_1.avalon_jtag_slave' start='0x200011C0' end='0x200011C8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /><slave name='mutex_0.s1' start='0x20101520' end='0x20101528' type='altera_avalon_mutex.s1' /><slave name='sysid.control_slave' start='0x20101528' end='0x20101530' type='altera_avalon_sysid_qsys.control_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /><slave name='cpu_1.debug_mem_slave' start='0x20000800' end='0x20001000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sd_cont.slave' start='0x20001000' end='0x20001400' type='sd_cont.slave' /><slave name='timer_1_1.s1' start='0x20001400' end='0x20001440' type='altera_avalon_timer.s1' /><slave name='timer_1_0.s1' start='0x20001440' end='0x20001480' type='altera_avalon_timer.s1' /><slave name='mailbox_simple_cpu1_to_cpu0.avmm_msg_sender' start='0x20001480' end='0x20001490' type='altera_avalon_mailbox_simple.avmm_msg_sender' /><slave name='mailbox_simple_cpu0_to_cpu1.avmm_msg_receiver' start='0x20001490' end='0x200014A0' type='altera_avalon_mailbox_simple.avmm_msg_receiver' /><slave name='jtag_uart_1.avalon_jtag_slave' start='0x200014A0' end='0x200014A8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /><slave name='mutex_0.s1' start='0x201011E0' end='0x201011E8' type='altera_avalon_mutex.s1' /><slave name='sysid.control_slave' start='0x201011E8' end='0x201011F0' type='altera_avalon_sysid_qsys.control_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -1142,7 +1115,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="2047" />
+  <parameter name="internalIrqMaskSystemInfo" value="31" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -1281,7 +1254,17 @@
   <parameter name="width" value="1" />
  </module>
  <module
-   name="idct_accelerator_2d"
+   name="idct_accelerator_2d_cb"
+   kind="2d_idct_accelerator"
+   version="2.0"
+   enabled="1" />
+ <module
+   name="idct_accelerator_2d_cr"
+   kind="2d_idct_accelerator"
+   version="2.0"
+   enabled="1" />
+ <module
+   name="idct_accelerator_2d_y"
    kind="2d_idct_accelerator"
    version="2.0"
    enabled="1" />
@@ -1699,52 +1682,6 @@
   <parameter name="MSG_SPACE_NOTIFY" value="1" />
  </module>
  <module
-   name="mdma_from_idct_accel"
-   kind="altera_msgdma"
-   version="15.1"
-   enabled="1">
-  <parameter name="AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_MAP" value="" />
-  <parameter
-     name="AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_WIDTH"
-     value="AddressWidth = -1" />
-  <parameter name="AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_MAP" value="" />
-  <parameter
-     name="AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_WIDTH"
-     value="AddressWidth = -1" />
-  <parameter name="AUTO_DEVICE" value="5CGXFC5C6F27C7" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
-  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7_H6" />
-  <parameter name="AUTO_MM_READ_ADDRESS_MAP" value="" />
-  <parameter name="AUTO_MM_READ_ADDRESS_WIDTH" value="AddressWidth = -1" />
-  <parameter name="AUTO_MM_WRITE_ADDRESS_MAP"><![CDATA[<address-map><slave name='lpddr2.avl_2' start='0x0' end='0x20000000' /></address-map>]]></parameter>
-  <parameter name="AUTO_MM_WRITE_ADDRESS_WIDTH" value="AddressWidth = 29" />
-  <parameter name="BURST_ENABLE" value="1" />
-  <parameter name="BURST_WRAPPING_SUPPORT" value="1" />
-  <parameter name="CHANNEL_ENABLE" value="0" />
-  <parameter name="CHANNEL_WIDTH" value="8" />
-  <parameter name="DATA_FIFO_DEPTH" value="1024" />
-  <parameter name="DATA_WIDTH" value="32" />
-  <parameter name="DESCRIPTOR_FIFO_DEPTH" value="16" />
-  <parameter name="ENHANCED_FEATURES" value="0" />
-  <parameter name="ERROR_ENABLE" value="0" />
-  <parameter name="ERROR_WIDTH" value="8" />
-  <parameter name="FIX_ADDRESS_WIDTH" value="32" />
-  <parameter name="MAX_BURST_COUNT" value="128" />
-  <parameter name="MAX_BYTE" value="536870912" />
-  <parameter name="MAX_STRIDE" value="1" />
-  <parameter name="MODE" value="2" />
-  <parameter name="PACKET_ENABLE" value="0" />
-  <parameter name="PREFETCHER_DATA_WIDTH" value="32" />
-  <parameter name="PREFETCHER_ENABLE" value="0" />
-  <parameter name="PREFETCHER_MAX_READ_BURST_COUNT" value="2" />
-  <parameter name="PREFETCHER_READ_BURST_ENABLE" value="0" />
-  <parameter name="PROGRAMMABLE_BURST_ENABLE" value="0" />
-  <parameter name="RESPONSE_PORT" value="2" />
-  <parameter name="STRIDE_ENABLE" value="0" />
-  <parameter name="TRANSFER_TYPE">Full Word Accesses Only</parameter>
-  <parameter name="USE_FIX_ADDRESS_WIDTH" value="0" />
- </module>
- <module
    name="mdma_from_ycbcr_to_rgb_accel"
    kind="altera_msgdma"
    version="15.1"
@@ -1791,7 +1728,7 @@
   <parameter name="USE_FIX_ADDRESS_WIDTH" value="0" />
  </module>
  <module
-   name="mdma_to_idct_accel"
+   name="mdma_to_idct_accel_cb"
    kind="altera_msgdma"
    version="15.1"
    enabled="1">
@@ -1837,7 +1774,7 @@
   <parameter name="USE_FIX_ADDRESS_WIDTH" value="0" />
  </module>
  <module
-   name="mdma_to_ycbcr_to_rgb_accel_cb"
+   name="mdma_to_idct_accel_cr"
    kind="altera_msgdma"
    version="15.1"
    enabled="1">
@@ -1883,53 +1820,7 @@
   <parameter name="USE_FIX_ADDRESS_WIDTH" value="0" />
  </module>
  <module
-   name="mdma_to_ycbcr_to_rgb_accel_cr"
-   kind="altera_msgdma"
-   version="15.1"
-   enabled="1">
-  <parameter name="AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_MAP" value="" />
-  <parameter
-     name="AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_WIDTH"
-     value="AddressWidth = -1" />
-  <parameter name="AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_MAP" value="" />
-  <parameter
-     name="AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_WIDTH"
-     value="AddressWidth = -1" />
-  <parameter name="AUTO_DEVICE" value="5CGXFC5C6F27C7" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
-  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7_H6" />
-  <parameter name="AUTO_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='lpddr2.avl_1' start='0x0' end='0x20000000' /></address-map>]]></parameter>
-  <parameter name="AUTO_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 29" />
-  <parameter name="AUTO_MM_WRITE_ADDRESS_MAP" value="" />
-  <parameter name="AUTO_MM_WRITE_ADDRESS_WIDTH" value="AddressWidth = -1" />
-  <parameter name="BURST_ENABLE" value="1" />
-  <parameter name="BURST_WRAPPING_SUPPORT" value="1" />
-  <parameter name="CHANNEL_ENABLE" value="0" />
-  <parameter name="CHANNEL_WIDTH" value="8" />
-  <parameter name="DATA_FIFO_DEPTH" value="1024" />
-  <parameter name="DATA_WIDTH" value="32" />
-  <parameter name="DESCRIPTOR_FIFO_DEPTH" value="16" />
-  <parameter name="ENHANCED_FEATURES" value="0" />
-  <parameter name="ERROR_ENABLE" value="0" />
-  <parameter name="ERROR_WIDTH" value="8" />
-  <parameter name="FIX_ADDRESS_WIDTH" value="32" />
-  <parameter name="MAX_BURST_COUNT" value="128" />
-  <parameter name="MAX_BYTE" value="536870912" />
-  <parameter name="MAX_STRIDE" value="1" />
-  <parameter name="MODE" value="1" />
-  <parameter name="PACKET_ENABLE" value="0" />
-  <parameter name="PREFETCHER_DATA_WIDTH" value="32" />
-  <parameter name="PREFETCHER_ENABLE" value="0" />
-  <parameter name="PREFETCHER_MAX_READ_BURST_COUNT" value="2" />
-  <parameter name="PREFETCHER_READ_BURST_ENABLE" value="0" />
-  <parameter name="PROGRAMMABLE_BURST_ENABLE" value="0" />
-  <parameter name="RESPONSE_PORT" value="2" />
-  <parameter name="STRIDE_ENABLE" value="0" />
-  <parameter name="TRANSFER_TYPE">Full Word Accesses Only</parameter>
-  <parameter name="USE_FIX_ADDRESS_WIDTH" value="0" />
- </module>
- <module
-   name="mdma_to_ycbcr_to_rgb_accel_y"
+   name="mdma_to_idct_accel_y"
    kind="altera_msgdma"
    version="15.1"
    enabled="1">
@@ -2477,7 +2368,7 @@
    start="cpu_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101530" />
+  <parameter name="baseAddress" value="0x201011f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2486,7 +2377,7 @@
    start="cpu_1.data_master"
    end="jtag_uart_1.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x200011c0" />
+  <parameter name="baseAddress" value="0x200014a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2513,7 +2404,7 @@
    start="cpu_1.data_master"
    end="mailbox_simple_cpu0_to_cpu1.avmm_msg_receiver">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001150" />
+  <parameter name="baseAddress" value="0x20001490" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2522,7 +2413,7 @@
    start="cpu_0.data_master"
    end="mailbox_simple_cpu1_to_cpu0.avmm_msg_receiver">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014c0" />
+  <parameter name="baseAddress" value="0x201011d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2531,7 +2422,7 @@
    start="cpu_0.data_master"
    end="mailbox_simple_cpu0_to_cpu1.avmm_msg_sender">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014d0" />
+  <parameter name="baseAddress" value="0x201011c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2540,7 +2431,7 @@
    start="cpu_1.data_master"
    end="mailbox_simple_cpu1_to_cpu0.avmm_msg_sender">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001140" />
+  <parameter name="baseAddress" value="0x20001480" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2549,7 +2440,7 @@
    start="cpu_0.data_master"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101528" />
+  <parameter name="baseAddress" value="0x201011e8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2558,7 +2449,7 @@
    start="cpu_1.data_master"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101528" />
+  <parameter name="baseAddress" value="0x201011e8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2567,61 +2458,43 @@
    start="cpu_0.data_master"
    end="video_dma.csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014a0" />
+  <parameter name="baseAddress" value="0x20101120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_to_idct_accel.csr">
+   start="cpu_0.data_master"
+   end="mdma_to_idct_accel_cr.csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001120" />
+  <parameter name="baseAddress" value="0x201010a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_from_idct_accel.csr">
+   start="cpu_0.data_master"
+   end="mdma_to_idct_accel_cb.csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001100" />
+  <parameter name="baseAddress" value="0x20101080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_to_ycbcr_to_rgb_accel_cb.csr">
+   start="cpu_0.data_master"
+   end="mdma_to_idct_accel_y.csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x200010e0" />
+  <parameter name="baseAddress" value="0x20101060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_to_ycbcr_to_rgb_accel_cr.csr">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x200010c0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_to_ycbcr_to_rgb_accel_y.csr">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x200010a0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="15.1"
-   start="cpu_1.data_master"
+   start="cpu_0.data_master"
    end="mdma_from_ycbcr_to_rgb_accel.csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001080" />
+  <parameter name="baseAddress" value="0x20101040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2648,61 +2521,43 @@
    start="cpu_0.data_master"
    end="video_dma.descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101510" />
+  <parameter name="baseAddress" value="0x201011b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_to_idct_accel.descriptor_slave">
+   start="cpu_0.data_master"
+   end="mdma_to_idct_accel_cr.descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x200011b0" />
+  <parameter name="baseAddress" value="0x20101170" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_from_idct_accel.descriptor_slave">
+   start="cpu_0.data_master"
+   end="mdma_to_idct_accel_cb.descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x200011a0" />
+  <parameter name="baseAddress" value="0x20101160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_to_ycbcr_to_rgb_accel_cb.descriptor_slave">
+   start="cpu_0.data_master"
+   end="mdma_to_idct_accel_y.descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001190" />
+  <parameter name="baseAddress" value="0x20101150" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_to_ycbcr_to_rgb_accel_cr.descriptor_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001180" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="15.1"
-   start="cpu_1.data_master"
-   end="mdma_to_ycbcr_to_rgb_accel_y.descriptor_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001170" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="15.1"
-   start="cpu_1.data_master"
+   start="cpu_0.data_master"
    end="mdma_from_ycbcr_to_rgb_accel.descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001160" />
+  <parameter name="baseAddress" value="0x20101140" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2711,12 +2566,12 @@
    start="cpu_0.data_master"
    end="timer_0_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101480" />
+  <parameter name="baseAddress" value="0x20101100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu_0.data_master" end="key.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101500" />
+  <parameter name="baseAddress" value="0x201011a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2725,17 +2580,17 @@
    start="cpu_0.data_master"
    end="timer_0_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101400" />
+  <parameter name="baseAddress" value="0x20101000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu_0.data_master" end="ledg.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101460" />
+  <parameter name="baseAddress" value="0x201010e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu_0.data_master" end="ledr.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101440" />
+  <parameter name="baseAddress" value="0x201010c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2744,7 +2599,7 @@
    start="cpu_0.data_master"
    end="i2c_scl.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014f0" />
+  <parameter name="baseAddress" value="0x20101190" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2753,7 +2608,7 @@
    start="cpu_0.data_master"
    end="i2c_sda.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x201014e0" />
+  <parameter name="baseAddress" value="0x20101180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2762,7 +2617,7 @@
    start="cpu_0.data_master"
    end="mutex_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101520" />
+  <parameter name="baseAddress" value="0x201011e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2771,7 +2626,7 @@
    start="cpu_1.data_master"
    end="mutex_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101520" />
+  <parameter name="baseAddress" value="0x201011e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2780,7 +2635,7 @@
    start="cpu_1.data_master"
    end="timer_1_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001040" />
+  <parameter name="baseAddress" value="0x20001440" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2789,16 +2644,16 @@
    start="cpu_1.data_master"
    end="timer_1_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20001000" />
+  <parameter name="baseAddress" value="0x20001400" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.1"
-   start="cpu_0.data_master"
+   start="cpu_1.data_master"
    end="sd_cont.slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101000" />
+  <parameter name="baseAddress" value="0x20001000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.1" start="cpu_0.data_master" end="sram.uas">
@@ -2859,15 +2714,6 @@
  <connection
    kind="avalon"
    version="15.1"
-   start="sd_cont.master"
-   end="video_dma.descriptor_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20101510" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="15.1"
    start="video_dma.mm_read"
    end="lpddr2.avl_1">
   <parameter name="arbitrationPriority" value="1" />
@@ -2877,7 +2723,7 @@
  <connection
    kind="avalon"
    version="15.1"
-   start="mdma_to_idct_accel.mm_read"
+   start="mdma_to_idct_accel_y.mm_read"
    end="lpddr2.avl_1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
@@ -2886,7 +2732,7 @@
  <connection
    kind="avalon"
    version="15.1"
-   start="mdma_to_ycbcr_to_rgb_accel_cb.mm_read"
+   start="mdma_to_idct_accel_cb.mm_read"
    end="lpddr2.avl_1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
@@ -2895,26 +2741,8 @@
  <connection
    kind="avalon"
    version="15.1"
-   start="mdma_to_ycbcr_to_rgb_accel_cr.mm_read"
+   start="mdma_to_idct_accel_cr.mm_read"
    end="lpddr2.avl_1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="15.1"
-   start="mdma_to_ycbcr_to_rgb_accel_y.mm_read"
-   end="lpddr2.avl_1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="15.1"
-   start="mdma_from_idct_accel.mm_write"
-   end="lpddr2.avl_2">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -2931,8 +2759,18 @@
  <connection
    kind="avalon_streaming"
    version="15.1"
-   start="idct_accelerator_2d.avalon_streaming_source"
-   end="mdma_from_idct_accel.st_sink" />
+   start="idct_accelerator_2d_cb.avalon_streaming_source"
+   end="ycbcr_to_rgb_accelerator.avalon_streaming_sink_cb" />
+ <connection
+   kind="avalon_streaming"
+   version="15.1"
+   start="idct_accelerator_2d_cr.avalon_streaming_source"
+   end="ycbcr_to_rgb_accelerator.avalon_streaming_sink_cr" />
+ <connection
+   kind="avalon_streaming"
+   version="15.1"
+   start="idct_accelerator_2d_y.avalon_streaming_source"
+   end="ycbcr_to_rgb_accelerator.avalon_streaming_sink_y" />
  <connection
    kind="avalon_streaming"
    version="15.1"
@@ -2951,23 +2789,18 @@
  <connection
    kind="avalon_streaming"
    version="15.1"
-   start="mdma_to_idct_accel.st_source"
-   end="idct_accelerator_2d.avalon_streaming_sink" />
+   start="mdma_to_idct_accel_y.st_source"
+   end="idct_accelerator_2d_y.avalon_streaming_sink" />
  <connection
    kind="avalon_streaming"
    version="15.1"
-   start="mdma_to_ycbcr_to_rgb_accel_cb.st_source"
-   end="ycbcr_to_rgb_accelerator.avalon_streaming_sink_cb" />
+   start="mdma_to_idct_accel_cb.st_source"
+   end="idct_accelerator_2d_cb.avalon_streaming_sink" />
  <connection
    kind="avalon_streaming"
    version="15.1"
-   start="mdma_to_ycbcr_to_rgb_accel_cr.st_source"
-   end="ycbcr_to_rgb_accelerator.avalon_streaming_sink_cr" />
- <connection
-   kind="avalon_streaming"
-   version="15.1"
-   start="mdma_to_ycbcr_to_rgb_accel_y.st_source"
-   end="ycbcr_to_rgb_accelerator.avalon_streaming_sink_y" />
+   start="mdma_to_idct_accel_cr.st_source"
+   end="idct_accelerator_2d_cr.avalon_streaming_sink" />
  <connection
    kind="avalon_streaming"
    version="15.1"
@@ -3016,17 +2849,12 @@
    kind="clock"
    version="15.1"
    start="clk_125.clk"
-   end="idct_accelerator_2d.clock" />
+   end="idct_accelerator_2d_y.clock" />
  <connection
    kind="clock"
    version="15.1"
    start="clk_125.clk"
-   end="mdma_to_idct_accel.clock" />
- <connection
-   kind="clock"
-   version="15.1"
-   start="clk_125.clk"
-   end="mdma_from_idct_accel.clock" />
+   end="mdma_to_idct_accel_y.clock" />
  <connection
    kind="clock"
    version="15.1"
@@ -3036,22 +2864,27 @@
    kind="clock"
    version="15.1"
    start="clk_125.clk"
-   end="mdma_to_ycbcr_to_rgb_accel_y.clock" />
- <connection
-   kind="clock"
-   version="15.1"
-   start="clk_125.clk"
-   end="mdma_to_ycbcr_to_rgb_accel_cr.clock" />
- <connection
-   kind="clock"
-   version="15.1"
-   start="clk_125.clk"
-   end="mdma_to_ycbcr_to_rgb_accel_cb.clock" />
- <connection
-   kind="clock"
-   version="15.1"
-   start="clk_125.clk"
    end="mdma_from_ycbcr_to_rgb_accel.clock" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
+   end="idct_accelerator_2d_cb.clock" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
+   end="idct_accelerator_2d_cr.clock" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
+   end="mdma_to_idct_accel_cr.clock" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="clk_125.clk"
+   end="mdma_to_idct_accel_cb.clock" />
  <connection
    kind="clock"
    version="15.1"
@@ -3128,101 +2961,87 @@
  <connection
    kind="interrupt"
    version="15.1"
-   start="cpu_1.irq"
-   end="mdma_to_idct_accel.csr_irq">
-  <parameter name="irqNumber" value="1" />
- </connection>
- <connection
-   kind="interrupt"
-   version="15.1"
-   start="cpu_1.irq"
-   end="mdma_from_idct_accel.csr_irq">
-  <parameter name="irqNumber" value="2" />
- </connection>
- <connection
-   kind="interrupt"
-   version="15.1"
-   start="cpu_1.irq"
-   end="mdma_from_ycbcr_to_rgb_accel.csr_irq">
-  <parameter name="irqNumber" value="3" />
- </connection>
- <connection
-   kind="interrupt"
-   version="15.1"
-   start="cpu_1.irq"
-   end="mdma_to_ycbcr_to_rgb_accel_cb.csr_irq">
-  <parameter name="irqNumber" value="4" />
- </connection>
- <connection
-   kind="interrupt"
-   version="15.1"
-   start="cpu_1.irq"
-   end="mdma_to_ycbcr_to_rgb_accel_cr.csr_irq">
-  <parameter name="irqNumber" value="5" />
- </connection>
- <connection
-   kind="interrupt"
-   version="15.1"
-   start="cpu_1.irq"
-   end="mdma_to_ycbcr_to_rgb_accel_y.csr_irq">
-  <parameter name="irqNumber" value="6" />
- </connection>
- <connection
-   kind="interrupt"
-   version="15.1"
    start="cpu_0.irq"
-   end="mailbox_simple_cpu0_to_cpu1.interrupt_mb_available">
-  <parameter name="irqNumber" value="5" />
- </connection>
- <connection
-   kind="interrupt"
-   version="15.1"
-   start="cpu_1.irq"
-   end="mailbox_simple_cpu1_to_cpu0.interrupt_mb_available">
-  <parameter name="irqNumber" value="8" />
- </connection>
- <connection
-   kind="interrupt"
-   version="15.1"
-   start="cpu_1.irq"
-   end="mailbox_simple_cpu0_to_cpu1.interrupt_msg_pending">
+   end="mdma_to_idct_accel_cr.csr_irq">
   <parameter name="irqNumber" value="7" />
  </connection>
  <connection
    kind="interrupt"
    version="15.1"
    start="cpu_0.irq"
-   end="mailbox_simple_cpu1_to_cpu0.interrupt_msg_pending">
-  <parameter name="irqNumber" value="6" />
+   end="mdma_to_idct_accel_cb.csr_irq">
+  <parameter name="irqNumber" value="8" />
  </connection>
- <connection kind="interrupt" version="15.1" start="cpu_0.irq" end="timer_0_0.irq">
+ <connection
+   kind="interrupt"
+   version="15.1"
+   start="cpu_0.irq"
+   end="mdma_to_idct_accel_y.csr_irq">
+  <parameter name="irqNumber" value="9" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.1"
+   start="cpu_0.irq"
+   end="mdma_from_ycbcr_to_rgb_accel.csr_irq">
+  <parameter name="irqNumber" value="10" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.1"
+   start="cpu_0.irq"
+   end="mailbox_simple_cpu0_to_cpu1.interrupt_mb_available">
+  <parameter name="irqNumber" value="1" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.1"
+   start="cpu_1.irq"
+   end="mailbox_simple_cpu1_to_cpu0.interrupt_mb_available">
+  <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.1"
+   start="cpu_1.irq"
+   end="mailbox_simple_cpu0_to_cpu1.interrupt_msg_pending">
   <parameter name="irqNumber" value="1" />
  </connection>
  <connection
    kind="interrupt"
    version="15.1"
    start="cpu_0.irq"
-   end="jtag_uart_0.irq">
+   end="mailbox_simple_cpu1_to_cpu0.interrupt_msg_pending">
   <parameter name="irqNumber" value="2" />
  </connection>
- <connection kind="interrupt" version="15.1" start="cpu_0.irq" end="key.irq">
+ <connection kind="interrupt" version="15.1" start="cpu_0.irq" end="timer_0_0.irq">
   <parameter name="irqNumber" value="3" />
  </connection>
- <connection kind="interrupt" version="15.1" start="cpu_0.irq" end="timer_0_1.irq">
+ <connection
+   kind="interrupt"
+   version="15.1"
+   start="cpu_0.irq"
+   end="jtag_uart_0.irq">
   <parameter name="irqNumber" value="4" />
+ </connection>
+ <connection kind="interrupt" version="15.1" start="cpu_0.irq" end="key.irq">
+  <parameter name="irqNumber" value="5" />
+ </connection>
+ <connection kind="interrupt" version="15.1" start="cpu_0.irq" end="timer_0_1.irq">
+  <parameter name="irqNumber" value="6" />
  </connection>
  <connection
    kind="interrupt"
    version="15.1"
    start="cpu_1.irq"
    end="jtag_uart_1.irq">
-  <parameter name="irqNumber" value="0" />
+  <parameter name="irqNumber" value="2" />
  </connection>
  <connection kind="interrupt" version="15.1" start="cpu_1.irq" end="timer_1_1.irq">
-  <parameter name="irqNumber" value="9" />
+  <parameter name="irqNumber" value="3" />
  </connection>
  <connection kind="interrupt" version="15.1" start="cpu_1.irq" end="timer_1_0.irq">
-  <parameter name="irqNumber" value="10" />
+  <parameter name="irqNumber" value="4" />
  </connection>
  <connection
    kind="reset"
@@ -3408,32 +3227,12 @@
    kind="reset"
    version="15.1"
    start="reset_controller_0.reset_out"
-   end="mdma_to_idct_accel.reset_n" />
+   end="mdma_to_idct_accel_y.reset_n" />
  <connection
    kind="reset"
    version="15.1"
    start="reset_controller_0.reset_out"
-   end="mdma_from_idct_accel.reset_n" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="reset_controller_0.reset_out"
-   end="idct_accelerator_2d.reset_n" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="reset_controller_0.reset_out"
-   end="mdma_to_ycbcr_to_rgb_accel_cr.reset_n" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="reset_controller_0.reset_out"
-   end="mdma_to_ycbcr_to_rgb_accel_y.reset_n" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="reset_controller_0.reset_out"
-   end="mdma_to_ycbcr_to_rgb_accel_cb.reset_n" />
+   end="idct_accelerator_2d_y.reset_n" />
  <connection
    kind="reset"
    version="15.1"
@@ -3444,6 +3243,26 @@
    version="15.1"
    start="reset_controller_0.reset_out"
    end="mdma_from_ycbcr_to_rgb_accel.reset_n" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="mdma_to_idct_accel_cr.reset_n" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="idct_accelerator_2d_cr.reset_n" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="mdma_to_idct_accel_cb.reset_n" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="reset_controller_0.reset_out"
+   end="idct_accelerator_2d_cb.reset_n" />
  <connection
    kind="reset"
    version="15.1"
