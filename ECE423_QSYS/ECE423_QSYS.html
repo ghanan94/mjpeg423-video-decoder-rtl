@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2017.02.28.13:20:11</td>
+    <td class="l">2017.02.28.20:24:09</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -130,22 +130,16 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <a href="#module_mailbox_simple_cpu1_to_cpu0"><b>mailbox_simple_cpu1_to_cpu0</b>
      </a> altera_avalon_mailbox_simple 15.1
      <br/>&#160;&#160;
-     <a href="#module_mdma_from_idct_accel"><b>mdma_from_idct_accel</b>
-     </a> altera_msgdma 15.1
-     <br/>&#160;&#160;
      <a href="#module_mdma_from_ycbcr_to_rgb_accel"><b>mdma_from_ycbcr_to_rgb_accel</b>
      </a> altera_msgdma 15.1
      <br/>&#160;&#160;
-     <a href="#module_mdma_to_idct_accel"><b>mdma_to_idct_accel</b>
+     <a href="#module_mdma_to_idct_accel_cb"><b>mdma_to_idct_accel_cb</b>
      </a> altera_msgdma 15.1
      <br/>&#160;&#160;
-     <a href="#module_mdma_to_ycbcr_to_rgb_accel_cb"><b>mdma_to_ycbcr_to_rgb_accel_cb</b>
+     <a href="#module_mdma_to_idct_accel_cr"><b>mdma_to_idct_accel_cr</b>
      </a> altera_msgdma 15.1
      <br/>&#160;&#160;
-     <a href="#module_mdma_to_ycbcr_to_rgb_accel_cr"><b>mdma_to_ycbcr_to_rgb_accel_cr</b>
-     </a> altera_msgdma 15.1
-     <br/>&#160;&#160;
-     <a href="#module_mdma_to_ycbcr_to_rgb_accel_y"><b>mdma_to_ycbcr_to_rgb_accel_y</b>
+     <a href="#module_mdma_to_idct_accel_y"><b>mdma_to_idct_accel_y</b>
      </a> altera_msgdma 15.1
      <br/>&#160;&#160;
      <a href="#module_mutex_0"><b>mutex_0</b>
@@ -190,27 +184,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </a>
     </td>
     <td class="mastermodule" colspan="1">
-     <a href="#module_mdma_from_idct_accel"><b>mdma_from_idct_accel</b>
-     </a>
-    </td>
-    <td class="mastermodule" colspan="1">
      <a href="#module_mdma_from_ycbcr_to_rgb_accel"><b>mdma_from_ycbcr_to_rgb_accel</b>
      </a>
     </td>
     <td class="mastermodule" colspan="1">
-     <a href="#module_mdma_to_idct_accel"><b>mdma_to_idct_accel</b>
+     <a href="#module_mdma_to_idct_accel_cb"><b>mdma_to_idct_accel_cb</b>
      </a>
     </td>
     <td class="mastermodule" colspan="1">
-     <a href="#module_mdma_to_ycbcr_to_rgb_accel_cb"><b>mdma_to_ycbcr_to_rgb_accel_cb</b>
+     <a href="#module_mdma_to_idct_accel_cr"><b>mdma_to_idct_accel_cr</b>
      </a>
     </td>
     <td class="mastermodule" colspan="1">
-     <a href="#module_mdma_to_ycbcr_to_rgb_accel_cr"><b>mdma_to_ycbcr_to_rgb_accel_cr</b>
-     </a>
-    </td>
-    <td class="mastermodule" colspan="1">
-     <a href="#module_mdma_to_ycbcr_to_rgb_accel_y"><b>mdma_to_ycbcr_to_rgb_accel_y</b>
+     <a href="#module_mdma_to_idct_accel_y"><b>mdma_to_idct_accel_y</b>
      </a>
     </td>
     <td class="mastermodule" colspan="1">
@@ -228,8 +214,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="masterl">&#160;data_master</td>
     <td class="masterr">&#160;instruction_master</td>
     <td class="masterlr">&#160;mm_write</td>
-    <td class="masterlr">&#160;mm_write</td>
-    <td class="masterlr">&#160;mm_read</td>
     <td class="masterlr">&#160;mm_read</td>
     <td class="masterlr">&#160;mm_read</td>
     <td class="masterlr">&#160;mm_read</td>
@@ -251,15 +235,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">debug_mem_slave&#160;</td>
     <td class="addr"><span style="color:#989898">0x</span>20100800</td>
     <td class="addr"><span style="color:#989898">0x</span>20100800</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -284,8 +264,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">debug_mem_slave&#160;</td>
@@ -293,8 +271,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>20000800</td>
     <td class="addr"><span style="color:#989898">0x</span>20000800</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -317,14 +293,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201014f0</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20101190</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -350,14 +322,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201014e0</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20101180</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -383,14 +351,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_jtag_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101530</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>201011f0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -416,16 +380,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_jtag_slave&#160;</td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>200011c0</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>200014a0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -449,14 +409,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101500</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>201011a0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -482,14 +438,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101460</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>201010e0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -515,14 +467,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101440</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>201010c0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -548,16 +496,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavem">avl_0&#160;</td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -573,8 +517,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
@@ -588,8 +530,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
-    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
-    <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -611,14 +551,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavem">avmm_msg_sender&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201014d0</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>201011c0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -633,9 +569,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="slavem">avmm_msg_receiver&#160;</td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001150</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20001490</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -659,16 +593,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavem">avmm_msg_sender&#160;</td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001140</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20001480</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -679,57 +609,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">avmm_msg_receiver&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201014c0</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-   </tr>
-   <tr>
-    <td class="slavemodule">&#160;
-     <a href="#module_mdma_from_idct_accel"><b>mdma_from_idct_accel</b>
-     </a>
-    </td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-   </tr>
-   <tr>
-    <td class="slavem">csr&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001100</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-   </tr>
-   <tr>
-    <td class="slavem">descriptor_slave&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>200011a0</td>
+    <td class="addr"><span style="color:#989898">0x</span>201011d0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -755,14 +635,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavem">csr&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001080</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101040</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -775,9 +651,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">descriptor_slave&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001160</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101140</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -790,11 +664,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_mdma_to_idct_accel"><b>mdma_to_idct_accel</b>
+     <a href="#module_mdma_to_idct_accel_cb"><b>mdma_to_idct_accel_cb</b>
      </a>
     </td>
-    <td class="empty"></td>
-    <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -808,9 +680,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">csr&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001120</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101080</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -823,9 +693,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">descriptor_slave&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>200011b0</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101160</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -838,11 +706,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_mdma_to_ycbcr_to_rgb_accel_cb"><b>mdma_to_ycbcr_to_rgb_accel_cb</b>
+     <a href="#module_mdma_to_idct_accel_cr"><b>mdma_to_idct_accel_cr</b>
      </a>
     </td>
-    <td class="empty"></td>
-    <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -856,9 +722,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">csr&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>200010e0</td>
+    <td class="addr"><span style="color:#989898">0x</span>201010a0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -871,9 +735,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">descriptor_slave&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001190</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101170</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -886,11 +748,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_mdma_to_ycbcr_to_rgb_accel_cr"><b>mdma_to_ycbcr_to_rgb_accel_cr</b>
+     <a href="#module_mdma_to_idct_accel_y"><b>mdma_to_idct_accel_y</b>
      </a>
     </td>
-    <td class="empty"></td>
-    <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -904,57 +764,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">csr&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>200010c0</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-   </tr>
-   <tr>
-    <td class="slavem">descriptor_slave&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001180</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-   </tr>
-   <tr>
-    <td class="slavemodule">&#160;
-     <a href="#module_mdma_to_ycbcr_to_rgb_accel_y"><b>mdma_to_ycbcr_to_rgb_accel_y</b>
-     </a>
-    </td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-   </tr>
-   <tr>
-    <td class="slavem">csr&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>200010a0</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101060</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -967,9 +777,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">descriptor_slave&#160;</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001170</td>
+    <td class="addr"><span style="color:#989898">0x</span>20101150</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -995,16 +803,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101520</td>
+    <td class="addr"><span style="color:#989898">0x</span>201011e0</td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20101520</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>201011e0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1028,16 +832,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101000</td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20001000</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1061,8 +861,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">uas&#160;</td>
@@ -1070,8 +868,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="addr"><span style="color:#989898">0x</span>20080000</td>
     <td class="addr"><span style="color:#989898">0x</span>20080000</td>
     <td class="addr"><span style="color:#989898">0x</span>20080000</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1094,16 +890,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">control_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101528</td>
+    <td class="addr"><span style="color:#989898">0x</span>201011e8</td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20101528</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>201011e8</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1127,14 +919,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101480</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20101100</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1160,14 +948,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101400</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20101000</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1193,16 +977,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001040</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20001440</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1226,16 +1006,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20001000</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20001400</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1259,14 +1035,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavem">csr&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>201014a0</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>20101120</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1279,7 +1051,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">descriptor_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>20101510</td>
+    <td class="addr"><span style="color:#989898">0x</span>201011b0</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1288,8 +1060,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>20101510</td>
     <td class="empty"></td>
    </tr>
   </table>
@@ -1395,7 +1165,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk_125">clk_125</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="72">cpu_0</td>
+      <td class="main" rowspan="97">cpu_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -1538,6 +1308,150 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">data_master&#160;&#160;</td>
       <td class="neighbor" rowspan="6">
        <a href="#module_video_dma">video_dma</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;descriptor_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr_irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_mdma_to_idct_accel_cr">mdma_to_idct_accel_cr</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;descriptor_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr_irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_mdma_to_idct_accel_cb">mdma_to_idct_accel_cb</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;descriptor_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr_irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_mdma_to_idct_accel_y">mdma_to_idct_accel_y</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;descriptor_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;csr_irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_mdma_from_ycbcr_to_rgb_accel">mdma_from_ycbcr_to_rgb_accel</a>
       </td>
      </tr>
      <tr>
@@ -1722,22 +1636,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;s1</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_sd_cont">sd_cont</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;slave</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -2456,7 +2354,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /&gt;&lt;slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /&gt;&lt;slave name='cpu_0.debug_mem_slave' start='0x20100800' end='0x20101000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='sd_cont.slave' start='0x20101000' end='0x20101400' type='sd_cont.slave' /&gt;&lt;slave name='timer_0_1.s1' start='0x20101400' end='0x20101440' type='altera_avalon_timer.s1' /&gt;&lt;slave name='ledr.s1' start='0x20101440' end='0x20101460' type='altera_avalon_pio.s1' /&gt;&lt;slave name='ledg.s1' start='0x20101460' end='0x20101480' type='altera_avalon_pio.s1' /&gt;&lt;slave name='timer_0_0.s1' start='0x20101480' end='0x201014A0' type='altera_avalon_timer.s1' /&gt;&lt;slave name='video_dma.csr' start='0x201014A0' end='0x201014C0' type='altera_msgdma.csr' /&gt;&lt;slave name='mailbox_simple_cpu1_to_cpu0.avmm_msg_receiver' start='0x201014C0' end='0x201014D0' type='altera_avalon_mailbox_simple.avmm_msg_receiver' /&gt;&lt;slave name='mailbox_simple_cpu0_to_cpu1.avmm_msg_sender' start='0x201014D0' end='0x201014E0' type='altera_avalon_mailbox_simple.avmm_msg_sender' /&gt;&lt;slave name='i2c_sda.s1' start='0x201014E0' end='0x201014F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='i2c_scl.s1' start='0x201014F0' end='0x20101500' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x20101500' end='0x20101510' type='altera_avalon_pio.s1' /&gt;&lt;slave name='video_dma.descriptor_slave' start='0x20101510' end='0x20101520' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mutex_0.s1' start='0x20101520' end='0x20101528' type='altera_avalon_mutex.s1' /&gt;&lt;slave name='sysid.control_slave' start='0x20101528' end='0x20101530' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x20101530' end='0x20101538' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /&gt;&lt;slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /&gt;&lt;slave name='cpu_0.debug_mem_slave' start='0x20100800' end='0x20101000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_0_1.s1' start='0x20101000' end='0x20101040' type='altera_avalon_timer.s1' /&gt;&lt;slave name='mdma_from_ycbcr_to_rgb_accel.csr' start='0x20101040' end='0x20101060' type='altera_msgdma.csr' /&gt;&lt;slave name='mdma_to_idct_accel_y.csr' start='0x20101060' end='0x20101080' type='altera_msgdma.csr' /&gt;&lt;slave name='mdma_to_idct_accel_cb.csr' start='0x20101080' end='0x201010A0' type='altera_msgdma.csr' /&gt;&lt;slave name='mdma_to_idct_accel_cr.csr' start='0x201010A0' end='0x201010C0' type='altera_msgdma.csr' /&gt;&lt;slave name='ledr.s1' start='0x201010C0' end='0x201010E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='ledg.s1' start='0x201010E0' end='0x20101100' type='altera_avalon_pio.s1' /&gt;&lt;slave name='timer_0_0.s1' start='0x20101100' end='0x20101120' type='altera_avalon_timer.s1' /&gt;&lt;slave name='video_dma.csr' start='0x20101120' end='0x20101140' type='altera_msgdma.csr' /&gt;&lt;slave name='mdma_from_ycbcr_to_rgb_accel.descriptor_slave' start='0x20101140' end='0x20101150' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mdma_to_idct_accel_y.descriptor_slave' start='0x20101150' end='0x20101160' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mdma_to_idct_accel_cb.descriptor_slave' start='0x20101160' end='0x20101170' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mdma_to_idct_accel_cr.descriptor_slave' start='0x20101170' end='0x20101180' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='i2c_sda.s1' start='0x20101180' end='0x20101190' type='altera_avalon_pio.s1' /&gt;&lt;slave name='i2c_scl.s1' start='0x20101190' end='0x201011A0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x201011A0' end='0x201011B0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='video_dma.descriptor_slave' start='0x201011B0' end='0x201011C0' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mailbox_simple_cpu0_to_cpu1.avmm_msg_sender' start='0x201011C0' end='0x201011D0' type='altera_avalon_mailbox_simple.avmm_msg_sender' /&gt;&lt;slave name='mailbox_simple_cpu1_to_cpu0.avmm_msg_receiver' start='0x201011D0' end='0x201011E0' type='altera_avalon_mailbox_simple.avmm_msg_receiver' /&gt;&lt;slave name='mutex_0.s1' start='0x201011E0' end='0x201011E8' type='altera_avalon_mutex.s1' /&gt;&lt;slave name='sysid.control_slave' start='0x201011E8' end='0x201011F0' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x201011F0' end='0x201011F8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -2508,7 +2406,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">internalIrqMaskSystemInfo</td>
-        <td class="parametervalue">127</td>
+        <td class="parametervalue">2047</td>
        </tr>
        <tr>
         <td class="parametername">customInstSlavesSystemInfo</td>
@@ -2708,7 +2606,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk_125">clk_125</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="87">cpu_1</td>
+      <td class="main" rowspan="48">cpu_1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -2849,222 +2747,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_mdma_to_idct_accel">mdma_to_idct_accel</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;descriptor_slave</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">irq&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_mdma_from_idct_accel">mdma_from_idct_accel</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;descriptor_slave</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">irq&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_cb">mdma_to_ycbcr_to_rgb_accel_cb</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;descriptor_slave</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">irq&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_cr">mdma_to_ycbcr_to_rgb_accel_cr</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;descriptor_slave</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">irq&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_y">mdma_to_ycbcr_to_rgb_accel_y</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;descriptor_slave</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">irq&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_mdma_from_ycbcr_to_rgb_accel">mdma_from_ycbcr_to_rgb_accel</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;descriptor_slave</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">irq&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;csr_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_mutex_0">mutex_0</a>
       </td>
@@ -3125,6 +2807,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_sd_cont">sd_cont</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;slave</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -3843,7 +3541,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /&gt;&lt;slave name='cpu_1.debug_mem_slave' start='0x20000800' end='0x20001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_1_1.s1' start='0x20001000' end='0x20001040' type='altera_avalon_timer.s1' /&gt;&lt;slave name='timer_1_0.s1' start='0x20001040' end='0x20001080' type='altera_avalon_timer.s1' /&gt;&lt;slave name='mdma_from_ycbcr_to_rgb_accel.csr' start='0x20001080' end='0x200010A0' type='altera_msgdma.csr' /&gt;&lt;slave name='mdma_to_ycbcr_to_rgb_accel_y.csr' start='0x200010A0' end='0x200010C0' type='altera_msgdma.csr' /&gt;&lt;slave name='mdma_to_ycbcr_to_rgb_accel_cr.csr' start='0x200010C0' end='0x200010E0' type='altera_msgdma.csr' /&gt;&lt;slave name='mdma_to_ycbcr_to_rgb_accel_cb.csr' start='0x200010E0' end='0x20001100' type='altera_msgdma.csr' /&gt;&lt;slave name='mdma_from_idct_accel.csr' start='0x20001100' end='0x20001120' type='altera_msgdma.csr' /&gt;&lt;slave name='mdma_to_idct_accel.csr' start='0x20001120' end='0x20001140' type='altera_msgdma.csr' /&gt;&lt;slave name='mailbox_simple_cpu1_to_cpu0.avmm_msg_sender' start='0x20001140' end='0x20001150' type='altera_avalon_mailbox_simple.avmm_msg_sender' /&gt;&lt;slave name='mailbox_simple_cpu0_to_cpu1.avmm_msg_receiver' start='0x20001150' end='0x20001160' type='altera_avalon_mailbox_simple.avmm_msg_receiver' /&gt;&lt;slave name='mdma_from_ycbcr_to_rgb_accel.descriptor_slave' start='0x20001160' end='0x20001170' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mdma_to_ycbcr_to_rgb_accel_y.descriptor_slave' start='0x20001170' end='0x20001180' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mdma_to_ycbcr_to_rgb_accel_cr.descriptor_slave' start='0x20001180' end='0x20001190' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mdma_to_ycbcr_to_rgb_accel_cb.descriptor_slave' start='0x20001190' end='0x200011A0' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mdma_from_idct_accel.descriptor_slave' start='0x200011A0' end='0x200011B0' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='mdma_to_idct_accel.descriptor_slave' start='0x200011B0' end='0x200011C0' type='altera_msgdma.descriptor_slave' /&gt;&lt;slave name='jtag_uart_1.avalon_jtag_slave' start='0x200011C0' end='0x200011C8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /&gt;&lt;slave name='mutex_0.s1' start='0x20101520' end='0x20101528' type='altera_avalon_mutex.s1' /&gt;&lt;slave name='sysid.control_slave' start='0x20101528' end='0x20101530' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='lpddr2.avl_0' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl_0' /&gt;&lt;slave name='cpu_1.debug_mem_slave' start='0x20000800' end='0x20001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='sd_cont.slave' start='0x20001000' end='0x20001400' type='sd_cont.slave' /&gt;&lt;slave name='timer_1_1.s1' start='0x20001400' end='0x20001440' type='altera_avalon_timer.s1' /&gt;&lt;slave name='timer_1_0.s1' start='0x20001440' end='0x20001480' type='altera_avalon_timer.s1' /&gt;&lt;slave name='mailbox_simple_cpu1_to_cpu0.avmm_msg_sender' start='0x20001480' end='0x20001490' type='altera_avalon_mailbox_simple.avmm_msg_sender' /&gt;&lt;slave name='mailbox_simple_cpu0_to_cpu1.avmm_msg_receiver' start='0x20001490' end='0x200014A0' type='altera_avalon_mailbox_simple.avmm_msg_receiver' /&gt;&lt;slave name='jtag_uart_1.avalon_jtag_slave' start='0x200014A0' end='0x200014A8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;slave name='sram.uas' start='0x20080000' end='0x20100000' type='altera_generic_tristate_controller.uas' /&gt;&lt;slave name='mutex_0.s1' start='0x201011E0' end='0x201011E8' type='altera_avalon_mutex.s1' /&gt;&lt;slave name='sysid.control_slave' start='0x201011E8' end='0x201011F0' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -3895,7 +3593,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">internalIrqMaskSystemInfo</td>
-        <td class="parametervalue">2047</td>
+        <td class="parametervalue">31</td>
        </tr>
        <tr>
         <td class="parametername">customInstSlavesSystemInfo</td>
@@ -4491,19 +4189,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_idct_accelerator_2d"> </a>
+  <a name="module_idct_accelerator_2d_cb"> </a>
   <div>
    <hr/>
-   <h2>idct_accelerator_2d</h2>2d_idct_accelerator v2.0
+   <h2>idct_accelerator_2d_cb</h2>2d_idct_accelerator v2.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_idct_accel">mdma_to_idct_accel</a>
+       <a href="#module_mdma_to_idct_accel_cb">mdma_to_idct_accel_cb</a>
       </td>
       <td class="from">st_source&#160;&#160;</td>
-      <td class="main" rowspan="10">idct_accelerator_2d</td>
+      <td class="main" rowspan="10">idct_accelerator_2d_cb</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avalon_streaming_sink</td>
@@ -4537,13 +4235,177 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">avalon_streaming_source&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_from_idct_accel">mdma_from_idct_accel</a>
+       <a href="#module_ycbcr_to_rgb_accelerator">ycbcr_to_rgb_accelerator</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;st_sink</td>
+      <td class="to">&#160;&#160;avalon_streaming_sink_cb</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_idct_accelerator_2d_cr"> </a>
+  <div>
+   <hr/>
+   <h2>idct_accelerator_2d_cr</h2>2d_idct_accelerator v2.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_mdma_to_idct_accel_cr">mdma_to_idct_accel_cr</a>
+      </td>
+      <td class="from">st_source&#160;&#160;</td>
+      <td class="main" rowspan="10">idct_accelerator_2d_cr</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_streaming_sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_125">clk_125</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_reset_controller_0">reset_controller_0</a>
+      </td>
+      <td class="from">reset_out&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset_n</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_streaming_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ycbcr_to_rgb_accelerator">ycbcr_to_rgb_accelerator</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_streaming_sink_cr</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_idct_accelerator_2d_y"> </a>
+  <div>
+   <hr/>
+   <h2>idct_accelerator_2d_y</h2>2d_idct_accelerator v2.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_mdma_to_idct_accel_y">mdma_to_idct_accel_y</a>
+      </td>
+      <td class="from">st_source&#160;&#160;</td>
+      <td class="main" rowspan="10">idct_accelerator_2d_y</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_streaming_sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_125">clk_125</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_reset_controller_0">reset_controller_0</a>
+      </td>
+      <td class="from">reset_out&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset_n</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_streaming_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ycbcr_to_rgb_accelerator">ycbcr_to_rgb_accelerator</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_streaming_sink_y</td>
      </tr>
     </table>
    </div>
@@ -5531,7 +5393,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_cpu_0">cpu_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="61">lpddr2</td>
+      <td class="main" rowspan="55">lpddr2</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avl_0</td>
@@ -5577,7 +5439,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_idct_accel">mdma_to_idct_accel</a>
+       <a href="#module_mdma_to_idct_accel_y">mdma_to_idct_accel_y</a>
       </td>
       <td class="from">mm_read&#160;&#160;</td>
      </tr>
@@ -5589,7 +5451,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_cb">mdma_to_ycbcr_to_rgb_accel_cb</a>
+       <a href="#module_mdma_to_idct_accel_cb">mdma_to_idct_accel_cb</a>
       </td>
       <td class="from">mm_read&#160;&#160;</td>
      </tr>
@@ -5601,36 +5463,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_cr">mdma_to_ycbcr_to_rgb_accel_cr</a>
+       <a href="#module_mdma_to_idct_accel_cr">mdma_to_idct_accel_cr</a>
       </td>
       <td class="from">mm_read&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avl_1</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_y">mdma_to_ycbcr_to_rgb_accel_y</a>
-      </td>
-      <td class="from">mm_read&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;avl_1</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_from_idct_accel">mdma_from_idct_accel</a>
-      </td>
-      <td class="from">mm_write&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;avl_2</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -11660,371 +11498,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_mdma_from_idct_accel"> </a>
-  <div>
-   <hr/>
-   <h2>mdma_from_idct_accel</h2>altera_msgdma v15.1
-   <br/>
-   <div class="greydiv">
-    <table class="connectionboxes">
-     <tr>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_cpu_1">cpu_1</a>
-      </td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="17">mdma_from_idct_accel</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;csr</td>
-     </tr>
-     <tr>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;descriptor_slave</td>
-     </tr>
-     <tr>
-      <td class="from">irq&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;csr_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_idct_accelerator_2d">idct_accelerator_2d</a>
-      </td>
-      <td class="from">avalon_streaming_source&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;st_sink</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_clk_125">clk_125</a>
-      </td>
-      <td class="from">clk&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;clock</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_reset_controller_0">reset_controller_0</a>
-      </td>
-      <td class="from">reset_out&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;reset_n</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">mm_write&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_lpddr2">lpddr2</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;avl_2</td>
-     </tr>
-    </table>
-   </div>
-   <br/>
-   <br/>
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Parameters</h2>
-      <table>
-       <tr>
-        <td class="parametername">MODE</td>
-        <td class="parametervalue">2</td>
-       </tr>
-       <tr>
-        <td class="parametername">DATA_WIDTH</td>
-        <td class="parametervalue">32</td>
-       </tr>
-       <tr>
-        <td class="parametername">USE_FIX_ADDRESS_WIDTH</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">FIX_ADDRESS_WIDTH</td>
-        <td class="parametervalue">32</td>
-       </tr>
-       <tr>
-        <td class="parametername">DATA_FIFO_DEPTH</td>
-        <td class="parametervalue">1024</td>
-       </tr>
-       <tr>
-        <td class="parametername">DESCRIPTOR_FIFO_DEPTH</td>
-        <td class="parametervalue">16</td>
-       </tr>
-       <tr>
-        <td class="parametername">RESPONSE_PORT</td>
-        <td class="parametervalue">2</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_BYTE</td>
-        <td class="parametervalue">536870912</td>
-       </tr>
-       <tr>
-        <td class="parametername">TRANSFER_TYPE</td>
-        <td class="parametervalue">Full Word Accesses Only</td>
-       </tr>
-       <tr>
-        <td class="parametername">BURST_ENABLE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_BURST_COUNT</td>
-        <td class="parametervalue">128</td>
-       </tr>
-       <tr>
-        <td class="parametername">BURST_WRAPPING_SUPPORT</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">ENHANCED_FEATURES</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">STRIDE_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_STRIDE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">PROGRAMMABLE_BURST_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">STRIDE_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PACKET_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PACKET_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_WIDTH</td>
-        <td class="parametervalue">8</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_WIDTH</td>
-        <td class="parametervalue">8</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_READ_BURST_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_DATA_WIDTH</td>
-        <td class="parametervalue">32</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_MAX_READ_BURST_COUNT</td>
-        <td class="parametervalue">2</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DEVICE_FAMILY</td>
-        <td class="parametervalue">CYCLONEV</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DEVICE</td>
-        <td class="parametervalue">5CGXFC5C6F27C7</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DEVICE_SPEEDGRADE</td>
-        <td class="parametervalue">7_H6</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_MM_READ_ADDRESS_MAP</td>
-        <td class="parametervalue"></td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_MM_READ_ADDRESS_WIDTH</td>
-        <td class="parametervalue">AddressWidth = -1</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_MM_WRITE_ADDRESS_MAP</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='lpddr2.avl_2' start='0x0' end='0x20000000' /&gt;&lt;/address-map&gt;</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_MM_WRITE_ADDRESS_WIDTH</td>
-        <td class="parametervalue">AddressWidth = 29</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_MAP</td>
-        <td class="parametervalue"></td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_WIDTH</td>
-        <td class="parametervalue">AddressWidth = -1</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_MAP</td>
-        <td class="parametervalue"></td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_WIDTH</td>
-        <td class="parametervalue">AddressWidth = -1</td>
-       </tr>
-       <tr>
-        <td class="parametername">deviceFamily</td>
-        <td class="parametervalue">Cyclone V</td>
-       </tr>
-       <tr>
-        <td class="parametername">generateLegacySim</td>
-        <td class="parametervalue">false</td>
-       </tr>
-      </table>
-     </td>
-    </tr>
-   </table>&#160;&#160;
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Software Assignments</h2>
-      <table>
-       <tr>
-        <td class="parametername">BURST_ENABLE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">BURST_WRAPPING_SUPPORT</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_WIDTH</td>
-        <td class="parametervalue">8</td>
-       </tr>
-       <tr>
-        <td class="parametername">DATA_FIFO_DEPTH</td>
-        <td class="parametervalue">1024</td>
-       </tr>
-       <tr>
-        <td class="parametername">DATA_WIDTH</td>
-        <td class="parametervalue">32</td>
-       </tr>
-       <tr>
-        <td class="parametername">DESCRIPTOR_FIFO_DEPTH</td>
-        <td class="parametervalue">16</td>
-       </tr>
-       <tr>
-        <td class="parametername">DMA_MODE</td>
-        <td class="parametervalue">2</td>
-       </tr>
-       <tr>
-        <td class="parametername">ENHANCED_FEATURES</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_WIDTH</td>
-        <td class="parametervalue">8</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_BURST_COUNT</td>
-        <td class="parametervalue">128</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_BYTE</td>
-        <td class="parametervalue">536870912</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_STRIDE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">PACKET_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PACKET_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PROGRAMMABLE_BURST_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">RESPONSE_PORT</td>
-        <td class="parametervalue">2</td>
-       </tr>
-       <tr>
-        <td class="parametername">STRIDE_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">STRIDE_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">TRANSFER_TYPE</td>
-        <td class="parametervalue">Full Word Accesses Only</td>
-       </tr>
-      </table>
-     </td>
-    </tr>
-   </table>
-  </div>
   <a name="module_mdma_from_ycbcr_to_rgb_accel"> </a>
   <div>
    <hr/>
@@ -12034,7 +11507,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="6">
-       <a href="#module_cpu_1">cpu_1</a>
+       <a href="#module_cpu_0">cpu_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
       <td class="main" rowspan="17">mdma_from_ycbcr_to_rgb_accel</td>
@@ -12390,19 +11863,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_mdma_to_idct_accel"> </a>
+  <a name="module_mdma_to_idct_accel_cb"> </a>
   <div>
    <hr/>
-   <h2>mdma_to_idct_accel</h2>altera_msgdma v15.1
+   <h2>mdma_to_idct_accel_cb</h2>altera_msgdma v15.1
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="6">
-       <a href="#module_cpu_1">cpu_1</a>
+       <a href="#module_cpu_0">cpu_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="17">mdma_to_idct_accel</td>
+      <td class="main" rowspan="17">mdma_to_idct_accel_cb</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;csr</td>
@@ -12464,7 +11937,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">st_source&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_idct_accelerator_2d">idct_accelerator_2d</a>
+       <a href="#module_idct_accelerator_2d_cb">idct_accelerator_2d_cb</a>
       </td>
      </tr>
      <tr>
@@ -12759,19 +12232,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_mdma_to_ycbcr_to_rgb_accel_cb"> </a>
+  <a name="module_mdma_to_idct_accel_cr"> </a>
   <div>
    <hr/>
-   <h2>mdma_to_ycbcr_to_rgb_accel_cb</h2>altera_msgdma v15.1
+   <h2>mdma_to_idct_accel_cr</h2>altera_msgdma v15.1
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="6">
-       <a href="#module_cpu_1">cpu_1</a>
+       <a href="#module_cpu_0">cpu_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="17">mdma_to_ycbcr_to_rgb_accel_cb</td>
+      <td class="main" rowspan="17">mdma_to_idct_accel_cr</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;csr</td>
@@ -12833,13 +12306,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">st_source&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_ycbcr_to_rgb_accelerator">ycbcr_to_rgb_accelerator</a>
+       <a href="#module_idct_accelerator_2d_cr">idct_accelerator_2d_cr</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;avalon_streaming_sink_cb</td>
+      <td class="to">&#160;&#160;avalon_streaming_sink</td>
      </tr>
     </table>
    </div>
@@ -13128,19 +12601,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_mdma_to_ycbcr_to_rgb_accel_cr"> </a>
+  <a name="module_mdma_to_idct_accel_y"> </a>
   <div>
    <hr/>
-   <h2>mdma_to_ycbcr_to_rgb_accel_cr</h2>altera_msgdma v15.1
+   <h2>mdma_to_idct_accel_y</h2>altera_msgdma v15.1
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="6">
-       <a href="#module_cpu_1">cpu_1</a>
+       <a href="#module_cpu_0">cpu_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="17">mdma_to_ycbcr_to_rgb_accel_cr</td>
+      <td class="main" rowspan="17">mdma_to_idct_accel_y</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;csr</td>
@@ -13202,382 +12675,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">st_source&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_ycbcr_to_rgb_accelerator">ycbcr_to_rgb_accelerator</a>
+       <a href="#module_idct_accelerator_2d_y">idct_accelerator_2d_y</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;avalon_streaming_sink_cr</td>
-     </tr>
-    </table>
-   </div>
-   <br/>
-   <br/>
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Parameters</h2>
-      <table>
-       <tr>
-        <td class="parametername">MODE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">DATA_WIDTH</td>
-        <td class="parametervalue">32</td>
-       </tr>
-       <tr>
-        <td class="parametername">USE_FIX_ADDRESS_WIDTH</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">FIX_ADDRESS_WIDTH</td>
-        <td class="parametervalue">32</td>
-       </tr>
-       <tr>
-        <td class="parametername">DATA_FIFO_DEPTH</td>
-        <td class="parametervalue">1024</td>
-       </tr>
-       <tr>
-        <td class="parametername">DESCRIPTOR_FIFO_DEPTH</td>
-        <td class="parametervalue">16</td>
-       </tr>
-       <tr>
-        <td class="parametername">RESPONSE_PORT</td>
-        <td class="parametervalue">2</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_BYTE</td>
-        <td class="parametervalue">536870912</td>
-       </tr>
-       <tr>
-        <td class="parametername">TRANSFER_TYPE</td>
-        <td class="parametervalue">Full Word Accesses Only</td>
-       </tr>
-       <tr>
-        <td class="parametername">BURST_ENABLE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_BURST_COUNT</td>
-        <td class="parametervalue">128</td>
-       </tr>
-       <tr>
-        <td class="parametername">BURST_WRAPPING_SUPPORT</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">ENHANCED_FEATURES</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">STRIDE_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_STRIDE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">PROGRAMMABLE_BURST_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">STRIDE_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PACKET_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PACKET_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_WIDTH</td>
-        <td class="parametervalue">8</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_WIDTH</td>
-        <td class="parametervalue">8</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_READ_BURST_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_DATA_WIDTH</td>
-        <td class="parametervalue">32</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_MAX_READ_BURST_COUNT</td>
-        <td class="parametervalue">2</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DEVICE_FAMILY</td>
-        <td class="parametervalue">CYCLONEV</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DEVICE</td>
-        <td class="parametervalue">5CGXFC5C6F27C7</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DEVICE_SPEEDGRADE</td>
-        <td class="parametervalue">7_H6</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_MM_READ_ADDRESS_MAP</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='lpddr2.avl_1' start='0x0' end='0x20000000' /&gt;&lt;/address-map&gt;</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_MM_READ_ADDRESS_WIDTH</td>
-        <td class="parametervalue">AddressWidth = 29</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_MM_WRITE_ADDRESS_MAP</td>
-        <td class="parametervalue"></td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_MM_WRITE_ADDRESS_WIDTH</td>
-        <td class="parametervalue">AddressWidth = -1</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_MAP</td>
-        <td class="parametervalue"></td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DESCRIPTOR_READ_MASTER_ADDRESS_WIDTH</td>
-        <td class="parametervalue">AddressWidth = -1</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_MAP</td>
-        <td class="parametervalue"></td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DESCRIPTOR_WRITE_MASTER_ADDRESS_WIDTH</td>
-        <td class="parametervalue">AddressWidth = -1</td>
-       </tr>
-       <tr>
-        <td class="parametername">deviceFamily</td>
-        <td class="parametervalue">Cyclone V</td>
-       </tr>
-       <tr>
-        <td class="parametername">generateLegacySim</td>
-        <td class="parametervalue">false</td>
-       </tr>
-      </table>
-     </td>
-    </tr>
-   </table>&#160;&#160;
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Software Assignments</h2>
-      <table>
-       <tr>
-        <td class="parametername">BURST_ENABLE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">BURST_WRAPPING_SUPPORT</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">CHANNEL_WIDTH</td>
-        <td class="parametervalue">8</td>
-       </tr>
-       <tr>
-        <td class="parametername">DATA_FIFO_DEPTH</td>
-        <td class="parametervalue">1024</td>
-       </tr>
-       <tr>
-        <td class="parametername">DATA_WIDTH</td>
-        <td class="parametervalue">32</td>
-       </tr>
-       <tr>
-        <td class="parametername">DESCRIPTOR_FIFO_DEPTH</td>
-        <td class="parametervalue">16</td>
-       </tr>
-       <tr>
-        <td class="parametername">DMA_MODE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">ENHANCED_FEATURES</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">ERROR_WIDTH</td>
-        <td class="parametervalue">8</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_BURST_COUNT</td>
-        <td class="parametervalue">128</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_BYTE</td>
-        <td class="parametervalue">536870912</td>
-       </tr>
-       <tr>
-        <td class="parametername">MAX_STRIDE</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">PACKET_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PACKET_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PREFETCHER_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">PROGRAMMABLE_BURST_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">RESPONSE_PORT</td>
-        <td class="parametervalue">2</td>
-       </tr>
-       <tr>
-        <td class="parametername">STRIDE_ENABLE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">STRIDE_ENABLE_DERIVED</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">TRANSFER_TYPE</td>
-        <td class="parametervalue">Full Word Accesses Only</td>
-       </tr>
-      </table>
-     </td>
-    </tr>
-   </table>
-  </div>
-  <a name="module_mdma_to_ycbcr_to_rgb_accel_y"> </a>
-  <div>
-   <hr/>
-   <h2>mdma_to_ycbcr_to_rgb_accel_y</h2>altera_msgdma v15.1
-   <br/>
-   <div class="greydiv">
-    <table class="connectionboxes">
-     <tr>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_cpu_1">cpu_1</a>
-      </td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="17">mdma_to_ycbcr_to_rgb_accel_y</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;csr</td>
-     </tr>
-     <tr>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;descriptor_slave</td>
-     </tr>
-     <tr>
-      <td class="from">irq&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;csr_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_clk_125">clk_125</a>
-      </td>
-      <td class="from">clk&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;clock</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_reset_controller_0">reset_controller_0</a>
-      </td>
-      <td class="from">reset_out&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;reset_n</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">mm_read&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_lpddr2">lpddr2</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;avl_1</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">st_source&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_ycbcr_to_rgb_accelerator">ycbcr_to_rgb_accelerator</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;avalon_streaming_sink_y</td>
+      <td class="to">&#160;&#160;avalon_streaming_sink</td>
      </tr>
     </table>
    </div>
@@ -14572,7 +13676,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">reset_out&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_idct_accel">mdma_to_idct_accel</a>
+       <a href="#module_mdma_to_idct_accel_y">mdma_to_idct_accel_y</a>
       </td>
      </tr>
      <tr>
@@ -14588,71 +13692,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">reset_out&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_from_idct_accel">mdma_from_idct_accel</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset_n</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">reset_out&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_idct_accelerator_2d">idct_accelerator_2d</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset_n</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">reset_out&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_cr">mdma_to_ycbcr_to_rgb_accel_cr</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset_n</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">reset_out&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_y">mdma_to_ycbcr_to_rgb_accel_y</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset_n</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">reset_out&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_cb">mdma_to_ycbcr_to_rgb_accel_cb</a>
+       <a href="#module_idct_accelerator_2d_y">idct_accelerator_2d_y</a>
       </td>
      </tr>
      <tr>
@@ -14685,6 +13725,70 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">reset_out&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_mdma_from_ycbcr_to_rgb_accel">mdma_from_ycbcr_to_rgb_accel</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset_n</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">reset_out&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_mdma_to_idct_accel_cr">mdma_to_idct_accel_cr</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset_n</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">reset_out&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_idct_accelerator_2d_cr">idct_accelerator_2d_cr</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset_n</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">reset_out&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_mdma_to_idct_accel_cb">mdma_to_idct_accel_cb</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset_n</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">reset_out&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_idct_accelerator_2d_cb">idct_accelerator_2d_cb</a>
       </td>
      </tr>
      <tr>
@@ -14861,10 +13965,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_cpu_0">cpu_0</a>
+       <a href="#module_cpu_1">cpu_1</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="15">sd_cont</td>
+      <td class="main" rowspan="12">sd_cont</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;slave</td>
@@ -14911,22 +14015,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;avl_0</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">master&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_video_dma">video_dma</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;descriptor_slave</td>
      </tr>
     </table>
    </div>
@@ -15584,7 +14672,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timestamp</td>
-        <td class="parametervalue">1488306009</td>
+        <td class="parametervalue">1488331446</td>
        </tr>
        <tr>
         <td class="parametername">AUTO_DEVICE_FAMILY</td>
@@ -15613,7 +14701,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TIMESTAMP</td>
-        <td class="parametervalue">1488306009</td>
+        <td class="parametervalue">1488331446</td>
        </tr>
       </table>
      </td>
@@ -16594,7 +15682,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_cpu_0">cpu_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="20">video_dma</td>
+      <td class="main" rowspan="17">video_dma</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;csr</td>
@@ -16610,18 +15698,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="to">&#160;&#160;csr_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_sd_cont">sd_cont</a>
-      </td>
-      <td class="from">master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;descriptor_slave</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -19249,9 +18325,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_cb">mdma_to_ycbcr_to_rgb_accel_cb</a>
+       <a href="#module_idct_accelerator_2d_cb">idct_accelerator_2d_cb</a>
       </td>
-      <td class="from">st_source&#160;&#160;</td>
+      <td class="from">avalon_streaming_source&#160;&#160;</td>
       <td class="main" rowspan="16">ycbcr_to_rgb_accelerator</td>
      </tr>
      <tr>
@@ -19262,9 +18338,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_cr">mdma_to_ycbcr_to_rgb_accel_cr</a>
+       <a href="#module_idct_accelerator_2d_cr">idct_accelerator_2d_cr</a>
       </td>
-      <td class="from">st_source&#160;&#160;</td>
+      <td class="from">avalon_streaming_source&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avalon_streaming_sink_cr</td>
@@ -19274,9 +18350,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mdma_to_ycbcr_to_rgb_accel_y">mdma_to_ycbcr_to_rgb_accel_y</a>
+       <a href="#module_idct_accelerator_2d_y">idct_accelerator_2d_y</a>
       </td>
-      <td class="from">st_source&#160;&#160;</td>
+      <td class="from">avalon_streaming_source&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avalon_streaming_sink_y</td>
@@ -19348,8 +18424,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0.02 seconds</td>
-    <td class="r">rendering took 0.43 seconds</td>
+    <td class="l">generation took 0.06 seconds</td>
+    <td class="r">rendering took 0.67 seconds</td>
    </tr>
   </table>
  </body>

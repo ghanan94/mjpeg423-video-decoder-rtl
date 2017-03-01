@@ -49,21 +49,21 @@ module ECE423_QSYS_mm_interconnect_0_router_004_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 9 
    )
-  (output [107 - 102 : 0] default_destination_id,
-   output [36-1 : 0] default_wr_channel,
-   output [36-1 : 0] default_rd_channel,
-   output [36-1 : 0] default_src_channel
+  (output [105 - 101 : 0] default_destination_id,
+   output [32-1 : 0] default_wr_channel,
+   output [32-1 : 0] default_rd_channel,
+   output [32-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[107 - 102 : 0];
+    DEFAULT_DESTID[105 - 101 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 36'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 32'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module ECE423_QSYS_mm_interconnect_0_router_004_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 36'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 36'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 32'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 32'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -93,7 +93,7 @@ module ECE423_QSYS_mm_interconnect_0_router_004
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [121-1 : 0]    sink_data,
+    input  [119-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,8 +102,8 @@ module ECE423_QSYS_mm_interconnect_0_router_004
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [121-1    : 0] src_data,
-    output reg [36-1 : 0] src_channel,
+    output reg [119-1    : 0] src_data,
+    output reg [32-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -114,12 +114,12 @@ module ECE423_QSYS_mm_interconnect_0_router_004
     // -------------------------------------------------------
     localparam PKT_ADDR_H = 67;
     localparam PKT_ADDR_L = 36;
-    localparam PKT_DEST_ID_H = 107;
-    localparam PKT_DEST_ID_L = 102;
-    localparam PKT_PROTECTION_H = 111;
-    localparam PKT_PROTECTION_L = 109;
-    localparam ST_DATA_W = 121;
-    localparam ST_CHANNEL_W = 36;
+    localparam PKT_DEST_ID_H = 105;
+    localparam PKT_DEST_ID_L = 101;
+    localparam PKT_PROTECTION_H = 109;
+    localparam PKT_PROTECTION_L = 107;
+    localparam ST_DATA_W = 119;
+    localparam ST_CHANNEL_W = 32;
     localparam DECODER_TYPE = 0;
 
     localparam PKT_TRANS_WRITE = 70;
@@ -135,27 +135,21 @@ module ECE423_QSYS_mm_interconnect_0_router_004
     // during address decoding
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h20000000 - 64'h0); 
-    localparam PAD1 = log2ceil(64'h20101520 - 64'h20101510); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h20101520;
+    localparam ADDR_RANGE = 64'h20000000;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
                                         PKT_ADDR_H :
                                         PKT_ADDR_L + RANGE_ADDR_WIDTH - 1;
 
-    localparam RG = RANGE_ADDR_WIDTH-1;
+    localparam RG = RANGE_ADDR_WIDTH;
     localparam REAL_ADDRESS_RANGE = OPTIMIZED_ADDR_H - PKT_ADDR_L;
 
-      reg [PKT_ADDR_W-1 : 0] address;
-      always @* begin
-        address = {PKT_ADDR_W{1'b0}};
-        address [REAL_ADDRESS_RANGE:0] = sink_data[OPTIMIZED_ADDR_H : PKT_ADDR_L];
-      end   
 
     // -------------------------------------------------------
     // Pass almost everything through, untouched
@@ -165,16 +159,11 @@ module ECE423_QSYS_mm_interconnect_0_router_004
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [36-1 : 0] default_src_channel;
+    wire [32-1 : 0] default_src_channel;
 
 
 
 
-    // -------------------------------------------------------
-    // Write and read transaction signals
-    // -------------------------------------------------------
-    wire write_transaction;
-    assign write_transaction = sink_data[PKT_TRANS_WRITE];
 
 
     ECE423_QSYS_mm_interconnect_0_router_004_default_decode the_default_decode(
@@ -193,18 +182,13 @@ module ECE423_QSYS_mm_interconnect_0_router_004
         // Address Decoder
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
-
-    // ( 0x0 .. 0x20000000 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 30'h0   ) begin
-            src_channel = 36'b01;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 9;
-    end
-
-    // ( 0x20101510 .. 0x20101520 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 30'h20101510  && write_transaction  ) begin
-            src_channel = 36'b10;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 35;
-    end
+           
+         
+          // ( 0 .. 20000000 )
+          src_channel = 32'b1;
+          src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 9;
+	     
+        
 
 end
 

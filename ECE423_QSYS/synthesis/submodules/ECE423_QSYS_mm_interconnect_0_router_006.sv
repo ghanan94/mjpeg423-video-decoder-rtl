@@ -49,21 +49,21 @@ module ECE423_QSYS_mm_interconnect_0_router_006_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 0 
    )
-  (output [107 - 102 : 0] default_destination_id,
-   output [36-1 : 0] default_wr_channel,
-   output [36-1 : 0] default_rd_channel,
-   output [36-1 : 0] default_src_channel
+  (output [105 - 101 : 0] default_destination_id,
+   output [32-1 : 0] default_wr_channel,
+   output [32-1 : 0] default_rd_channel,
+   output [32-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[107 - 102 : 0];
+    DEFAULT_DESTID[105 - 101 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 36'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 32'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module ECE423_QSYS_mm_interconnect_0_router_006_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 36'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 36'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 32'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 32'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -93,7 +93,7 @@ module ECE423_QSYS_mm_interconnect_0_router_006
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [121-1 : 0]    sink_data,
+    input  [119-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,8 +102,8 @@ module ECE423_QSYS_mm_interconnect_0_router_006
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [121-1    : 0] src_data,
-    output reg [36-1 : 0] src_channel,
+    output reg [119-1    : 0] src_data,
+    output reg [32-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -114,12 +114,12 @@ module ECE423_QSYS_mm_interconnect_0_router_006
     // -------------------------------------------------------
     localparam PKT_ADDR_H = 67;
     localparam PKT_ADDR_L = 36;
-    localparam PKT_DEST_ID_H = 107;
-    localparam PKT_DEST_ID_L = 102;
-    localparam PKT_PROTECTION_H = 111;
-    localparam PKT_PROTECTION_L = 109;
-    localparam ST_DATA_W = 121;
-    localparam ST_CHANNEL_W = 36;
+    localparam PKT_DEST_ID_H = 105;
+    localparam PKT_DEST_ID_L = 101;
+    localparam PKT_PROTECTION_H = 109;
+    localparam PKT_PROTECTION_L = 107;
+    localparam ST_DATA_W = 119;
+    localparam ST_CHANNEL_W = 32;
     localparam DECODER_TYPE = 1;
 
     localparam PKT_TRANS_WRITE = 70;
@@ -158,7 +158,7 @@ module ECE423_QSYS_mm_interconnect_0_router_006
     assign src_valid         = sink_valid;
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
-    wire [36-1 : 0] default_src_channel;
+    wire [32-1 : 0] default_src_channel;
 
 
 
@@ -185,15 +185,15 @@ module ECE423_QSYS_mm_interconnect_0_router_006
 
 
         if (destid == 0 ) begin
-            src_channel = 36'b001;
+            src_channel = 32'b001;
         end
 
         if (destid == 2 ) begin
-            src_channel = 36'b010;
+            src_channel = 32'b010;
         end
 
         if (destid == 4 ) begin
-            src_channel = 36'b100;
+            src_channel = 32'b100;
         end
 
 
