@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="ECE423_QSYS" kind="system" version="15.1" fabric="QSYS">
  <!-- Format version 15.1 185 (Future versions may contain additional information.) -->
- <!-- 2017.02.28.20:29:22 -->
+ <!-- 2017.03.07.11:36:12 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1488331446</value>
+  <value>1488904293</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -4220,7 +4220,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.EXCEPTION_ADDR</name>
-   <value>0x20080020</value>
+   <value>0x200c0020</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.FLASH_ACCELERATOR_LINES</name>
@@ -4296,7 +4296,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.RESET_ADDR</name>
-   <value>0x20080000</value>
+   <value>0x200c0000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.configuration.DataCacheVictimBufImpl</name>
@@ -4320,7 +4320,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.configuration.exceptionOffset</name>
-   <value>32</value>
+   <value>262176</value>
   </assignment>
   <assignment>
    <name>embeddedsw.configuration.exceptionSlave</name>
@@ -4328,7 +4328,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.configuration.resetOffset</name>
-   <value>0</value>
+   <value>262144</value>
   </assignment>
   <assignment>
    <name>embeddedsw.configuration.resetSlave</name>
@@ -4348,7 +4348,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,exception-addr</name>
-   <value>0x20080020</value>
+   <value>0x200c0020</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,has-initda</name>
@@ -4364,7 +4364,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,reset-addr</name>
-   <value>0x20080000</value>
+   <value>0x200c0000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.clock-frequency</name>
@@ -4736,7 +4736,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="resetOffset">
    <type>int</type>
-   <value>0</value>
+   <value>262144</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -4744,7 +4744,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="exceptionOffset">
    <type>int</type>
-   <value>32</value>
+   <value>262176</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -5504,7 +5504,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="resetAbsoluteAddr">
    <type>int</type>
-   <value>537395200</value>
+   <value>537657344</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -5512,7 +5512,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="exceptionAbsoluteAddr">
    <type>int</type>
-   <value>537395232</value>
+   <value>537657376</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -42390,7 +42390,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1488331446</value>
+   <value>1488904293</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -42410,7 +42410,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1488331446</value>
+   <value>1488904293</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -42426,7 +42426,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1488331446</value>
+   <value>1488904293</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -81606,5 +81606,5 @@ parameters are a RESULT of the module parameters. -->
   <version>15.1</version>
  </plugin>
  <reportVersion>15.1 185</reportVersion>
- <uniqueIdentifier>08606E7A773A0000015A87780EA6</uniqueIdentifier>
+ <uniqueIdentifier>60A44C53E4540000015AA99CEC33</uniqueIdentifier>
 </EnsembleReport>
