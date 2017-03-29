@@ -104,35 +104,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "LEDG[0]",
+					"name" : "HDMI_TX_DE",
 					"strict" : false
 				},
 				{
-					"name" : "LEDG[1]",
+					"name" : "HDMI_TX_HS",
 					"strict" : false
 				},
 				{
-					"name" : "LEDG[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[3]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[4]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[5]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[6]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[7]",
+					"name" : "HDMI_TX_VS",
 					"strict" : false
 				},
 				{
@@ -165,6 +145,54 @@
 				},
 				{
 					"name" : "LEDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "I2C_SCL",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_CE_n",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_OE_n",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_WE_n",
 					"strict" : false
 				},
 				{
@@ -248,31 +276,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "SRAM_WE_n",
+					"name" : "SD_CMD",
 					"strict" : false
 				},
 				{
-					"name" : "HDMI_TX_DE",
+					"name" : "SD_DAT[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HDMI_TX_HS",
+					"name" : "SD_DAT[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HDMI_TX_VS",
+					"name" : "SD_DAT[2]",
 					"strict" : false
 				},
 				{
-					"name" : "I2C_SCL",
-					"strict" : false
-				},
-				{
-					"name" : "SRAM_CE_n",
-					"strict" : false
-				},
-				{
-					"name" : "SRAM_OE_n",
+					"name" : "SD_DAT[3]",
 					"strict" : false
 				},
 				{
@@ -308,19 +328,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SD_DAT[0]",
-					"strict" : false
-				},
-				{
-					"name" : "SD_DAT[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SD_DAT[2]",
-					"strict" : false
-				},
-				{
-					"name" : "SD_DAT[3]",
+					"name" : "I2C_SDA",
 					"strict" : false
 				},
 				{
@@ -388,19 +396,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SD_CMD",
-					"strict" : false
-				},
-				{
-					"name" : "I2C_SDA",
+					"name" : "CLOCK_125_p",
 					"strict" : false
 				},
 				{
 					"name" : "CLOCK_50_B7A",
-					"strict" : false
-				},
-				{
-					"name" : "CLOCK_125_p",
 					"strict" : false
 				},
 				{

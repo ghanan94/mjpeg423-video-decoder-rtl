@@ -4,133 +4,137 @@ preplace inst ECE423_QSYS.sram.reset -pg 1
 preplace inst ECE423_QSYS.lpddr2.soft_reset -pg 1
 preplace inst ECE423_QSYS.lpddr2.pll0 -pg 1
 preplace inst ECE423_QSYS.video_dma.dispatcher_internal -pg 1
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cr.read_mstr_internal -pg 1
 preplace inst ECE423_QSYS.lpddr2.afi_half_clk -pg 1
-preplace inst ECE423_QSYS.mdma_from_idct_accel.dispatcher_internal -pg 1
+preplace inst ECE423_QSYS.idct_accelerator_2d_cb -pg 1 -lvl 11 -y 620
 preplace inst ECE423_QSYS.mdma_from_ycbcr_to_rgb_accel.dispatcher_internal -pg 1
 preplace inst ECE423_QSYS.lpddr2.global_reset -pg 1
-preplace inst ECE423_QSYS.key -pg 1 -lvl 6 -y 170
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cr -pg 1 -lvl 3 -y 970
+preplace inst ECE423_QSYS.key -pg 1 -lvl 17 -y 120
 preplace inst ECE423_QSYS.mdma_from_ycbcr_to_rgb_accel.rst_inst -pg 1
-preplace inst ECE423_QSYS.sram_sharer -pg 1 -lvl 4 -y 1330
-preplace inst ECE423_QSYS.idct_accelerator_2d -pg 1 -lvl 4 -y 600
+preplace inst ECE423_QSYS.sram_sharer -pg 1 -lvl 12 -y 1760
+preplace inst ECE423_QSYS.mdma_to_idct_accel_y.dispatcher_internal -pg 1
 preplace inst ECE423_QSYS.lpddr2.pll_ref_clk -pg 1
 preplace inst ECE423_QSYS.lpddr2.dll0 -pg 1
 preplace inst ECE423_QSYS.video_dma.cb_inst -pg 1
-preplace inst ECE423_QSYS.reset_controller_0 -pg 1 -lvl 2 -y 770
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cr.dispatcher_internal -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_y.rst_inst -pg 1
-preplace inst ECE423_QSYS.clk_125 -pg 1 -lvl 1 -y 890
-preplace inst ECE423_QSYS.i2c_sda -pg 1 -lvl 6 -y 840
+preplace inst ECE423_QSYS.reset_controller_0 -pg 1 -lvl 2 -y 860
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cb.read_mstr_internal -pg 1
+preplace inst ECE423_QSYS.clk_125 -pg 1 -lvl 1 -y 980
+preplace inst ECE423_QSYS.i2c_sda -pg 1 -lvl 17 -y 930
 preplace inst ECE423_QSYS.sram_sharer.pin_sharer -pg 1
-preplace inst ECE423_QSYS.sram -pg 1 -lvl 3 -y 1350
-preplace inst ECE423_QSYS.mdma_from_idct_accel.write_mstr_internal -pg 1
+preplace inst ECE423_QSYS.mdma_to_idct_accel_y -pg 1 -lvl 10 -y 790
+preplace inst ECE423_QSYS.sram -pg 1 -lvl 10 -y 1780
 preplace inst ECE423_QSYS.mdma_from_ycbcr_to_rgb_accel.write_mstr_internal -pg 1
-preplace inst ECE423_QSYS.video_clk -pg 1 -lvl 8 -y 310
-preplace inst ECE423_QSYS.jtag_uart -pg 1 -lvl 6 -y 290
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cb.read_mstr_internal -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_y.dispatcher_internal -pg 1
-preplace inst ECE423_QSYS.cpu.reset_bridge -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cb.dispatcher_internal -pg 1
-preplace inst ECE423_QSYS.cpu.cpu -pg 1
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cr.rst_inst -pg 1
+preplace inst ECE423_QSYS.video_clk -pg 1 -lvl 19 -y 400
+preplace inst ECE423_QSYS.idct_accelerator_2d_y -pg 1 -lvl 11 -y 950
+preplace inst ECE423_QSYS.mutex_0 -pg 1 -lvl 9 -y 990
+preplace inst ECE423_QSYS.cpu_0.clock_bridge -pg 1
 preplace inst ECE423_QSYS.lpddr2.mp_cmd_reset_n_0 -pg 1
-preplace inst ECE423_QSYS.video_dma -pg 1 -lvl 3 -y 360
+preplace inst ECE423_QSYS.video_dma -pg 1 -lvl 10 -y 950
+preplace inst ECE423_QSYS.timer_1_0 -pg 1 -lvl 9 -y 710
 preplace inst ECE423_QSYS.sram_sharer.clock -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cr.cb_inst -pg 1
 preplace inst ECE423_QSYS.lpddr2.mp_cmd_reset_n_1 -pg 1
-preplace inst ECE423_QSYS.video -pg 1 -lvl 10 -y 30
-preplace inst ECE423_QSYS.mdma_to_idct_accel.dispatcher_internal -pg 1
+preplace inst ECE423_QSYS.video -pg 1 -lvl 21 -y 120
+preplace inst ECE423_QSYS.timer_1_1 -pg 1 -lvl 9 -y 890
 preplace inst ECE423_QSYS.lpddr2.mp_cmd_reset_n_2 -pg 1
 preplace inst ECE423_QSYS.lpddr2.c0 -pg 1
-preplace inst ECE423_QSYS.timer_0 -pg 1 -lvl 6 -y 490
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cr.cb_inst -pg 1
 preplace inst ECE423_QSYS.sram.tda -pg 1
-preplace inst ECE423_QSYS.timer_1 -pg 1 -lvl 6 -y 590
+preplace inst ECE423_QSYS.cpu_0.reset_bridge -pg 1
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cr.dispatcher_internal -pg 1
+preplace inst ECE423_QSYS.idct_accelerator_2d_cr -pg 1 -lvl 11 -y 870
 preplace inst ECE423_QSYS.sram_sharer.reset -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_y.cb_inst -pg 1
-preplace inst ECE423_QSYS.mdma_from_ycbcr_to_rgb_accel -pg 1 -lvl 5 -y 810
-preplace inst ECE423_QSYS.clk_50 -pg 1 -lvl 6 -y 30
+preplace inst ECE423_QSYS.mdma_from_ycbcr_to_rgb_accel -pg 1 -lvl 13 -y 750
+preplace inst ECE423_QSYS.clk_50 -pg 1 -lvl 17 -y 40
 preplace inst ECE423_QSYS.lpddr2.afi_reset_export -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cr.read_mstr_internal -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_y -pg 1 -lvl 3 -y 1190
+preplace inst ECE423_QSYS.timer_0_0 -pg 1 -lvl 10 -y 1510
 preplace inst ECE423_QSYS.sram_sharer.arbiter -pg 1
-preplace inst ECE423_QSYS.sram_bridge -pg 1 -lvl 6 -y 1520
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cr.rst_inst -pg 1
-preplace inst ECE423_QSYS.cpu.clock_bridge -pg 1
+preplace inst ECE423_QSYS.sram_bridge -pg 1 -lvl 17 -y 1950
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cb -pg 1 -lvl 10 -y 450
+preplace inst ECE423_QSYS.jtag_uart_0 -pg 1 -lvl 10 -y 1900
+preplace inst ECE423_QSYS.cpu_1.reset_bridge -pg 1
+preplace inst ECE423_QSYS.timer_0_1 -pg 1 -lvl 10 -y 1610
 preplace inst ECE423_QSYS.lpddr2.pll_bridge -pg 1
-preplace inst ECE423_QSYS.sysid -pg 1 -lvl 6 -y 410
-preplace inst ECE423_QSYS.mdma_from_idct_accel.cb_inst -pg 1
+preplace inst ECE423_QSYS.jtag_uart_1 -pg 1 -lvl 9 -y 610
+preplace inst ECE423_QSYS.cpu_0.cpu -pg 1
+preplace inst ECE423_QSYS.sysid -pg 1 -lvl 17 -y 500
+preplace inst ECE423_QSYS.mdma_to_idct_accel_y.rst_inst -pg 1
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cb.dispatcher_internal -pg 1
 preplace inst ECE423_QSYS.lpddr2.mp_cmd_clk_0 -pg 1
 preplace inst ECE423_QSYS.lpddr2.afi_reset -pg 1
 preplace inst ECE423_QSYS.video_dma.rst_inst -pg 1
-preplace inst ECE423_QSYS.lpddr2 -pg 1 -lvl 6 -y 1650
+preplace inst ECE423_QSYS.lpddr2 -pg 1 -lvl 17 -y 2080
 preplace inst ECE423_QSYS.lpddr2.mp_cmd_clk_1 -pg 1
 preplace inst ECE423_QSYS.sram.clk -pg 1
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cb.cb_inst -pg 1
+preplace inst ECE423_QSYS.cpu_1.cpu -pg 1
 preplace inst ECE423_QSYS.lpddr2.mp_cmd_clk_2 -pg 1
+preplace inst ECE423_QSYS.mailbox_simple_cpu0_to_cpu1 -pg 1 -lvl 10 -y 120
 preplace inst ECE423_QSYS.mdma_from_ycbcr_to_rgb_accel.cb_inst -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cb.cb_inst -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cb.rst_inst -pg 1
+preplace inst ECE423_QSYS.cpu_1.clock_bridge -pg 1
 preplace inst ECE423_QSYS.video_dma.read_mstr_internal -pg 1
-preplace inst ECE423_QSYS.sd_cont -pg 1 -lvl 7 -y 30
-preplace inst ECE423_QSYS.mdma_to_idct_accel.rst_inst -pg 1
+preplace inst ECE423_QSYS.sd_cont -pg 1 -lvl 18 -y 60
+preplace inst ECE423_QSYS.cpu_0 -pg 1 -lvl 9 -y 470
 preplace inst ECE423_QSYS.lpddr2.s0 -pg 1
-preplace inst ECE423_QSYS.ycbcr_to_rgb_accelerator -pg 1 -lvl 4 -y 780
-preplace inst ECE423_QSYS.pixel_conv -pg 1 -lvl 9 -y 150
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_cb -pg 1 -lvl 3 -y 600
-preplace inst ECE423_QSYS.ledg -pg 1 -lvl 6 -y 960
+preplace inst ECE423_QSYS.ycbcr_to_rgb_accelerator -pg 1 -lvl 12 -y 870
+preplace inst ECE423_QSYS.pixel_conv -pg 1 -lvl 20 -y 240
+preplace inst ECE423_QSYS.cpu_1 -pg 1 -lvl 8 -y 890
+preplace inst ECE423_QSYS.ledg -pg 1 -lvl 17 -y 1050
+preplace inst ECE423_QSYS.mdma_to_idct_accel_y.read_mstr_internal -pg 1
 preplace inst ECE423_QSYS.lpddr2.as0 -pg 1
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cb.rst_inst -pg 1
 preplace inst ECE423_QSYS.lpddr2.p0 -pg 1
-preplace inst ECE423_QSYS.i2c_scl -pg 1 -lvl 6 -y 740
-preplace inst ECE423_QSYS.video_pll -pg 1 -lvl 7 -y 230
+preplace inst ECE423_QSYS.mdma_to_idct_accel_y.cb_inst -pg 1
+preplace inst ECE423_QSYS.mailbox_simple_cpu1_to_cpu0 -pg 1 -lvl 10 -y 1370
+preplace inst ECE423_QSYS.i2c_scl -pg 1 -lvl 17 -y 830
+preplace inst ECE423_QSYS.video_pll -pg 1 -lvl 18 -y 320
 preplace inst ECE423_QSYS -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst ECE423_QSYS.sram.tdt -pg 1
 preplace inst ECE423_QSYS.lpddr2.afi_clk -pg 1
-preplace inst ECE423_QSYS.mdma_to_idct_accel -pg 1 -lvl 3 -y 200
-preplace inst ECE423_QSYS.video_fifo -pg 1 -lvl 8 -y 150
-preplace inst ECE423_QSYS.mdma_from_idct_accel.rst_inst -pg 1
-preplace inst ECE423_QSYS.mdma_from_idct_accel -pg 1 -lvl 5 -y 520
+preplace inst ECE423_QSYS.video_fifo -pg 1 -lvl 19 -y 240
+preplace inst ECE423_QSYS.mdma_to_idct_accel_cr -pg 1 -lvl 10 -y 630
 preplace inst ECE423_QSYS.sram.slave_translator -pg 1
-preplace inst ECE423_QSYS.ledr -pg 1 -lvl 6 -y 1420
+preplace inst ECE423_QSYS.ledr -pg 1 -lvl 17 -y 1850
 preplace inst ECE423_QSYS.lpddr2.oct0 -pg 1
-preplace inst ECE423_QSYS.mdma_to_ycbcr_to_rgb_accel_y.read_mstr_internal -pg 1
-preplace inst ECE423_QSYS.cpu -pg 1 -lvl 2 -y 900
-preplace inst ECE423_QSYS.mdma_to_idct_accel.read_mstr_internal -pg 1
-preplace inst ECE423_QSYS.mdma_to_idct_accel.cb_inst -pg 1
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.status,(SLAVE)ECE423_QSYS.lpddr2_status) 1 0 6 NJ 2120 NJ 2120 NJ 2120 NJ 2120 NJ 2120 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)reset_controller_0.reset_in0,(MASTER)clk_125.clk_reset) 1 1 1 340
-preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)jtag_uart.clk,(SLAVE)sram.clk,(SLAVE)key.clk,(SLAVE)lpddr2.mp_wfifo_clk_0,(SLAVE)sysid.clk,(SLAVE)mdma_from_idct_accel.clock,(SLAVE)ycbcr_to_rgb_accelerator.clock,(SLAVE)lpddr2.mp_cmd_clk_1,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cr.clock,(SLAVE)lpddr2.mp_cmd_clk_0,(SLAVE)mdma_to_idct_accel.clock,(SLAVE)lpddr2.mp_rfifo_clk_0,(SLAVE)reset_controller_0.clk,(SLAVE)mdma_to_ycbcr_to_rgb_accel_y.clock,(SLAVE)timer_1.clk,(SLAVE)ledg.clk,(SLAVE)mdma_from_ycbcr_to_rgb_accel.clock,(SLAVE)lpddr2.mp_cmd_clk_2,(MASTER)clk_125.clk,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cb.clock,(SLAVE)lpddr2.mp_rfifo_clk_1,(SLAVE)i2c_scl.clk,(SLAVE)idct_accelerator_2d.clock,(SLAVE)cpu.clk,(SLAVE)video_fifo.clk_in,(SLAVE)ledr.clk,(SLAVE)video_dma.clock,(SLAVE)sram_bridge.clk,(SLAVE)sram_sharer.clk,(SLAVE)i2c_sda.clk,(SLAVE)timer_0.clk,(SLAVE)lpddr2.mp_wfifo_clk_1) 1 1 7 360 760 820 1130 1200 690 1760 680 2190 120 NJ 200 2820
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)clk_125.clk_in,(SLAVE)ECE423_QSYS.clk_125) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)video_fifo.out,(SLAVE)pixel_conv.in) 1 8 1 N
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)idct_accelerator_2d.avalon_streaming_sink,(MASTER)mdma_to_idct_accel.st_source) 1 3 1 1220
-preplace netloc INTERCONNECT<net_container>ECE423_QSYS</net_container>(MASTER)cpu.instruction_master,(SLAVE)sysid.control_slave,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cb.csr,(SLAVE)mdma_to_idct_accel.descriptor_slave,(SLAVE)i2c_sda.s1,(SLAVE)timer_0.s1,(SLAVE)mdma_from_idct_accel.csr,(SLAVE)i2c_scl.s1,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cb.descriptor_slave,(SLAVE)sram.uas,(MASTER)sd_cont.master,(SLAVE)lpddr2.avl_0,(SLAVE)video_dma.descriptor_slave,(SLAVE)mdma_from_ycbcr_to_rgb_accel.descriptor_slave,(SLAVE)ledg.s1,(SLAVE)mdma_to_idct_accel.csr,(SLAVE)mdma_to_ycbcr_to_rgb_accel_y.descriptor_slave,(SLAVE)mdma_to_ycbcr_to_rgb_accel_y.csr,(SLAVE)ledr.s1,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cr.csr,(SLAVE)video_dma.csr,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cr.descriptor_slave,(SLAVE)jtag_uart.avalon_jtag_slave,(MASTER)cpu.data_master,(SLAVE)cpu.debug_mem_slave,(SLAVE)key.s1,(SLAVE)sd_cont.slave,(SLAVE)mdma_from_ycbcr_to_rgb_accel.csr,(SLAVE)mdma_from_idct_accel.descriptor_slave,(SLAVE)timer_1.s1) 1 1 7 340 1040 800 540 NJ 540 1740 720 2210 140 2600 160 2760
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ledr.external_connection,(SLAVE)ECE423_QSYS.ledr) 1 0 6 NJ 1450 NJ 1450 NJ 1450 NJ 1450 NJ 1450 NJ
-preplace netloc FAN_IN<net_container>ECE423_QSYS</net_container>(MASTER)mdma_from_idct_accel.mm_write,(SLAVE)lpddr2.avl_2,(MASTER)mdma_from_ycbcr_to_rgb_accel.mm_write) 1 5 1 2090
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.memory,(SLAVE)ECE423_QSYS.lpddr2) 1 0 6 NJ 1660 NJ 1660 NJ 1660 NJ 1660 NJ 1660 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)i2c_sda.external_connection,(SLAVE)ECE423_QSYS.i2c_sda) 1 0 6 NJ 860 NJ 860 NJ 910 NJ 910 NJ 970 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ledg.external_connection,(SLAVE)ECE423_QSYS.ledg) 1 0 6 NJ 1060 NJ 1060 NJ 930 NJ 990 NJ 990 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)video_dma.st_source,(SLAVE)video_fifo.in) 1 3 5 NJ 400 NJ 400 NJ 400 NJ 400 2860
-preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(MASTER)video_pll.outclk0,(SLAVE)video.clk,(SLAVE)video_fifo.clk_out,(SLAVE)video_clk.in_clk,(SLAVE)pixel_conv.clk) 1 7 3 2800 120 3020 240 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.pll_ref_clk,(SLAVE)ECE423_QSYS.lpddr2_pll_ref_clk) 1 0 6 NJ 1700 NJ 1700 NJ 1700 NJ 1700 NJ 1700 NJ
-preplace netloc INTERCONNECT<net_container>ECE423_QSYS</net_container>(SLAVE)jtag_uart.reset,(SLAVE)timer_1.reset,(SLAVE)video_fifo.reset_out,(SLAVE)i2c_scl.reset,(SLAVE)pixel_conv.clk_reset,(SLAVE)lpddr2.mp_rfifo_reset_n_1,(SLAVE)sram_bridge.reset,(SLAVE)mdma_to_idct_accel.reset_n,(SLAVE)lpddr2.mp_wfifo_reset_n_0,(SLAVE)key.reset,(SLAVE)ledr.reset,(SLAVE)cpu.reset,(SLAVE)lpddr2.soft_reset,(SLAVE)lpddr2.mp_cmd_reset_n_2,(SLAVE)timer_0.reset,(SLAVE)lpddr2.mp_cmd_reset_n_1,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cb.reset_n,(SLAVE)ycbcr_to_rgb_accelerator.reset_n,(SLAVE)mdma_to_ycbcr_to_rgb_accel_y.reset_n,(SLAVE)video_pll.reset,(SLAVE)lpddr2.mp_wfifo_reset_n_1,(SLAVE)sram.reset,(SLAVE)video.clk_reset,(SLAVE)ledg.reset,(SLAVE)sysid.reset,(SLAVE)sd_cont.reset,(SLAVE)lpddr2.mp_cmd_reset_n_0,(SLAVE)idct_accelerator_2d.reset_n,(MASTER)cpu.debug_reset_request,(SLAVE)lpddr2.mp_rfifo_reset_n_0,(SLAVE)sram_sharer.reset,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cr.reset_n,(SLAVE)i2c_sda.reset,(MASTER)reset_controller_0.reset_out,(SLAVE)mdma_from_ycbcr_to_rgb_accel.reset_n,(SLAVE)video_fifo.reset_in,(SLAVE)video_dma.reset_n,(SLAVE)mdma_from_idct_accel.reset_n) 1 1 9 360 1080 860 1150 1220 710 1700 770 2150 160 2580 220 2840 140 3040 60 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)mdma_to_ycbcr_to_rgb_accel_cb.st_source,(SLAVE)ycbcr_to_rgb_accelerator.avalon_streaming_sink_cb) 1 3 1 1160
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)mdma_from_idct_accel.st_sink,(MASTER)idct_accelerator_2d.avalon_streaming_source) 1 4 1 N
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)i2c_scl.external_connection,(SLAVE)ECE423_QSYS.i2c_scl) 1 0 6 NJ 740 NJ 740 NJ 740 NJ 740 NJ 740 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)ycbcr_to_rgb_accelerator.avalon_streaming_source,(SLAVE)mdma_from_ycbcr_to_rgb_accel.st_sink) 1 4 1 1680
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)video.in,(MASTER)pixel_conv.out) 1 9 1 3210
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.lpddr2_global_reset,(SLAVE)lpddr2.global_reset) 1 0 6 NJ 1640 NJ 1640 NJ 1640 NJ 1640 NJ 1640 NJ
-preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)key.irq,(SLAVE)video_dma.csr_irq,(SLAVE)jtag_uart.irq,(SLAVE)mdma_from_idct_accel.csr_irq,(SLAVE)mdma_from_ycbcr_to_rgb_accel.csr_irq,(MASTER)cpu.irq,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cb.csr_irq,(SLAVE)mdma_to_idct_accel.csr_irq,(SLAVE)mdma_to_ycbcr_to_rgb_accel_cr.csr_irq,(SLAVE)timer_1.irq,(SLAVE)mdma_to_ycbcr_to_rgb_accel_y.csr_irq,(SLAVE)timer_0.irq) 1 2 4 780 560 NJ 560 1720 700 2110
-preplace netloc FAN_IN<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.avl_1,(MASTER)mdma_to_idct_accel.mm_read,(MASTER)video_dma.mm_read,(MASTER)mdma_to_ycbcr_to_rgb_accel_cb.mm_read,(MASTER)mdma_to_ycbcr_to_rgb_accel_y.mm_read,(MASTER)mdma_to_ycbcr_to_rgb_accel_cr.mm_read) 1 3 3 1140 1620 NJ 1620 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)key.external_connection,(SLAVE)ECE423_QSYS.key) 1 0 6 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)ycbcr_to_rgb_accelerator.avalon_streaming_sink_cr,(MASTER)mdma_to_ycbcr_to_rgb_accel_cr.st_source) 1 3 1 1180
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(MASTER)video_clk.out_clk,(MASTER)ECE423_QSYS.video_clk) 1 8 3 NJ 320 NJ 320 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.clk_50,(SLAVE)clk_50.in_clk) 1 0 6 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)video.sync,(SLAVE)ECE423_QSYS.video) 1 0 10 NJ 100 NJ 100 NJ 100 NJ 100 NJ 100 NJ 100 NJ 180 NJ 100 NJ 100 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.oct,(SLAVE)ECE423_QSYS.lpddr2_oct) 1 0 6 NJ 1680 NJ 1680 NJ 1680 NJ 1680 NJ 1680 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)mdma_to_ycbcr_to_rgb_accel_y.st_source,(SLAVE)ycbcr_to_rgb_accelerator.avalon_streaming_sink_y) 1 3 1 1240
-preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(MASTER)clk_50.out_clk,(SLAVE)video_pll.refclk,(SLAVE)sd_cont.sd_clk,(SLAVE)sd_cont.clock) 1 6 1 2560
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)sram_bridge.out,(SLAVE)ECE423_QSYS.sram_bridge_out) 1 0 6 NJ 1550 NJ 1550 NJ 1550 NJ 1550 NJ 1550 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.reset,(SLAVE)clk_125.clk_in_reset) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)sram_bridge.tcs,(MASTER)sram_sharer.tcm) 1 4 2 1720 1570 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.sd,(SLAVE)sd_cont.sd) 1 0 7 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ
-preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.pll_sharing,(SLAVE)ECE423_QSYS.lpddr2_pll_sharing) 1 0 6 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ
-preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)sram_sharer.tcs0,(MASTER)sram.tcm) 1 3 1 N
-levelinfo -pg 1 0 130 3420
-levelinfo -hier ECE423_QSYS 140 170 540 1000 1340 1900 2340 2630 2890 3070 3240 3330
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.status,(SLAVE)ECE423_QSYS.lpddr2_status) 1 0 17 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ 2550 NJ
+preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)mailbox_simple_cpu1_to_cpu0.interrupt_msg_pending,(MASTER)cpu_0.irq,(SLAVE)mdma_to_idct_accel_cr.csr_irq,(SLAVE)mdma_to_idct_accel_y.csr_irq,(SLAVE)timer_0_0.irq,(SLAVE)key.irq,(SLAVE)mdma_from_ycbcr_to_rgb_accel.csr_irq,(SLAVE)video_dma.csr_irq,(SLAVE)mdma_to_idct_accel_cb.csr_irq,(SLAVE)mailbox_simple_cpu0_to_cpu1.interrupt_mb_available,(SLAVE)jtag_uart_0.irq,(SLAVE)timer_0_1.irq) 1 9 8 3650 270 NJ 90 NJ 90 4980 170 NJ 170 NJ 170 NJ 170 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)mdma_to_idct_accel_y.st_source,(SLAVE)idct_accelerator_2d_y.avalon_streaming_sink) 1 10 1 4020
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)reset_controller_0.reset_in0,(MASTER)clk_125.clk_reset) 1 1 1 380
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)video_fifo.out,(SLAVE)pixel_conv.in) 1 19 1 N
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.lpddr2_pll_ref_clk,(SLAVE)lpddr2.pll_ref_clk) 1 0 17 NJ 1830 NJ 1830 NJ 1830 NJ 1830 NJ 1830 NJ 2210 NJ 2210 NJ 2210 NJ 2210 NJ 2210 NJ 2210 NJ 2210 NJ 2210 NJ 2210 NJ 2210 NJ 2490 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ledr.external_connection,(SLAVE)ECE423_QSYS.ledr) 1 0 17 NJ 1870 NJ 1750 NJ 1750 NJ 1750 NJ 1750 NJ 1880 NJ 1880 NJ 1880 NJ 1880 NJ 1880 NJ 1880 NJ 1880 NJ 1880 NJ 1880 NJ 1880 NJ 1880 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.memory,(SLAVE)ECE423_QSYS.lpddr2) 1 0 17 NJ 1730 NJ 1730 NJ 1730 NJ 1730 NJ 1730 NJ 2070 NJ 2070 NJ 2070 NJ 2070 NJ 2070 NJ 2170 NJ 2170 NJ 2170 NJ 2170 NJ 2170 NJ 2170 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)video_dma.st_source,(SLAVE)video_fifo.in) 1 10 9 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1040 NJ 500 6120
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.clk_125,(SLAVE)clk_125.clk_in) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)idct_accelerator_2d_cb.avalon_streaming_source,(SLAVE)ycbcr_to_rgb_accelerator.avalon_streaming_sink_cb) 1 11 1 4370
+preplace netloc INTERCONNECT<net_container>ECE423_QSYS</net_container>(SLAVE)i2c_sda.s1,(SLAVE)mdma_to_idct_accel_cr.descriptor_slave,(SLAVE)mailbox_simple_cpu0_to_cpu1.avmm_msg_sender,(SLAVE)mdma_to_idct_accel_y.descriptor_slave,(SLAVE)lpddr2.avl_0,(SLAVE)mailbox_simple_cpu1_to_cpu0.avmm_msg_receiver,(SLAVE)ledr.s1,(SLAVE)mailbox_simple_cpu0_to_cpu1.avmm_msg_receiver,(SLAVE)timer_1_0.s1,(SLAVE)mdma_from_ycbcr_to_rgb_accel.csr,(SLAVE)mdma_to_idct_accel_cr.csr,(SLAVE)mutex_0.s1,(SLAVE)sram.uas,(SLAVE)mdma_to_idct_accel_cb.descriptor_slave,(SLAVE)key.s1,(MASTER)cpu_1.instruction_master,(MASTER)cpu_1.data_master,(SLAVE)sysid.control_slave,(SLAVE)video_dma.csr,(MASTER)cpu_0.instruction_master,(SLAVE)i2c_scl.s1,(SLAVE)cpu_0.debug_mem_slave,(SLAVE)mdma_to_idct_accel_cb.csr,(SLAVE)jtag_uart_1.avalon_jtag_slave,(SLAVE)timer_0_1.s1,(MASTER)cpu_0.data_master,(SLAVE)mailbox_simple_cpu1_to_cpu0.avmm_msg_sender,(SLAVE)video_dma.descriptor_slave,(SLAVE)ledg.s1,(SLAVE)mdma_to_idct_accel_y.csr,(SLAVE)mdma_from_ycbcr_to_rgb_accel.descriptor_slave,(SLAVE)timer_1_1.s1,(MASTER)sd_cont.master,(SLAVE)cpu_1.debug_mem_slave,(SLAVE)timer_0_0.s1,(SLAVE)sd_cont.slave,(SLAVE)jtag_uart_0.avalon_jtag_slave) 1 7 12 2710 1070 3170 1120 3630 330 NJ 330 NJ 330 5000 330 NJ 330 NJ 330 NJ 330 5530 350 5880 190 6100
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)i2c_scl.external_connection,(SLAVE)ECE423_QSYS.i2c_scl) 1 0 17 NJ 850 NJ 850 NJ 850 NJ 850 NJ 850 NJ 850 NJ 850 NJ 850 NJ 850 NJ 1090 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)mdma_to_idct_accel_cr.st_source,(SLAVE)idct_accelerator_2d_cr.avalon_streaming_sink) 1 10 1 4060
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)ycbcr_to_rgb_accelerator.avalon_streaming_source,(SLAVE)mdma_from_ycbcr_to_rgb_accel.st_sink) 1 12 1 5040
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.i2c_sda,(SLAVE)i2c_sda.external_connection) 1 0 17 NJ 1600 NJ 1600 NJ 1600 NJ 1600 NJ 1600 NJ 1600 NJ 1600 NJ 1600 NJ 1600 NJ 1720 NJ 1380 NJ 1380 NJ 1380 NJ 1380 NJ 1380 NJ 1380 5510
+preplace netloc INTERCONNECT<net_container>ECE423_QSYS</net_container>(SLAVE)pixel_conv.clk_reset,(SLAVE)cpu_0.reset,(SLAVE)idct_accelerator_2d_cb.reset_n,(SLAVE)ledr.reset,(SLAVE)lpddr2.mp_wfifo_reset_n_1,(SLAVE)timer_1_0.reset,(SLAVE)lpddr2.mp_cmd_reset_n_2,(SLAVE)lpddr2.mp_wfifo_reset_n_0,(SLAVE)lpddr2.soft_reset,(SLAVE)i2c_sda.reset,(SLAVE)idct_accelerator_2d_cr.reset_n,(SLAVE)mutex_0.reset,(SLAVE)lpddr2.mp_rfifo_reset_n_1,(SLAVE)ledg.reset,(SLAVE)timer_0_1.reset,(SLAVE)video_dma.reset_n,(SLAVE)sram.reset,(SLAVE)mdma_to_idct_accel_y.reset_n,(SLAVE)video_fifo.reset_out,(SLAVE)mailbox_simple_cpu0_to_cpu1.rst_n,(SLAVE)sysid.reset,(SLAVE)sram_sharer.reset,(SLAVE)sd_cont.reset,(SLAVE)key.reset,(SLAVE)video.clk_reset,(SLAVE)lpddr2.mp_cmd_reset_n_0,(SLAVE)sram_bridge.reset,(SLAVE)video_fifo.reset_in,(SLAVE)i2c_scl.reset,(SLAVE)lpddr2.mp_cmd_reset_n_1,(SLAVE)mailbox_simple_cpu1_to_cpu0.rst_n,(SLAVE)mdma_to_idct_accel_cr.reset_n,(MASTER)cpu_1.debug_reset_request,(MASTER)reset_controller_0.reset_out,(SLAVE)idct_accelerator_2d_y.reset_n,(SLAVE)video_pll.reset,(SLAVE)jtag_uart_1.reset,(SLAVE)lpddr2.mp_rfifo_reset_n_0,(SLAVE)ycbcr_to_rgb_accelerator.reset_n,(SLAVE)jtag_uart_0.reset,(SLAVE)timer_1_1.reset,(SLAVE)mdma_from_ycbcr_to_rgb_accel.reset_n,(SLAVE)cpu_1.reset,(SLAVE)timer_0_0.reset,(MASTER)cpu_0.debug_reset_request,(SLAVE)mdma_to_idct_accel_cb.reset_n) 1 2 19 670 960 NJ 960 NJ 960 NJ 960 NJ 960 2670 1050 3150 1100 3590 590 4080 1040 4410 1000 5060 930 NJ 930 NJ 930 NJ 930 5450 370 5940 390 6140 370 6320 230 6490
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)video.in,(MASTER)pixel_conv.out) 1 20 1 6510
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.lpddr2_global_reset,(SLAVE)lpddr2.global_reset) 1 0 17 NJ 1910 NJ 1790 NJ 1790 NJ 1790 NJ 1790 NJ 2090 NJ 2050 NJ 2050 NJ 2050 NJ 2050 NJ 2150 NJ 2150 NJ 2150 NJ 2150 NJ 2150 NJ 2150 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(SLAVE)idct_accelerator_2d_cb.avalon_streaming_sink,(MASTER)mdma_to_idct_accel_cb.st_source) 1 10 1 4120
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(MASTER)ECE423_QSYS.video_clk,(MASTER)video_clk.out_clk) 1 19 3 NJ 410 NJ 410 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)ECE423_QSYS.ledg,(SLAVE)ledg.external_connection) 1 0 17 NJ 1160 NJ 1160 NJ 1160 NJ 1160 NJ 1160 NJ 1160 NJ 1160 NJ 1160 NJ 1160 NJ 1110 NJ 1080 NJ 1080 NJ 1080 NJ 1080 NJ 1080 NJ 1080 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)sram_sharer.tcm,(SLAVE)sram_bridge.tcs) 1 12 5 5020 2020 NJ 2020 NJ 2020 NJ 2020 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)mdma_from_ycbcr_to_rgb_accel.mm_write,(SLAVE)lpddr2.avl_2) 1 13 4 5310 2130 NJ 2130 NJ 2130 NJ
+preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)sd_cont.clock,(SLAVE)sd_cont.sd_clk,(SLAVE)video_pll.refclk,(MASTER)clk_50.out_clk) 1 17 1 5920
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)idct_accelerator_2d_cr.avalon_streaming_source,(SLAVE)ycbcr_to_rgb_accelerator.avalon_streaming_sink_cr) 1 11 1 N
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)key.external_connection,(SLAVE)ECE423_QSYS.key) 1 0 17 NJ 150 NJ 150 NJ 150 NJ 150 NJ 150 NJ 150 NJ 150 NJ 150 NJ 150 NJ 70 NJ 70 NJ 70 NJ 70 NJ 70 NJ 70 NJ 70 NJ
+preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)mailbox_simple_cpu0_to_cpu1.interrupt_msg_pending,(SLAVE)mailbox_simple_cpu1_to_cpu0.interrupt_mb_available,(SLAVE)timer_1_0.irq,(SLAVE)timer_1_1.irq,(SLAVE)jtag_uart_1.irq,(MASTER)cpu_1.irq) 1 8 2 3190 880 3550
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)video.sync,(SLAVE)ECE423_QSYS.video) 1 0 21 NJ 190 NJ 190 NJ 190 NJ 190 NJ 190 NJ 190 NJ 190 NJ 190 NJ 190 NJ 90 NJ 150 NJ 150 NJ 150 NJ 150 NJ 150 NJ 150 NJ 330 NJ 210 NJ 190 NJ 190 N
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)sd_cont.sd,(SLAVE)ECE423_QSYS.sd) 1 0 18 NJ 170 NJ 170 NJ 170 NJ 170 NJ 170 NJ 170 NJ 170 NJ 170 NJ 170 NJ 30 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.oct,(SLAVE)ECE423_QSYS.lpddr2_oct) 1 0 17 NJ 1810 NJ 1810 NJ 1810 NJ 1810 NJ 1810 NJ 2190 NJ 2190 NJ 2190 NJ 2190 NJ 2190 NJ 2190 NJ 2190 NJ 2190 NJ 2190 NJ 2190 NJ 2470 NJ
+preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)timer_0_0.clk,(SLAVE)key.clk,(SLAVE)ledr.clk,(SLAVE)lpddr2.mp_cmd_clk_1,(SLAVE)timer_1_0.clk,(SLAVE)timer_1_1.clk,(SLAVE)timer_0_1.clk,(SLAVE)video_fifo.clk_in,(SLAVE)mdma_to_idct_accel_y.clock,(SLAVE)sram.clk,(SLAVE)ledg.clk,(SLAVE)ycbcr_to_rgb_accelerator.clock,(SLAVE)mdma_to_idct_accel_cr.clock,(SLAVE)lpddr2.mp_wfifo_clk_1,(SLAVE)i2c_scl.clk,(SLAVE)lpddr2.mp_cmd_clk_0,(SLAVE)mutex_0.clk,(SLAVE)lpddr2.mp_cmd_clk_2,(SLAVE)cpu_0.clk,(SLAVE)sram_bridge.clk,(SLAVE)jtag_uart_1.clk,(SLAVE)video_dma.clock,(MASTER)clk_125.clk,(SLAVE)sram_sharer.clk,(SLAVE)reset_controller_0.clk,(SLAVE)lpddr2.mp_wfifo_clk_0,(SLAVE)idct_accelerator_2d_cr.clock,(SLAVE)lpddr2.mp_rfifo_clk_1,(SLAVE)mailbox_simple_cpu0_to_cpu1.clk,(SLAVE)cpu_1.clk,(SLAVE)mailbox_simple_cpu1_to_cpu0.clk,(SLAVE)lpddr2.mp_rfifo_clk_0,(SLAVE)mdma_to_idct_accel_cb.clock,(SLAVE)i2c_sda.clk,(SLAVE)mdma_from_ycbcr_to_rgb_accel.clock,(SLAVE)sysid.clk,(SLAVE)idct_accelerator_2d_y.clock,(SLAVE)jtag_uart_0.clk,(SLAVE)idct_accelerator_2d_cb.clock) 1 1 18 340 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 2690 1030 3130 1080 3570 410 4100 610 4390 860 5020 910 NJ 910 NJ 910 NJ 910 5490 250 NJ 250 NJ
+preplace netloc FAN_IN<net_container>ECE423_QSYS</net_container>(MASTER)video_dma.mm_read,(MASTER)mdma_to_idct_accel_cr.mm_read,(SLAVE)lpddr2.avl_1,(MASTER)mdma_to_idct_accel_y.mm_read,(MASTER)mdma_to_idct_accel_cb.mm_read) 1 10 7 4040 2110 NJ 2110 NJ 2110 NJ 2110 NJ 2110 NJ 2110 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)sram_bridge.out,(SLAVE)ECE423_QSYS.sram_bridge_out) 1 0 17 NJ 1890 NJ 1770 NJ 1770 NJ 1770 NJ 1770 NJ 2010 NJ 2010 NJ 2010 NJ 2010 NJ 2010 NJ 1980 NJ 1980 NJ 1980 NJ 1980 NJ 1980 NJ 1980 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)idct_accelerator_2d_y.avalon_streaming_source,(SLAVE)ycbcr_to_rgb_accelerator.avalon_streaming_sink_y) 1 11 1 4370
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)lpddr2.pll_sharing,(SLAVE)ECE423_QSYS.lpddr2_pll_sharing) 1 0 17 NJ 1850 NJ 1850 NJ 1850 NJ 1850 NJ 1850 NJ 2230 NJ 2230 NJ 2230 NJ 2230 NJ 2230 NJ 2230 NJ 2230 NJ 2230 NJ 2230 NJ 2230 NJ 2510 NJ
+preplace netloc POINT_TO_POINT<net_container>ECE423_QSYS</net_container>(MASTER)sram.tcm,(SLAVE)sram_sharer.tcs0) 1 10 2 N 1810 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)clk_125.clk_in_reset,(SLAVE)ECE423_QSYS.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>ECE423_QSYS</net_container>(SLAVE)clk_50.in_clk,(SLAVE)ECE423_QSYS.clk_50) 1 0 17 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ
+preplace netloc FAN_OUT<net_container>ECE423_QSYS</net_container>(SLAVE)video.clk,(SLAVE)video_fifo.clk_out,(SLAVE)video_clk.in_clk,(MASTER)video_pll.outclk0,(SLAVE)pixel_conv.clk) 1 18 3 6100 390 6300 210 6470
+levelinfo -pg 1 0 130 6720
+levelinfo -hier ECE423_QSYS 140 170 540 1000 1340 1900 2380 2650 2890 3310 3810 4150 4660 5180 5330 5350 5430 5700 5970 6170 6350 6540 6630

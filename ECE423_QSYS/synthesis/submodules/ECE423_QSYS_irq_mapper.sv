@@ -22,7 +22,7 @@
 // Parameters
 //   NUM_RCVRS        : 11
 //   SENDER_IRW_WIDTH : 32
-//   IRQ_MAP          : 0:3,1:5,2:6,3:7,4:8,5:9,6:10,7:0,8:1,9:2,10:4
+//   IRQ_MAP          : 0:0,1:7,2:8,3:9,4:10,5:1,6:2,7:3,8:4,9:5,10:6
 //
 // -------------------------------------------------------
 
@@ -61,17 +61,17 @@ module ECE423_QSYS_irq_mapper
     always @* begin
 	sender_irq = 0;
 
-        sender_irq[3] = receiver0_irq;
-        sender_irq[5] = receiver1_irq;
-        sender_irq[6] = receiver2_irq;
-        sender_irq[7] = receiver3_irq;
-        sender_irq[8] = receiver4_irq;
-        sender_irq[9] = receiver5_irq;
-        sender_irq[10] = receiver6_irq;
-        sender_irq[0] = receiver7_irq;
-        sender_irq[1] = receiver8_irq;
-        sender_irq[2] = receiver9_irq;
-        sender_irq[4] = receiver10_irq;
+        sender_irq[0] = receiver0_irq;
+        sender_irq[7] = receiver1_irq;
+        sender_irq[8] = receiver2_irq;
+        sender_irq[9] = receiver3_irq;
+        sender_irq[10] = receiver4_irq;
+        sender_irq[1] = receiver5_irq;
+        sender_irq[2] = receiver6_irq;
+        sender_irq[3] = receiver7_irq;
+        sender_irq[4] = receiver8_irq;
+        sender_irq[5] = receiver9_irq;
+        sender_irq[6] = receiver10_irq;
     end
 
 endmodule
